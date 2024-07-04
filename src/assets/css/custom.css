@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/apercu-font@1.0.0/stylesheet.min.css');
+
+.styled-link{
+    @apply relative inline-flex items-center gap-3 text-base
+}
+.styled-link:after{
+    @apply content-[''] block absolute left-1/2 -translate-x-1/2 bottom-[-8px] w-0 border-b border-light transition-all duration-500 ease-in-out
+}
+.styled-link.last-link{
+    @apply text-primary
+}
+.styled-link.last-link:after{
+    @apply border-primary
+}
+.styled-link:hover::after{
+    @apply w-5
+}
+.styled-link.active:after{
+    @apply w-full
+}
+
+.home-view .hero-heading{
+    @apply relative overflow-hidden cursor-text font-apercu text-[40px] leading-[52px] sm:text-[60px] sm:leading-[75px] md:text-[90px] md:leading-[95px] lg:text-[128px] lg:leading-[136px] font-medium
+}
+.home-view .hero-heading span{
+    @apply inline-block
+}
+.home-view .heading-overlay{
+    transition: top .5s ease-out, left .5s ease-out, opacity .4s;
+    pointer-events: none;
+    z-index: 1;
+    position: absolute;
+    background: radial-gradient(rgba(5, 11, 16, 0), rgba(5, 11, 16, .5) 4%, rgba(5, 11, 16, .9) 8%);
+    width: 400%;
+    height: 400%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    top: 54%;
+    left: 33%;
+}
+.home-view .hero-text{
+    @apply text-2xl leading-[38px] md:text-[28px] md:leading-[44px] lg:text-[32px] lg:leading-[48px] mt-6 md:mt-14
+}
