@@ -40,5 +40,15 @@
     left: 33%;
 }
 .home-view .hero-text{
-    @apply text-2xl leading-[38px] md:text-[28px] md:leading-[44px] lg:text-[32px] lg:leading-[48px] mt-6 md:mt-14
+    @apply text-2xl md:text-[28px] md:leading-[44px] lg:text-[32px] lg:leading-[48px] mt-6 md:mt-14
+}
+
+.styled-button{
+    @apply relative text-lg font-medium bg-transparent p-1 border-none transition-all duration-300 ease-in-out inline-flex gap-3 items-center justify-center
+}
+.styled-button:after{
+    @apply content-[''] block h-0.5 opacity-0 absolute left-1/2 -translate-x-1/2 bottom-[4px] w-[calc(100%_-_8px)] bg-light transition-all duration-500 ease-in-out
+}
+.styled-button:hover:after{
+    @apply opacity-100
 }
