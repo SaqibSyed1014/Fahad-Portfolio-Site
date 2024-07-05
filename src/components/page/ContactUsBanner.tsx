@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 export default function ContactUsBanner() {
     return (
-        <div className="pt-40">
+        <div className="pt-14 md:pt-20 xl:pt-40">
             <section className="container overflow-hidden">
                 <div className="w-full bg-primary relative group">
                     <div className="absolute left-1/2 -translate-x-1/2">
@@ -47,7 +47,7 @@ export default function ContactUsBanner() {
                     </div>
                     <div className="container">
                         <div className="pt-36 pb-20 text-center max-w-[568px] mx-auto opacity-50 group-hover:opacity-100 transition-all duration-700 ease-in-out">
-                            <h3 className="text-2xl lg:text-5xl font-apercu font-medium">
+                            <h3 className="text-3xl lg:text-5xl font-apercu font-medium">
                                 Have an idea?
                             </h3>
                             <p className="mt-3 text-xl lg:text-2xl">

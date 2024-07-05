@@ -14,11 +14,12 @@ module.exports = {
         dark: '#040b10',
         light: '#FCFCFA',
         primary: '#3d43d8',
-        'gray-text': '#9ea4a6'
+        'gray-text': '#9ea4a6',
+        'dark-gray': '#1c2226'
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
-        'apercu': ['Apercu', 'sas-serif']
+        'apercu': ['Apercu', 'sans-serif']
       }
     },
     screens: {
@@ -29,12 +30,15 @@ module.exports = {
       '2xl': '1400px'
     },
     fontSize: {
-      sm: ['14px', '20px'],
+      xs: ['12px', '18px'],
+      sm: ['14px', '26px'],
       base: ['16px', '26px'],
       lg: ['18px', '30px'],
       xl: ['20px', '34px'],
       '2xl': ['24px', '38px'],
-      '5xl': ['48px', '63px']
+      '3xl': ['32px', '48px'],
+      '5xl': ['48px', '63px'],
+      '6xl': ['60px', '75px']
     }
   },
   plugins: [
