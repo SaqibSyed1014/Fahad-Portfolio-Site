@@ -8,6 +8,7 @@ import Home from "./views/Home";
 import About from "./views/About";
 import { register } from 'swiper/element/bundle';
 import Showcase from "./views/Showcase";
+import Careers from "./views/Careers";
 
 register();
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
             <Route index element={<Home />} />
             <Route path="showcase" element={<Showcase />} />
             <Route path="about" element={<About />} />
+            <Route path="careers" element={<Careers />} />
         </Route>
     )
 )
