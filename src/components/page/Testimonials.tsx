@@ -2,7 +2,6 @@ import React, {useRef, useState} from "react";
 import {clientsFeedback} from "../../assets/utils/constants";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {SwiperProps} from "swiper/swiper-react";
-import { Pagination } from 'swiper/modules';
 
 
 export default function Testimonials() {
@@ -11,7 +10,6 @@ export default function Testimonials() {
     const [activeSlide, setActiveSlide] = useState(1);
 
     function slideChanged(event :SwiperProps) {
-        console.log('chan ', event.activeIndex)
         setActiveSlide(event.activeIndex)
     }
 

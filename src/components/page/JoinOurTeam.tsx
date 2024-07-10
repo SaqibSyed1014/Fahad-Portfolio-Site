@@ -8,7 +8,7 @@ export default function JoinOurTeam() {
                             <h2 className="section-header-subtitle">
                                 Join our team
                             </h2>
-                            <h3 className="section-header-main-heading">
+                            <h3 className="section-header-main-heading left">
                                 Become a part of Concealed
                             </h3>
 

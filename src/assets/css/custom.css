@@ -2,8 +2,11 @@
 @import url('https://cdn.jsdelivr.net/npm/apercu-font@1.0.0/stylesheet.min.css');
 
 
+.section-spacing{
+    @apply mt-28 md:mt-40 xl:mt-60
+}
 .primary-btn{
-    @apply inline-flex justify-center items-center gap-3 text-sm text-primary hover:text-white font-medium bg-transparent hover:bg-primary py-2 px-5 border border-primary transition-all duration-300 ease-in-out
+    @apply inline-flex justify-center items-center gap-3 text-base text-primary hover:text-white font-medium bg-transparent hover:bg-primary py-2 px-5 border border-primary transition-all duration-300 ease-in-out
 }
 .styled-link{
     @apply relative inline-flex items-center gap-3 text-base
@@ -58,10 +61,13 @@
 }
 
 .section-header-heading{
-    @apply text-3xl xl:text-5xl font-medium font-apercu
+    @apply text-3xl xl:text-5xl font-medium font-apercu max-w-[620px] mx-auto
+}
+.section-header-heading.left, .section-header-main-heading.left{
+    @apply ml-0
 }
 .section-header-main-heading{
-    @apply text-3xl md:text-5xl xl:text-6xl font-medium font-apercu
+    @apply text-3xl md:text-5xl xl:text-6xl font-medium font-apercu max-w-[620px] mx-auto
 }
 .section-header-subtitle{
     @apply text-lg md:text-xl font-apercu text-gray-text font-medium mb-3 uppercase
@@ -86,4 +92,25 @@
 .career-perks:before{
     background-image: linear-gradient(180deg,#040b10,rgba(4,11,16,0) 65%,rgba(4,11,16,0) 90%,#040b10),linear-gradient(90deg,transparent 70%,#040b10), url('https://www.concealed.pt/_next/static/media/map.da8bb3d0.png');
     @apply content-[''] hidden md:block absolute z-[1] right-0 w-full h-full bg-no-repeat bg-bottom md:bg-[length:1400px]
+}
+
+.about-page{
+    @apply overflow-x-hidden
+}
+.about-page .about-images{
+    @apply max-w-[1400px]
+}
+.about-page .about-slider{
+    @apply !overflow-visible relative
+}
+.about-page .about-slider:before, .about-page .about-slider:after{
+    @apply absolute top-0 h-full w-full z-10 content-[""]
+}
+.about-page .about-slider:before{
+    background: linear-gradient(-90deg, rgba(4, 11, 16, 0), #040b10 10%);
+    @apply right-full
+}
+.about-page .about-slider:after{
+    background: linear-gradient(90deg, rgba(4, 11, 16, 0), #040b10 10%);
+    @apply left-full
 }

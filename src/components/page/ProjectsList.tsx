@@ -15,7 +15,7 @@ export default function ProjectsList() {
         <div className="mt-10 md:mt-20">
             <div className="container">
                 <div className="flex max-md:flex-col md:justify-between max-md:gap-10 md:items-end max-md:mb-20">
-                    <div className="flex flex-col ">
+                    <div className="flex flex-col">
                         <h2 className="section-header-subtitle">
                             Our Work
                         </h2>
