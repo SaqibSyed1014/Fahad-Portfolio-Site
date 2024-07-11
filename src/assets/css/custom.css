@@ -20,11 +20,20 @@
 .styled-link.last-link:after{
     @apply border-primary
 }
-.styled-link:hover::after{
+.styled-link:hover:after{
     @apply w-5
 }
 .styled-link.active:after{
     @apply w-full
+}
+.styled-link.mobile-link{
+    @apply text-2xl font-medium
+}
+.styled-link.last-link.mobile-link{
+    @apply text-light text-base
+}
+.styled-link.last-link.mobile-link.active:after{
+    @apply border-light
 }
 
 .home-view .hero-heading{
@@ -136,4 +145,23 @@ input:checked + div {
 }
 input:checked + div svg {
     @apply block;
+}
+
+.hamburger-toggle{
+    height: 14px;
+    width: 18px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hamburger-toggle .hamburger-bar{
+    @apply bg-light h-0.5 w-full rounded-[10px] transition-transform duration-[.4s] ease-in-out
+}
+.hamburger-toggle.toggle-open .hamburger-bar:nth-child(1){
+    @apply transform rotate-45
+}
+.hamburger-toggle.toggle-open .hamburger-bar:nth-child(2){
+    @apply transform scale-y-0
+}
+.hamburger-toggle.toggle-open .hamburger-bar:nth-child(3){
+    @apply transform -rotate-45
 }
