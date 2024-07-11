@@ -114,3 +114,26 @@
     background: linear-gradient(90deg, rgba(4, 11, 16, 0), #040b10 10%);
     @apply left-full
 }
+
+
+
+input[type=text], input[type=email], input[type=number]{
+    @apply bg-transparent font-medium text-2xl pt-0.5 w-full outline-0 border-b border-light/20 hover:border-light focus:border-light transition duration-300 ease-in-out
+}
+form label{
+    @apply block text-lg text-[#afafaf] mb-2
+}
+form label.checkbox-label{
+    @apply mb-0 text-light text-base cursor-pointer
+}
+
+
+.custom-checkbox{
+    @apply bg-transparent rounded border border-[#363b3f] group-hover:border-primary focus:border-primary w-4 h-4 flex flex-shrink-0 justify-center items-center cursor-pointer transition duration-300 ease-in-out
+}
+input:checked + div {
+    @apply border-blue-500;
+}
+input:checked + div svg {
+    @apply block;
+}

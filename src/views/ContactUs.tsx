@@ -1,14 +1,10 @@
-import Hero from "../components/page/Hero";
-import WhatWeDo from "../components/page/WhatWeDo";
-import Feedbacks from "../components/page/Feedbacks";
-import ContactUsBanner from "../components/page/ContactUsBanner";
-import OurWork from "../components/page/OurWork";
+import ContactForm from "../components/page/ContactForm";
 
-export default function Home() {
+export default function ContactUs() {
 
     return (
         <>
-            <ContactUsBanner />
+            <ContactForm />
         </>
     )
 }
