@@ -26,28 +26,37 @@ export const projects = [
         category: ProjectCategories.website,
         title: 'Indigenous culture accessible to anyone',
         subtitle: 'Our Songlines — Marketing Website',
-        images: [],
+        images: [
+            'https://www.concealed.pt/_next/image?url=%2Fshowcase-projects%2Foursonglines%2Fbehind.png&w=2048&q=100',
+            'https://www.concealed.pt/_next/image?url=%2Fshowcase-projects%2Foursonglines%2Ffront.png&w=2048&q=100'
+        ],
         color: ProjectColors.Green
     },
     {
         category: ProjectCategories.app,
         title: 'Explore an endless world',
         subtitle: 'simMarket — Desktop App',
-        images: [],
+        images: [
+            'https://www.concealed.pt/_next/image?url=%2Fshowcase-projects%2Fsimmarket-app%2Ffront.png&w=2048&q=100'
+        ],
         color: ProjectColors.Blue
     },
     {
         category: ProjectCategories.app,
         title: 'On-demand delivery made simple',
         subtitle: 'YouShip — Mobile App',
-        images: [],
+        images: [
+            'https://www.concealed.pt/_next/image?url=%2Fshowcase-projects%2Fyouship-mobile-app%2Ffront.png&w=2048&q=100'
+        ],
         color: ProjectColors.Red
     },
     {
         category: ProjectCategories.app,
         title: 'Restoring The Forgotten Forests In Our Ocean',
         subtitle: 'SeaForester — Marketing Website',
-        images: [],
+        images: [
+            'https://www.concealed.pt/_next/image?url=%2Fshowcase-projects%2Fseaforester%2Ffront.png&w=2048&q=100'
+        ],
         color: ProjectColors.Blue
     },
     {
@@ -126,7 +135,8 @@ export const clientsFeedback = [
         companyName: 'Gleam',
         designation: 'CTO & Co-founder',
         image: 'https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgleam-john-sherwood.6265451e.jpeg&w=32&q=100',
-        website: ''
+        website: '',
+        bgColor: ['#4B6998', '#68B193']
     },
     {
         logo: SimMarket,
@@ -136,7 +146,8 @@ export const clientsFeedback = [
         companyName: 'simMarket',
         designation: 'CEO',
         image: 'https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsimmarket-miguel-blaufuks.a3f01069.jpg&w=32&q=100',
-        website: ''
+        website: '',
+        bgColor: ['#589BDE', '#589BDE']
     },
     {
         logo: SeaForester,
@@ -146,7 +157,8 @@ export const clientsFeedback = [
         companyName: 'SeaForester',
         designation: 'Scientific Manager',
         image: 'https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fseaforester-jan-verbeek.59b70617.jpg&w=32&q=100',
-        website: ''
+        website: '',
+        bgColor: ['#0088B8', '#0088B8']
     },
     {
         logo: Cantihodo,
@@ -156,7 +168,8 @@ export const clientsFeedback = [
         companyName: 'Cantinho do Coimbra',
         designation: 'CEO',
         image: 'https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcantinhodocoimbra-andre-coimbra.99e6937e.jpg&w=32&q=100',
-        website: ''
+        website: '',
+        bgColor: ['#E69C4A', '#E69C4A']
     }
 ]
 

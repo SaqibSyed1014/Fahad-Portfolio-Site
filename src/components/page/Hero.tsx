@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
 
 export default function Hero() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -62,15 +64,47 @@ export default function Hero() {
         }
     }, [mousePosition, isHovering]);
 
+    const container = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        gsap.from('.hero-text', {
+            opacity: 0,
+            translateY: 50,
+            scrollTrigger: {
+                trigger: container.current,
+                start: 'top center'
+            },
+            delay: .5
+        });
+        gsap.from('.site-name', {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: container.current,
+                start: 'top center'
+            },
+        });
+        gsap.from('.heading-text-piece', {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: container.current,
+                start: 'top center'
+            },
+            delay: .5
+        });
+    });
+
     return (
         <div className="home-view mt-20">
-            <div className="container">
+            <div className="container" ref={container}>
                 <div className="flex">
                     <div className="w-full lg:w-10/12 mx-auto px-5">
                         <h1 ref={headingRef} className="hero-heading">
-                            <span>Everything</span>
-                            <span>Concealed will</span>
-                            <span>be revealed</span>
+                            <span className="heading-text-piece">Everything</span>
+                            <span>
+                                <span className="site-name">Concealed</span>&nbsp;
+                                <span className="heading-text-piece">will</span>
+                            </span>
+                            <span className="heading-text-piece">be revealed</span>
                             <div ref={followerRef} className="heading-overlay"></div>
                         </h1>
                     </div>

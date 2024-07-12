@@ -1,5 +1,17 @@
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+interface Service {
+    label: string;
+    text: string;
+    icon: JSX.Element;
+}
+
 export default function WhatWeDo() {
-    const services = [
+    const services :Service[] = [
         {
             label: 'Product Strategy',
             text: 'Thorough research and an optimized strategy are the foundation for the best product development.',
@@ -21,19 +33,55 @@ export default function WhatWeDo() {
             icon: <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="styles_card__icon__Vh26k "><g className="js-svg-reload" data-svg-origin="23 23" transform="matrix(-0.86603,0.5,-0.5,-0.86603,54.41869,31.41869)"><path fill="none" d="M0 0h46v46H0z"></path><circle cx="23" cy="23" r="16" fill="#3D43D8" fillOpacity="0.8"></circle><circle cx="23" cy="23" r="15.5" stroke="#FCFCFA" strokeOpacity="0.6"></circle><circle cx="23" cy="23" r="7" fill="#040B10"></circle><path opacity="0.9" d="M42.846 29.994l-4.276-5.649-6.341 3.661M2.155 20.414l5.592 4.35 5.177-5.178" stroke="#FCFCFA" strokeLinecap="round" strokeLinejoin="round"></path></g></svg>
         }
     ]
+
+    const container = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+            gsap.from('.box', {
+                opacity: 0,
+                stagger: 0.7,
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: 'top center'
+                }
+            });
+            gsap.from('.section-arrow', {
+                width: 0,
+                stagger: 0.7,
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: 'top center'
+                }
+            });
+        },
+        { scope: container }
+    );
+
     return (
         <section className="what-we-do-section py-14 md:py-20 xl:py-40">
-            <div className="container">
-                <div className="grid grid-cols-4">
-                    {services.map((service, index) => {
+            <div className="container" ref={container}>
+                <div className="grid grid-cols-4 relative">
+                    {services.map((service :Service, index :number) => {
                         return (
-                            <div key={service.label} className="px-5">
+                            <div key={index} className="px-5 box">
                                 {service.icon}
                                 <h3 className="lg:text-lg lg:mt-5 lg:mb-2 xl:text-2xl font-medium">{service.label}</h3>
                                 <p className="text-gray-text text-base xl:text-lg">{service.text}</p>
                             </div>
                         )
                     })}
+                    <div className="hidden xl:block">
+                        <div className="section-arrow hidden overflow-hidden xl:block xl:absolute xl:left-[10%] xl:top-[-40px] [transform:matrix(0.97,0.23,0.23,-0.97,0,0)]">
+                            <svg fill="none" height="46" viewBox="0 0 177 46" width="177" xmlns="http://www.w3.org/2000/svg"><path d="M.782.914c4.882 14.84 28.996 44.52 86.403 44.52 57.406 0 83.376-19.038 87.574-25.482m0 0l.879 7.03m-.879-7.03h-7.322" opacity="0.9" stroke="#fcfcfa" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                        </div>
+
+                        <div className="section-arrow hidden overflow-hidden xl:block xl:absolute xl:left-[40%] xl:bottom-[-60px]">
+                            <svg fill="none" height="46" viewBox="0 0 177 46" width="177" xmlns="http://www.w3.org/2000/svg"><path d="M.782.914c4.882 14.84 28.996 44.52 86.403 44.52 57.406 0 83.376-19.038 87.574-25.482m0 0l.879 7.03m-.879-7.03h-7.322" opacity="0.9" stroke="#fcfcfa" strokeLinecap="round" strokeLinejoin="round"></path></svg>                        </div>
+
+                        <div className="section-arrow hidden overflow-hidden xl:block xl:absolute xl:left-[60%] xl:top-[-40px] [transform:matrix(0.97,0.23,0.23,-0.97,0,0)]">
+                            <svg fill="none" height="46" viewBox="0 0 177 46" width="177" xmlns="http://www.w3.org/2000/svg"><path d="M.782.914c4.882 14.84 28.996 44.52 86.403 44.52 57.406 0 83.376-19.038 87.574-25.482m0 0l.879 7.03m-.879-7.03h-7.322" opacity="0.9" stroke="#fcfcfa" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

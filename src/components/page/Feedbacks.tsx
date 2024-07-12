@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useRef} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {EffectFade} from "swiper/modules";
+import {Autoplay, EffectFade} from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import {Link} from "react-router-dom";
@@ -11,12 +11,18 @@ import {clientsFeedback} from "../../assets/utils/constants";
 
 export default function Feedbacks() {
     const swiperRef = useRef<SwiperProps>(null);
+    const [activeSlide, setActiveSlide] = useState(0);
 
     function moveToSlide(index :number) {
         if (swiperRef.current && swiperRef.current.swiper) {
             swiperRef.current.swiper.slideTo(index);
         }
     }
+    function slideChanged($event :any) {
+        setActiveSlide($event.activeIndex);
+        console.log(activeSlide)
+    }
+
     return (
         <section className="clients-feedback py-14 md:py-20">
             <div className="max-w-[800px] mx-auto">
@@ -36,7 +42,10 @@ export default function Feedbacks() {
                         {clientsFeedback.map((client, index) => {
                                 return (
                                     <div key={index} onClick={() => moveToSlide(index)}>
-                                        <div className="border border-[#363b3f] h-[160px] w-full flex justify-center items-center cursor-pointer grayscale">
+                                        <div
+                                            className={`border border-[#363b3f] h-[160px] w-full flex justify-center items-center cursor-pointer ${activeSlide === index ? `` : 'grayscale' }`}
+                                            style={{ backgroundImage: activeSlide === index ? `linear-gradient(45deg, ${client.bgColor[0]}, ${client.bgColor[1]})` : 'none' }}
+                                        >
                                             <img src={client.logo} alt={client.companyName} />
                                         </div>
                                     </div>
@@ -47,8 +56,13 @@ export default function Feedbacks() {
                         <Swiper
                             ref={swiperRef}
                             effect={'fade'}
-                            modules={[EffectFade]}
+                            modules={[Autoplay, EffectFade]}
+                            autoplay={{
+                                delay: 4000,
+                                disableOnInteraction: true
+                            }}
                             fadeEffect={{ crossFade: true }}
+                            onSlideChange={slideChanged}
                         >
                             {clientsFeedback.map((client, index) => {
                             return (
@@ -60,7 +74,7 @@ export default function Feedbacks() {
                                                 <div className="w-8 h-8">
                                                     <img src={client.image} alt={client.name}/>
                                                 </div>
-                                                <p className="font-medium text-base">
+                                                <p className="font-medium text-base pt-2">
                                                     {client.name}, {client.designation}, {client.companyName}
                                                 </p>
                                             </div>
