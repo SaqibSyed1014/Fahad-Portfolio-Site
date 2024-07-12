@@ -165,3 +165,12 @@ input:checked + div svg {
 .hamburger-toggle.toggle-open .hamburger-bar:nth-child(3){
     @apply transform -rotate-45
 }
+
+
+/* Process Page CSS */
+.process-page .process-title{
+    @apply text-2xl md:text-3xl mb-4 md:mb-5 font-apercu font-medium
+}
+.process-page .process-desc{
+    @apply text-base md:text-lg max-md:mb-5
+}
