@@ -1,7 +1,9 @@
 import {projects} from "../../assets/utils/constants";
 import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
 import {ProjectCategories} from "../../assets/utils/constants";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function ProjectsList() {
     const [selectedFilter, setFilter] = useState<string>('All');
@@ -11,11 +13,34 @@ export default function ProjectsList() {
         setProjects(selectedFilter === 'All' ? projects : projects.filter((project) => project.category === selectedFilter));
     }, [selectedFilter]);
 
+    const ProjectsListSection = useRef<HTMLHeadingElement>(null);
+
+    const scrollTriggerConfig = {
+        trigger: ProjectsListSection.current,
+        start: 'top center'
+    };
+
+    useGSAP(() => {
+        gsap.from('.section-header', {
+            opacity: 0,
+            stagger: .7,
+            scrollTrigger: scrollTriggerConfig,
+            delay: .3
+        });
+        gsap.from('.project-card', {
+            opacity: 0,
+            stagger: .4,
+            translateY: 50,
+            scrollTrigger: scrollTriggerConfig,
+            delay: .8
+        });
+    });
+
     return (
-        <div className="mt-10 md:mt-20">
+        <section className="mt-10 md:mt-20" ref={ProjectsListSection}>
             <div className="container">
-                <div className="flex max-md:flex-col md:justify-between max-md:gap-10 md:items-end max-md:mb-20">
-                    <div className="flex flex-col">
+                <div className="section-header flex max-md:flex-col md:justify-between max-md:gap-10 md:items-end max-md:mb-20">
+                    <div>
                         <h2 className="section-header-subtitle">
                             Our Work
                         </h2>
@@ -25,7 +50,7 @@ export default function ProjectsList() {
                     </div>
 
                     <div className="flex md:mb-3">
-                        <div className={`relative light mr-3 ${selectedFilter === 'All' ? 'text-primary' : ''}`} onClick={() => setFilter('All')}>
+                        <div className={`project-filter ${selectedFilter === 'All' ? 'text-primary' : ''}`} onClick={() => setFilter('All')}>
                             <span>All</span>
                             <span className="project-filters-amount">{projects.length}</span>
                         </div>
@@ -34,7 +59,7 @@ export default function ProjectsList() {
                             return (
                                 <div className="flex items-center" key={index} onClick={() => setFilter(category)}>
                                     <div className="w-1 h-1 bg-light mx-6"></div>
-                                    <div className={`relative font-light ${selectedFilter === category ? 'text-primary' : ''}`}>
+                                    <div className={`project-filter ${selectedFilter === category ? 'text-primary' : ''}`}>
                                         <span>{category}</span>
                                         <span className="project-filters-amount">{projectCount}</span>
                                     </div>
@@ -50,7 +75,7 @@ export default function ProjectsList() {
                     })}
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
@@ -60,7 +85,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project } : ProjectCardProps) {
     return (
-        <Link to="">
+        <Link to="" className="project-card">
             <div className="flex flex-col h-full">
                 <div className="relative h-full bg-dark-gray p-5 transition duration-500 ease-in-out">
                     <div className="overflow-hidden h-[300px]" style={{ background: project.color }}>

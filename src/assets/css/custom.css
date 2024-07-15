@@ -174,3 +174,13 @@ input:checked + div svg {
 .process-page .process-desc{
     @apply text-base md:text-lg max-md:mb-5
 }
+
+
+.contact-us-lamp{
+    @apply absolute top-0 left-1/2 ml-1.5 transform -translate-x-1/2 -translate-y-full opacity-0
+}
+
+
+.project-filter{
+    @apply relative font-light cursor-pointer hover:text-primary transition duration-300 ease-in-out
+}

@@ -1,24 +1,53 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
 export default function AboutImages() {
+    const AboutImagesSection = useRef<HTMLHeadingElement>(null);
+
+    useGSAP(() => {
+        gsap.from('.section-header-text', {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: AboutImagesSection.current,
+                start: 'top center'
+            },
+            delay: .3,
+        });
+        gsap.from('.about-image', {
+            opacity: 0,
+            translateY: 50,
+            stagger: 0.5,
+            scrollTrigger: {
+                trigger: AboutImagesSection.current,
+                start: 'top center'
+            },
+            delay: .8
+        });
+    });
+
     return (
-        <section>
-            <div className="container text-center">
-                <h2 className="section-header-subtitle">
-                    Who we are
-                </h2>
-                <h3 className="section-header-main-heading">
-                    A fully remote creative digital agency
-                </h3>
+        <section ref={AboutImagesSection}>
+            <div className="container">
+                <div className="section-header-text text-center">
+                    <h2 className="section-header-subtitle">
+                        Who we are
+                    </h2>
+                    <h3 className="section-header-main-heading">
+                        A fully remote creative digital agency
+                    </h3>
+                </div>
 
                 <div className="max-w-[1400px] container">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-8 mt-20 lg:mt-32">
                         <div className="max-md:order-2 col-span-1">
-                            <img src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-1.03386880.jpg&w=1200&q=100" alt=""/>
+                            <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-1.03386880.jpg&w=1200&q=100" alt=""/>
                         </div>
                         <div className="max-md:order-1 col-span-2">
-                            <img src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-2.fb81c818.jpg&w=3840&q=100" alt=""/>
+                            <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-2.fb81c818.jpg&w=3840&q=100" alt=""/>
                         </div>
                         <div className="max-md:order-3 col-span-1">
-                            <img src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-3.9a7a20ae.jpg&w=1920&q=100" alt=""/>
+                            <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-3.9a7a20ae.jpg&w=1920&q=100" alt=""/>
                         </div>
                     </div>
                 </div>

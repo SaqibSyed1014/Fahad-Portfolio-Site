@@ -1,3 +1,7 @@
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
 export default function Perks() {
     const benefits = [
         {
@@ -30,7 +34,21 @@ export default function Perks() {
             description: 'In addition to our quarterly dinners, we get together for a full week once a year to cook, laugh and get to know each other even better.',
             icon: <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" className="styles_card__icon__Vh26k "><g className="js-team-retreat-left-person" data-svg-origin="5.928999900817871 15.911999702453613" transform="matrix(1,0,0,1,-4,0)"><rect x="13.025" y="15.912" width="8.171" height="8.171" rx="4.086" fill="#3D43D8" fill-opacity="0.8" stroke="#fff" stroke-width="0.43"></rect><mask id="path-2-inside-1_1225_3804" fill="#fff"><path d="M30.013 38.448A12.043 12.043 0 006.846 33.84a12.041 12.041 0 00-.917 4.608h24.084z"></path></mask><path d="M30.013 38.448A12.043 12.043 0 006.846 33.84a12.041 12.041 0 00-.917 4.608h24.084z" fill="#3D43D8" stroke="#fff" stroke-width="0.86" mask="url(#path-2-inside-1_1225_3804)"></path></g><g className="js-team-retreat-right-person" data-svg-origin="29.90399932861328 15.911999702453613" transform="matrix(1,0,0,1,4,0)"><rect x="37.861" y="15.912" width="8.171" height="8.171" rx="4.086" fill="#3D43D8" fill-opacity="0.8" stroke="#fff" stroke-width="0.43"></rect><mask id="path-5-inside-2_1225_3804" fill="#fff"><path d="M53.989 38.448A12.043 12.043 0 0030.82 33.84a12.042 12.042 0 00-.916 4.608h24.084z"></path></mask><path d="M53.989 38.448A12.043 12.043 0 0030.82 33.84a12.042 12.042 0 00-.916 4.608h24.084z" fill="#3D43D8" stroke="#fff" stroke-width="0.86" mask="url(#path-5-inside-2_1225_3804)"></path></g><g className="js-team-retreat-center-person"><rect x="25.658" y="20.848" width="8.171" height="8.171" rx="4.086" fill="#3D43D8" fill-opacity="0.8" stroke="#fff" stroke-width="0.43"></rect><mask id="path-6-inside-3_1225_3804" fill="#fff"><path d="M41.786 43.382a12.043 12.043 0 00-23.168-4.608 12.043 12.043 0 00-.916 4.608h24.084z"></path></mask><path d="M41.786 43.382a12.043 12.043 0 00-23.168-4.608 12.043 12.043 0 00-.916 4.608h24.084z" fill="#3D43D8" stroke="#fff" stroke-width="0.86" mask="url(#path-6-inside-3_1225_3804)"></path></g></svg>
         }
-    ]
+    ];
+
+    const PerksSection = useRef<HTMLHeadingElement>(null);
+
+    useGSAP(() => {
+        gsap.from('.team-perk', {
+            opacity: 0,
+            translateY: 50,
+            stagger: .7,
+            scrollTrigger: {
+                trigger: PerksSection.current,
+                start: 'top center'
+            },
+        });
+    });
     return (
         <section className="perks-section mt-32 xl:mt-60">
             <div className="container">
@@ -48,7 +66,7 @@ export default function Perks() {
                 <div className="container">
                     <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-8 mt-24 relative z-20">
                         {benefits.map((benefit, index) => {
-                                return (<div className="flex flex-col" key={index}>
+                                return (<div className="flex flex-col team-perk" key={index}>
                                         {benefit.icon}
                                         <h4 className="lg:text-lg lg:mt-5 lg:mb-2 xl:text-2xl font-medium">{benefit.title}</h4>
                                         <p className="text-gray-text text-base xl:text-lg">{benefit.description}</p>

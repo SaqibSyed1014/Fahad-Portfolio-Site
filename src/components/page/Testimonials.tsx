@@ -2,6 +2,8 @@ import React, {useRef, useState} from "react";
 import {clientsFeedback} from "../../assets/utils/constants";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {SwiperProps} from "swiper/swiper-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 
 export default function Testimonials() {
@@ -13,12 +15,38 @@ export default function Testimonials() {
         setActiveSlide(event.activeIndex)
     }
 
+    const TestimonialsSection = useRef<HTMLHeadingElement>(null);
+
+    useGSAP(() => {
+        const animations = [
+            { target: '.testimonial-card-1', endY: -19, speed: 1.095 },
+            { target: '.testimonial-card-2', endY: -100, speed: 0.5 },
+            { target: '.testimonial-card-3', endY: 60, speed: 0.7 },
+        ];
+
+        animations.forEach(({ target, endY, speed }) => {
+            gsap.fromTo(
+                target,
+                { yPercent: 0 },
+                {
+                    yPercent: endY,
+                    scrollTrigger: {
+                        trigger: TestimonialsSection.current,
+                        start: 'top center',
+                        end: 'bottom top',
+                        scrub: speed
+                    },
+                }
+            );
+        });
+    });
+
     return (
-        <section className="pt-24 pb-14 md:pt-40 md:pb-10 overflow-hidden">
+        <section className="pt-24 pb-14 md:pt-40 md:pb-10" ref={TestimonialsSection}>
             <div className="container">
                 <div className="hidden lg:grid grid-cols-12 gap-10">
-                    <div className="md:col-span-4">
-                        <div className="flex flex-col border border-[#363b3f] p-6">
+                    <div className="md:col-span-4 md:mt-20">
+                        <div className="flex flex-col border border-[#363b3f] p-6 testimonial-card-1">
                             <blockquote className="lg:text-lg xl:text-xl">
                                 {clientsFeedback[1].briefFeedback}
                             </blockquote>
@@ -28,8 +56,8 @@ export default function Testimonials() {
                         </div>
                     </div>
 
-                    <div className="md:col-span-4">
-                        <div className="flex flex-col border border-[#363b3f] p-6">
+                    <div className="md:col-span-4 md:mt-36">
+                        <div className="flex flex-col border border-[#363b3f] p-6 testimonial-card-2">
                             <blockquote className="lg:text-lg xl:text-xl">
                                 {clientsFeedback[0].briefFeedback}
                             </blockquote>
@@ -40,7 +68,7 @@ export default function Testimonials() {
                     </div>
 
                     <div className="md:col-span-4">
-                        <div className="flex flex-col border border-[#363b3f] p-6">
+                        <div className="flex flex-col border border-[#363b3f] p-6 testimonial-card-3">
                             <blockquote className="lg:text-lg xl:text-xl">
                                 {clientsFeedback[3].briefFeedback}
                             </blockquote>

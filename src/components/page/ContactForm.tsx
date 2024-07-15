@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function ContactForm() {
     const services = ['Product Strategy', 'UX & UI Design', 'Development', 'Conversion'];
@@ -28,110 +30,164 @@ export default function ContactForm() {
         setFileExtension('');
     }
 
-
     const handleRadioChange = (value: string) => {
         setSelectedValue(value);
     };
 
+    const ContactFormSection = useRef<HTMLHeadingElement>(null);
+
+    const scrollTriggerConfig = {
+        trigger: ContactFormSection.current,
+        start: 'top center'
+    };
+
+    useGSAP(() => {
+        gsap.to('.contact-us-lamp', {
+            opacity: 1,
+            translateX: -350,
+            translateY: 0,
+            scrollTrigger: scrollTriggerConfig,
+            delay: .3,
+            duration: 1,
+        });
+        gsap.from('.section-header-text', {
+            opacity: 0,
+            scrollTrigger: scrollTriggerConfig,
+            delay: 1.3
+        });
+        gsap.from('.contact-form', {
+            opacity: 0,
+            scrollTrigger: scrollTriggerConfig,
+            delay: 1.8
+        });
+    });
+
     return (
-        <section className="section-spacing">
-            <div className="container">
-                <div className="text-center">
-                    <h2 className="section-header-subtitle">
-                        CONTACT US
-                    </h2>
-                    <h3 className="section-header-main-heading">
-                        Get in touch
-                    </h3>
-                </div>
-                <div className="grid grid-cols-12 justify-center mb-5 mt-14 md:y-32">
-                    <div className="col-span-12 md:col-start-3 md:col-span-8">
-                        <form className="flex flex-col gap-10 md:gap-16">
-                            <div>
-                                <label htmlFor="">What's your name?</label>
-                                <input type="text"/>
-                            </div>
+        <div ref={ContactFormSection}>
+            <svg className="contact-us-lamp" width="708" height="648" viewBox="0 0 708 648" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <g>
+                        <path opacity="0.07" d="M707.5 424.945S426.367 647.418 347.133 647.418C267.9 647.418 10 426.945 10 426.945L279.952 157.1h134.295L707.5 424.945z" fill="url(#paint0_linear_122_2811)"></path>
+                        <path opacity="0.07" d="M645.33 411.831S412.298 541.115 347.149 541.115c-65.15 0-288.198-129.284-288.198-129.284l232.885-272.289h110.608L645.33 411.831z" fill="url(#paint1_linear_122_2811)"></path>
+                    </g>
+                    <path d="M348-101h-2v209.648h2V-101z" fill="#263238"></path>
+                    <path d="M420.241 146.63l-5.876 12.266H279.904l-5.859-12.266 46.447-49.955a36.391 36.391 0 0153.302 0l46.447 49.955z" fill="#2C32BB"></path>
+                    <path d="M420.241 146.63l-5.892 12.266H279.904l-5.859-12.266h146.196z" fill="#1B209A"></path>
+                    <path opacity="0.1" d="M420.241 146.63l-5.892 12.266H279.904l-5.859-12.266h146.196z" fill="#0D1175"></path>
+                    <path opacity="0.1" d="M331.286 109.036l-.806-7.344 33.675-3.25-1.159 10.594h-31.71z" fill="#2C31BB"></path>
+                </g>
+                <defs>
+                    <linearGradient x1="347.133" y1="157.1" x2="347.133" y2="477.418" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#fff"></stop>
+                        <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
+                    </linearGradient>
+                    <linearGradient x1="347.14" y1="139.542" x2="347.14" y2="451.115" gradientUnits="userSpaceOnUse">
+                        <stop stopColor="#fff"></stop>
+                        <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
+                    </linearGradient>
+                </defs>
+            </svg>
 
-                            <div>
-                                <label htmlFor="">What's your email?</label>
-                                <input type="text"/>
-                            </div>
-
-                            <div>
-                                <label htmlFor="">How can we help you?</label>
-                                <div className="grid md:grid-cols-2 gap-3 md:gap-1 max-md:mt-3">
-                                    {services.map((service, index) => {
-                                        return (
-                                            <Checkbox key={service} label={service} />
-                                        )
-                                    })}
+            <section className="section-spacing">
+                <div className="container">
+                    <div className="section-header-text text-center">
+                        <h2 className="section-header-subtitle">
+                            CONTACT US
+                        </h2>
+                        <h3 className="section-header-main-heading">
+                            Get in touch
+                        </h3>
+                    </div>
+                    <div className="grid grid-cols-12 justify-center mb-5 mt-14 md:y-32">
+                        <div className="col-span-12 md:col-start-3 md:col-span-8">
+                            <form className="flex flex-col gap-10 md:gap-16 contact-form">
+                                <div>
+                                    <label htmlFor="">What's your name?</label>
+                                    <input autoFocus={true} type="text"/>
                                 </div>
 
-
-                            </div>
-
-                            <div>
-                                <label htmlFor="">What’s your budget?</label>
-                                <div className="grid md:grid-cols-2 gap-1">
-                                    {budget.map((range, index) => {
-                                        return (
-                                            <CustomRadioButton
-                                                key={range}
-                                                label={range}
-                                                isSelected={selectedValue === range}
-                                                value={range}
-                                                onChange={handleRadioChange}
-                                            />
-                                        )
-                                    })}
+                                <div>
+                                    <label htmlFor="">What's your email?</label>
+                                    <input type="email"/>
                                 </div>
-                            </div>
 
-                            <div>
-                                <label htmlFor="">What can you tell us about it?</label>
-                                <input type="text"/>
-                            </div>
+                                <div>
+                                    <label htmlFor="">How can we help you?</label>
+                                    <div className="grid md:grid-cols-2 gap-3 md:gap-1 max-md:mt-3">
+                                        {services.map((service, index) => {
+                                            return (
+                                                <Checkbox key={service} label={service}/>
+                                            )
+                                        })}
+                                    </div>
 
-                            <div className="flex justify-between items-center">
-                                <div className="flex items-center gap-2.5 relative">
-                                    {fileName && (
-                                        <div className="absolute max-lg:top-10 lg:relative py-2 px-3 border border-[#363b3f]">{fileName}
-                                            <span className="text-gray-text">.{fileExtension}</span>
-                                            <div onClick={removeSelectedFile}
-                                                 className="absolute top-[-10px] right-[-10px] bg-[#040b10] cursor-pointer">
-                                                <svg className="transform rotate-45 text-primary" width="20"
-                                                     height="20" viewBox="0 0 20 20" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M10 3.5v13M3.5 10h13" stroke="currentColor"
-                                                          stroke-width="1.5" stroke-linecap="round"
-                                                          stroke-linejoin="round"></path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    )}
 
-                                    <div className="flex items-center gap-2.5 text-sm font-medium relative">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg"
-                                             className="styles_file-input__icon__1LT1X">
-                                            <path
-                                                d="M17.374 13.119c.098-1.172-.23-2.233-.925-2.99l-7.32-7.966a.424.424 0 00-.635 0 .52.52 0 000 .692l7.319 7.968c.502.547.738 1.33.665 2.207-.072.856-.43 1.693-.985 2.296a3.363 3.363 0 01-2.108 1.071c-.801.08-1.525-.177-2.028-.724L3.084 6.666c-.441-.48-.477-1.08-.429-1.498.068-.586.34-1.177.747-1.62.765-.833 2.077-1.202 2.864-.347l6.683 7.275c.503.548.011 1.373-.319 1.732-.33.36-1.088.895-1.59.346L5.947 7.012a.424.424 0 00-.637 0 .52.52 0 000 .693l5.091 5.543c.837.91 2.074.514 2.864-.347.791-.86 1.154-2.208.319-3.117L6.902 2.509c-1.179-1.284-3.065-.82-4.136.346a3.98 3.98 0 00-1.004 2.19c-.103.899.14 1.72.686 2.314l8.273 9.006c.614.669 1.448 1.026 2.376 1.026.122 0 .245-.006.37-.018.992-.098 1.962-.592 2.662-1.355.701-.762 1.154-1.819 1.245-2.9z"
-                                                fill="currentColor"></path>
-                                        </svg>
-                                        <span className="text-light underline">Add Attachment</span>
-                                        <div className="text-gray-text">(Optional)</div>
-                                        <input type="file" onChange={handleFileChange}
-                                               className="w-full absolute indent-[-9999px] top-0 bottom-0 left-0 right-0 cursor-pointer overflow-hidden"/>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="">What’s your budget?</label>
+                                    <div className="grid md:grid-cols-2 gap-1">
+                                        {budget.map((range, index) => {
+                                            return (
+                                                <CustomRadioButton
+                                                    key={range}
+                                                    label={range}
+                                                    isSelected={selectedValue === range}
+                                                    value={range}
+                                                    onChange={handleRadioChange}
+                                                />
+                                            )
+                                        })}
                                     </div>
                                 </div>
 
-                                <button className="primary-btn" type="button">Submit</button>
-                            </div>
-                        </form>
+                                <div>
+                                    <label htmlFor="">What can you tell us about it?</label>
+                                    <input type="text"/>
+                                </div>
+
+                                <div className="flex justify-between items-center">
+                                    <div className="flex items-center gap-2.5 relative">
+                                        {fileName && (
+                                            <div
+                                                className="absolute max-lg:top-10 lg:relative py-2 px-3 border border-[#363b3f]">{fileName}
+                                                <span className="text-gray-text">.{fileExtension}</span>
+                                                <div onClick={removeSelectedFile}
+                                                     className="absolute top-[-10px] right-[-10px] bg-[#040b10] cursor-pointer">
+                                                    <svg className="transform rotate-45 text-primary" width="20"
+                                                         height="20" viewBox="0 0 20 20" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 3.5v13M3.5 10h13" stroke="currentColor"
+                                                              stroke-width="1.5" stroke-linecap="round"
+                                                              stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <div className="flex items-center gap-2.5 text-sm font-medium relative">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg"
+                                                 className="styles_file-input__icon__1LT1X">
+                                                <path
+                                                    d="M17.374 13.119c.098-1.172-.23-2.233-.925-2.99l-7.32-7.966a.424.424 0 00-.635 0 .52.52 0 000 .692l7.319 7.968c.502.547.738 1.33.665 2.207-.072.856-.43 1.693-.985 2.296a3.363 3.363 0 01-2.108 1.071c-.801.08-1.525-.177-2.028-.724L3.084 6.666c-.441-.48-.477-1.08-.429-1.498.068-.586.34-1.177.747-1.62.765-.833 2.077-1.202 2.864-.347l6.683 7.275c.503.548.011 1.373-.319 1.732-.33.36-1.088.895-1.59.346L5.947 7.012a.424.424 0 00-.637 0 .52.52 0 000 .693l5.091 5.543c.837.91 2.074.514 2.864-.347.791-.86 1.154-2.208.319-3.117L6.902 2.509c-1.179-1.284-3.065-.82-4.136.346a3.98 3.98 0 00-1.004 2.19c-.103.899.14 1.72.686 2.314l8.273 9.006c.614.669 1.448 1.026 2.376 1.026.122 0 .245-.006.37-.018.992-.098 1.962-.592 2.662-1.355.701-.762 1.154-1.819 1.245-2.9z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                            <span className="text-light underline">Add Attachment</span>
+                                            <div className="text-gray-text">(Optional)</div>
+                                            <input type="file" onChange={handleFileChange}
+                                                   className="w-full absolute indent-[-9999px] top-0 bottom-0 left-0 right-0 cursor-pointer overflow-hidden"/>
+                                        </div>
+                                    </div>
+
+                                    <button className="primary-btn" type="button">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     )
 }
 
