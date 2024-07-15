@@ -1,18 +1,49 @@
 import {Link} from "react-router-dom";
+import {useEffect} from "react";
 
 export default function ContactUsBanner() {
+    useEffect(() => {
+        const leftSide = document.getElementById('leftSide');
+        const rightSide = document.getElementById('rightSide');
+        const lampHead = document.getElementById('lampHead');
+        const bannerContent = document.getElementById('bannerContent');
+        const handleMouseMove = (side :string) => {
+            if (lampHead && side === 'left') {
+                lampHead.style.transform = 'matrix(0.95, 0.25, -0.25, 0.95, 12.70, -26.53)';
+            }
+            else if (lampHead && side === 'right') {
+                lampHead.style.transform = 'matrix(0.95, -0.25, 0.25, 0.95, -5.40, 28.92)';
+            }
+        }
+        const resetLampPosition = () => {
+            if (lampHead) {
+                lampHead.style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
+            }
+        }
+
+        if (leftSide && rightSide && bannerContent) {
+            leftSide.addEventListener('mouseenter', () => handleMouseMove('left'));
+            leftSide.addEventListener('mouseleave', () => resetLampPosition());
+            rightSide.addEventListener('mouseenter', () => handleMouseMove('right'));
+            rightSide.addEventListener('mouseleave', () => resetLampPosition());
+            bannerContent.addEventListener('mouseleave', () => resetLampPosition());
+        }
+
+        // return () => {
+        //     window.removeEventListener('mouseenter', handleMouseMove);
+        // };
+    }, []);
     return (
         <div className="pt-14 md:pt-20 xl:pt-40">
             <section className="container overflow-hidden">
                 <div className="w-full bg-primary relative group">
-                    <div className="absolute left-1/2 -translate-x-1/2">
-                        <svg overflow="visible" width="215" height="470" viewBox="0 0 215 470" fill="none"
-                             xmlns="http://www.w3.org/2000/svg" className="styles_contact-us-section__lamps__nIL0k">
-                            <g className="js-svg-lamps" data-svg-origin="107.13300323486328 148.5"
+                    <div className="absolute left-1/2 -translate-x-1/2 top-[-3%] group-hover:top-0 smooth-transition">
+                        <svg overflow="visible" width="215" height="470" viewBox="0 0 215 470" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g className="js-svg-lamps " data-svg-origin="107.13300323486328 148.5"
                                transform="matrix(1,0,0,1,0,-15)">
                                 <path d="M108-178h-2V62h2v-240z" fill="#263238"></path>
-                                <g className="js-svg-lamps-object">
-                                    <g className="js-svg-lamps-light">
+                                <g id="lampHead" className="js-svg-lamps-object smooth-transition">
+                                    <g className="opacity-0 group-hover:opacity-60 smooth-transition">
                                         <path opacity="0.3"
                                               d="M195.33 409.076s-23.031 44.971-88.18 44.971c-65.15 0-88.198-44.971-88.198-44.971l32.885-311.71h110.608l32.885 311.71z"
                                               fill="url(#paint0_linear_37_2290)"></path>
@@ -34,19 +65,21 @@ export default function ContactUsBanner() {
                             <defs>
                                 <linearGradient id="paint0_linear_37_2290" x1="107.141" y1="97.366" x2="107.141"
                                                 y2="454.047" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#fff"></stop>
-                                    <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+                                    <stop stopColor="#fff"></stop>
+                                    <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
                                 </linearGradient>
                                 <linearGradient id="paint1_linear_37_2290" x1="107.133" y1="108.308" x2="107.133"
                                                 y2="475" gradientUnits="userSpaceOnUse">
                                     <stop stopColor="#fff"></stop>
-                                    <stop offset="1" stopColor="#fff" stop-opacity="0"></stop>
+                                    <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
                                 </linearGradient>
                             </defs>
                         </svg>
                     </div>
+                    <div id="leftSide" className="w-1/2 h-full absolute z-10 left-0 top-0 bg-transparent"></div>
+                    <div id="rightSide" className="w-1/2 h-full absolute z-10 right-0 top-0 bg-transparent"></div>
                     <div className="container">
-                        <div className="pt-36 pb-20 text-center max-w-[568px] mx-auto opacity-50 group-hover:opacity-100 transition-all duration-700 ease-in-out">
+                        <div id="bannerContent" className="relative z-20 pt-36 pb-20 text-center max-w-[568px] mx-auto opacity-50 group-hover:opacity-100 transition-all duration-700 ease-in-out">
                             <h3 className="text-3xl lg:text-5xl font-apercu font-medium">
                                 Have an idea?
                             </h3>

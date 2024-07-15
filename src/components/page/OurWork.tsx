@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/effect-creative';
 import type {SwiperProps} from "swiper/swiper-react";
 import {projects} from "../../assets/utils/constants";
+import {Link} from "react-router-dom";
 
 
 export default function OurWork() {
@@ -18,8 +19,10 @@ export default function OurWork() {
     }
     function slideChanged($event :any) {
         setActiveSlide($event.activeIndex);
-        console.log(activeSlide)
     }
+
+    const autoPlayTime = 4000;
+
     return (
         <section className="py-14 md:py-20 lg:py-40">
             <div className="container">
@@ -33,7 +36,7 @@ export default function OurWork() {
                         </h3>
                     </div>
 
-                    <button className="primary-btn">View all projects</button>
+                    <Link to="showcase" className="primary-btn">View all projects</Link>
                 </div>
 
                 <div>
@@ -56,7 +59,7 @@ export default function OurWork() {
                                 }}
                                 modules={[Autoplay, EffectCreative]}
                                 autoplay={{
-                                    delay: 4000,
+                                    delay: autoPlayTime,
                                     disableOnInteraction: true
                                 }}
                                 onSlideChange={slideChanged}
@@ -77,14 +80,15 @@ export default function OurWork() {
                             <div className="flex flex-col">
                                 {projects.slice(0, 4).map((project, index) => {
                                     return (
-                                        <div onClick={() => moveToSlide(index)} className={`py-6 px-5 font-medium border-b border-[#242b31] cursor-pointer ${activeSlide === index ? 'bg-[#363B3F]/20' : '' }`}>
+                                        <button type="button" onClick={() => moveToSlide(index)} className={`relative py-6 px-5 font-medium border-b border-[#242b31] text-left cursor-pointer ${activeSlide === index ? 'bg-[#363B3F]/20' : '' }`}>
+                                           <div className={`bg-primary absolute top-0 left-0 h-px ${activeSlide === index ? 'animate-bar':''}`}></div>
                                             <h4 className="text-gray-text text-base mb-1 md:mb-2">
                                                 {project.subtitle}
                                             </h4>
                                             <h5 className="text-xl md:text-2xl">
                                                 {project.title}
                                             </h5>
-                                        </div>
+                                        </button>
                                     )
                                 })}
                             </div>

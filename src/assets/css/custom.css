@@ -165,7 +165,22 @@ input:checked + div svg {
 .hamburger-toggle.toggle-open .hamburger-bar:nth-child(3){
     @apply transform -rotate-45
 }
+@keyframes barAnimation {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
 
+.animate-bar {
+    animation: barAnimation 4s linear;
+}
+
+.smooth-transition{
+    @apply transition-all duration-700 ease-in-out
+}
 
 /* Process Page CSS */
 .process-page .process-title{
