@@ -27,14 +27,10 @@ export default function Hero() {
 
                 setMousePosition({ x, y });
                 setIsHovering(true);
-            } else {
-                setIsHovering(false);
-            }
+            } else setIsHovering(false);
         };
 
-        const handleMouseLeave = () => {
-            setIsHovering(false);
-        };
+        const handleMouseLeave = () => setIsHovering(false);
 
         if (headingRef.current) {
             headingRef.current.addEventListener('mousemove', function (event) {

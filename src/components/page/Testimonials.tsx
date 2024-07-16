@@ -9,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 export default function Testimonials() {
     const swiperRef = useRef<SwiperProps>(null);
 
-    const [activeSlide, setActiveSlide] = useState(1);
+    const [activeSlide, setActiveSlide] = useState(0);
 
     function slideChanged(event :SwiperProps) {
         setActiveSlide(event.activeIndex)
@@ -42,7 +42,7 @@ export default function Testimonials() {
     });
 
     return (
-        <section className="pt-24 pb-14 md:pt-40 md:pb-10" ref={TestimonialsSection}>
+        <section className="pt-24 pb-14 md:pt-40 md:pb-20 max-lg:overflow-hidden" ref={TestimonialsSection}>
             <div className="container">
                 <div className="hidden lg:grid grid-cols-12 gap-10">
                     <div className="md:col-span-4 md:mt-20">

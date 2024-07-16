@@ -44,7 +44,7 @@ export default function Footer() {
                             <SiteLogo />
 
                             <a href="mailto:hell@conceal.com" className="text-2xl font-medium mb-8 mt-6 block">
-                                hell@conceal.com
+                                hello@conceal.com
                             </a>
                         </div>
                     </div>

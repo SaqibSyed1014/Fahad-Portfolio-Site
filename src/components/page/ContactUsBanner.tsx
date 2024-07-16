@@ -85,7 +85,7 @@ export default function ContactUsBanner() {
                                 We can help you bring it to life!
                             </p>
 
-                            <Link to="/contact" className="styled-button mt-8">
+                            <Link to="/contact-us" className="styled-button mt-8">
                                 Get in touch
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M10.97 14.47a.75.75 0 101.06 1.06l5-5a.75.75 0 000-1.06l-5-5a.75.75 0 10-1.06 1.06l3.72 3.72H4a.75.75 0 000 1.5h10.69l-3.72 3.72z" fill="currentColor"></path></svg>
                             </Link>

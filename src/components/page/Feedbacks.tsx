@@ -58,7 +58,7 @@ export default function Feedbacks() {
                             effect={'fade'}
                             modules={[Autoplay, EffectFade]}
                             autoplay={{
-                                delay: 4000,
+                                delay: 5000,
                                 disableOnInteraction: true
                             }}
                             fadeEffect={{ crossFade: true }}
@@ -86,7 +86,8 @@ export default function Feedbacks() {
                                                           d="M10.97 14.47a.75.75 0 101.06 1.06l5-5a.75.75 0 000-1.06l-5-5a.75.75 0 10-1.06 1.06l3.72 3.72H4a.75.75 0 000 1.5h10.69l-3.72 3.72z"
                                                           fill="currentColor"></path>
                                                 </svg>
-                                            </Link></div>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
                             )

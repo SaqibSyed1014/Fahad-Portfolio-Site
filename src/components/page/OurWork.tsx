@@ -80,7 +80,7 @@ export default function OurWork() {
                             <div className="flex flex-col">
                                 {projects.slice(0, 4).map((project, index) => {
                                     return (
-                                        <button type="button" onClick={() => moveToSlide(index)} className={`relative py-6 px-5 font-medium border-b border-[#242b31] text-left cursor-pointer ${activeSlide === index ? 'bg-[#363B3F]/20' : '' }`}>
+                                        <button type="button" onClick={() => moveToSlide(index)} className={`relative py-6 px-5 font-medium border-b border-[#242b31] text-left hover:bg-[#363B3F]/20 cursor-pointer ${activeSlide === index ? 'bg-[#363B3F]/20' : '' }`}>
                                            <div className={`bg-primary absolute top-0 left-0 h-px ${activeSlide === index ? 'animate-bar':''}`}></div>
                                             <h4 className="text-gray-text text-base mb-1 md:mb-2">
                                                 {project.subtitle}
