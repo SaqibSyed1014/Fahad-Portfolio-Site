@@ -37,10 +37,10 @@ export default function CoreValues() {
             <div className="container">
                 <div className="text-center">
                     <h2 className="section-header-subtitle">
-                        Perks
+                        Core Values
                     </h2>
                     <h3 className="section-header-heading max-w-[620px] mx-auto">
-                        Do great work, live an amazing life
+                        The principles that guide us
                     </h3>
                 </div>
 

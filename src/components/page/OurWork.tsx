@@ -43,8 +43,8 @@ export default function OurWork() {
                     <div className="flex lg:hidden">
                     </div>
 
-                    <div className="hidden lg:grid grid-cols-12 h-[520px] xl:h-[560px]">
-                        <div className="col-span-7 lg:order-2 px-5">
+                    <div className="hidden lg:grid grid-cols-12 h-[520px]">
+                        <div className="col-span-7 lg:order-2 lg:pl-5">
                             <Swiper
                                 ref={swiperRef}
                                 effect={'creative'}
@@ -76,7 +76,7 @@ export default function OurWork() {
                                 })}
                             </Swiper>
                         </div>
-                        <div className="lg:col-span-5 lg:order-1 px-5">
+                        <div className="lg:col-span-5 lg:order-1 lg:pr-5">
                             <div className="flex flex-col">
                                 {projects.slice(0, 4).map((project, index) => {
                                     return (

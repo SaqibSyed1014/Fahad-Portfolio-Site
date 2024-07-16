@@ -6,7 +6,7 @@ import React, {useRef, useState} from "react";
 export default function ImportantDates() {
     const swiperRef = useRef<SwiperProps>(null);
 
-    const [activeSlide, setActiveSlide] = useState(1);
+    const [activeSlide, setActiveSlide] = useState(0);
     function slideChanged(event :SwiperProps) {
         setActiveSlide(event.activeIndex)
     }
@@ -34,13 +34,13 @@ export default function ImportantDates() {
                     </div>
 
                     <div className="flex gap-3">
-                        <button onClick={() => swiperRef.current?.swiper.slidePrev()} className="border border-light focus:bg-primary w-[30px] h-[30px] md:w-[43px] md:h-[43px] flex items-center justify-center">
+                        <button onClick={() => swiperRef.current?.swiper.slidePrev()} className={`dates-slider-indicator ${activeSlide === 0 ? 'disabled' : ''}`}>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 6l-4 4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
                                       strokeLinejoin="round"></path>
                             </svg>
                         </button>
-                        <button onClick={() => swiperRef.current?.swiper.slideNext()} className="border border-light focus:bg-primary w-[30px] h-[30px] md:w-[43px] md:h-[43px] flex items-center justify-center">
+                        <button onClick={() => swiperRef.current?.swiper.slideNext()} className={`dates-slider-indicator ${activeSlide === dates.length - 1 ? 'disabled' : ''}`}>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 14l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                         </button>
                     </div>
@@ -53,7 +53,7 @@ export default function ImportantDates() {
                         spaceBetween={20}
                         breakpoints={swiperBreakpoints}
                         onSlideChange={slideChanged}
-                        className="about-slider"
+                        className="dates-slider"
                     >
                         {dates.map(date => {
                             return (

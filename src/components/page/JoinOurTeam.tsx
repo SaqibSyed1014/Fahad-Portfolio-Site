@@ -25,7 +25,7 @@ export default function JoinOurTeam() {
             opacity: 0,
             translateY: 50,
             scrollTrigger: scrollTriggerConfig,
-            delay: 1.3
+            delay: .8
         });
     });
 

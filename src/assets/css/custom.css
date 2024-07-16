@@ -15,7 +15,7 @@
     @apply content-[''] block absolute left-1/2 -translate-x-1/2 bottom-[-8px] w-0 border-b border-light transition-all duration-500 ease-in-out
 }
 .styled-link.last-link{
-    @apply text-primary
+    @apply text-[#606EE4]
 }
 .styled-link.last-link:after{
     @apply border-primary
@@ -113,19 +113,25 @@
 .about-page .about-images{
     @apply max-w-[1400px]
 }
-.about-page .about-slider{
-    @apply !overflow-visible relative
+.about-page .dates-slider{
+    @apply !overflow-visible relative mb-20
 }
-.about-page .about-slider:before, .about-page .about-slider:after{
+.about-page .dates-slider:before, .about-page .about-slider:after{
     @apply absolute top-0 h-full w-full z-10 content-[""]
 }
-.about-page .about-slider:before{
+.about-page .dates-slider:before{
     background: linear-gradient(-90deg, rgba(4, 11, 16, 0), #040b10 10%);
     @apply right-full
 }
-.about-page .about-slider:after{
+.about-page .dates-slider:after{
     background: linear-gradient(90deg, rgba(4, 11, 16, 0), #040b10 10%);
     @apply left-full
+}
+.about-page .dates-slider-indicator{
+    @apply border border-light focus:bg-primary w-[30px] h-[30px] md:w-[43px] md:h-[43px] flex items-center justify-center
+}
+.about-page .dates-slider-indicator.disabled{
+    @apply opacity-40 cursor-not-allowed focus:!bg-transparent
 }
 
 

@@ -37,18 +37,18 @@ export default function AboutImages() {
                         A fully remote creative digital agency
                     </h3>
                 </div>
+            </div>
 
-                <div className="max-w-[1400px] container">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-8 mt-20 lg:mt-32">
-                        <div className="max-md:order-2 col-span-1">
-                            <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-1.03386880.jpg&w=1200&q=100" alt=""/>
-                        </div>
-                        <div className="max-md:order-1 col-span-2">
-                            <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-2.fb81c818.jpg&w=3840&q=100" alt=""/>
-                        </div>
-                        <div className="max-md:order-3 col-span-1">
-                            <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-3.9a7a20ae.jpg&w=1920&q=100" alt=""/>
-                        </div>
+            <div className="container md:max-w-[1400px] md:px-0 mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-8 mt-20 lg:mt-32">
+                    <div className="max-md:order-2 col-span-1">
+                        <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-1.03386880.jpg&w=1200&q=100" alt=""/>
+                    </div>
+                    <div className="max-md:order-1 col-span-2">
+                        <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-2.fb81c818.jpg&w=3840&q=100" alt=""/>
+                    </div>
+                    <div className="max-md:order-3 col-span-1">
+                        <img className="about-image" src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-3.9a7a20ae.jpg&w=1920&q=100" alt=""/>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@ export default function AboutImages() {
                             <div className="h-8 w-8">
                                 <img src="https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjoao-saraiva.49a03236.jpg&w=3840&q=100" alt=""/>
                             </div>
-                            <p className="text-lg">João Saraiva, CEO-Founder</p>
+                            <p className="text-lg text-light-gray">João Saraiva, CEO-Founder</p>
                         </div>
                     </div>
                 </div>
