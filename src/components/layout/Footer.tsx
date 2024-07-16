@@ -40,11 +40,13 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div className="col-span-12 md:col-span-6 xl:col-span-8">
-                        <SiteLogo />
+                        <div className="mt-20 md:mt-0">
+                            <SiteLogo />
 
-                        <a href="mailto:hell@conceal.com" className="text-2xl font-medium mb-8 mt-6 block">
-                            hell@conceal.com
-                        </a>
+                            <a href="mailto:hell@conceal.com" className="text-2xl font-medium mb-8 mt-6 block">
+                                hell@conceal.com
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

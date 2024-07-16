@@ -26,7 +26,7 @@ export default function NavBar() {
     }, [location]);
 
     return (
-        <nav className="py-10">
+        <nav className="py-5 sm:py-10">
             <div className="container">
                 <div className="flex items-center justify-between relative z-50">
                     <Link to="/">

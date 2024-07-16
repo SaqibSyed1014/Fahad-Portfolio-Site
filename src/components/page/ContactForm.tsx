@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -6,7 +6,7 @@ export default function ContactForm() {
     const services = ['Product Strategy', 'UX & UI Design', 'Development', 'Conversion'];
     const budget = ['Less than €5k', '€5k - €10k', '€10k - €20k', '€+20k'];
 
-    const [selectedValue, setSelectedValue] = useState('Less than €5k');
+    const [selectedValue, setSelectedValue] = useState('');
     const [fileName, setFileName] = useState('');
     const [fileExtension, setFileExtension] = useState('');
 
@@ -62,11 +62,23 @@ export default function ContactForm() {
         });
     });
 
+    useEffect(() => {
+        const contactForm = document.querySelector('.contact-form') as HTMLFormElement;
+        const toggleLampLight = (on :boolean) => {
+            const lampLight = document.querySelector('.lamp-light') as HTMLElement;
+            if (lampLight) lampLight.style.opacity = on ? '1' : '0';
+        }
+
+        contactForm.addEventListener('mouseenter', () => toggleLampLight(true));
+        contactForm.addEventListener('mouseleave', () => toggleLampLight(false));
+    }, []);
+
+
     return (
         <div ref={ContactFormSection}>
-            <svg className="contact-us-lamp" width="708" height="648" viewBox="0 0 708 648" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g>
-                    <g>
+            <svg width="708" height="648" viewBox="0 0 708 648" fill="none" xmlns="http://www.w3.org/2000/svg" className="contact-us-lamp max-md:hidden">
+                <g className="js-svg-lamps-contact-us">
+                    <g className="lamp-light svg-transition">
                         <path opacity="0.07" d="M707.5 424.945S426.367 647.418 347.133 647.418C267.9 647.418 10 426.945 10 426.945L279.952 157.1h134.295L707.5 424.945z" fill="url(#paint0_linear_122_2811)"></path>
                         <path opacity="0.07" d="M645.33 411.831S412.298 541.115 347.149 541.115c-65.15 0-288.198-129.284-288.198-129.284l232.885-272.289h110.608L645.33 411.831z" fill="url(#paint1_linear_122_2811)"></path>
                     </g>
@@ -77,18 +89,18 @@ export default function ContactForm() {
                     <path opacity="0.1" d="M331.286 109.036l-.806-7.344 33.675-3.25-1.159 10.594h-31.71z" fill="#2C31BB"></path>
                 </g>
                 <defs>
-                    <linearGradient x1="347.133" y1="157.1" x2="347.133" y2="477.418" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#fff"></stop>
-                        <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
+                    <linearGradient id="paint0_linear_122_2811" x1="347.133" y1="157.1" x2="347.133" y2="477.418" gradientUnits="userSpaceOnUse">
+                        <stop className="js-svg-lamps-contact-us-light-color" stopColor="#fff"></stop>
+                        <stop className="js-svg-lamps-contact-us-light-color" offset="1" stopColor="#fff" stopOpacity="0"></stop>
                     </linearGradient>
-                    <linearGradient x1="347.14" y1="139.542" x2="347.14" y2="451.115" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#fff"></stop>
-                        <stop offset="1" stopColor="#fff" stopOpacity="0"></stop>
+                    <linearGradient id="paint1_linear_122_2811" x1="347.14" y1="139.542" x2="347.14" y2="451.115" gradientUnits="userSpaceOnUse">
+                        <stop className="js-svg-lamps-contact-us-light-color" stopColor="#fff"></stop>
+                        <stop className="js-svg-lamps-contact-us-light-color" offset="1" stopColor="#fff" stopOpacity="0"></stop>
                     </linearGradient>
                 </defs>
             </svg>
 
-            <section className="section-spacing">
+            <section className="mt-8 md:mt-[200px] relative">
                 <div className="container">
                     <div className="section-header-text text-center">
                         <h2 className="section-header-subtitle">
@@ -98,7 +110,8 @@ export default function ContactForm() {
                             Get in touch
                         </h3>
                     </div>
-                    <div className="grid grid-cols-12 justify-center mb-5 mt-14 md:y-32">
+
+                    <div className="grid grid-cols-12 justify-center mb-5 mt-14 md:my-[120px]">
                         <div className="col-span-12 md:col-start-3 md:col-span-8">
                             <form className="flex flex-col gap-10 md:gap-16 contact-form">
                                 <div>
@@ -116,7 +129,7 @@ export default function ContactForm() {
                                     <div className="grid md:grid-cols-2 gap-3 md:gap-1 max-md:mt-3">
                                         {services.map((service, index) => {
                                             return (
-                                                <Checkbox key={service} label={service}/>
+                                                <Checkbox key={index} label={service} />
                                             )
                                         })}
                                     </div>
@@ -130,7 +143,7 @@ export default function ContactForm() {
                                         {budget.map((range, index) => {
                                             return (
                                                 <CustomRadioButton
-                                                    key={range}
+                                                    key={index}
                                                     label={range}
                                                     isSelected={selectedValue === range}
                                                     value={range}
@@ -158,8 +171,8 @@ export default function ContactForm() {
                                                          height="20" viewBox="0 0 20 20" fill="none"
                                                          xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M10 3.5v13M3.5 10h13" stroke="currentColor"
-                                                              stroke-width="1.5" stroke-linecap="round"
-                                                              stroke-linejoin="round"></path>
+                                                              strokeWidth="1.5" strokeLinecap="round"
+                                                              strokeLinejoin="round"></path>
                                                     </svg>
                                                 </div>
                                             </div>
@@ -248,4 +261,4 @@ function CustomRadioButton({ label, value, onChange, isSelected } :CustomRadioBu
             <label className="checkbox-label">{label}</label>
         </label>
     );
-};
+}
