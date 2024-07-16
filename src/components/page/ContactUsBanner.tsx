@@ -16,9 +16,7 @@ export default function ContactUsBanner() {
             }
         }
         const resetLampPosition = () => {
-            if (lampHead) {
-                lampHead.style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
-            }
+            if (lampHead) lampHead.style.transform = 'matrix(1, 0, 0, 1, 0, 0)';
         }
 
         if (leftSide && rightSide && bannerContent) {

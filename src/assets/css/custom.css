@@ -36,6 +36,10 @@
     @apply border-light
 }
 
+.dotted-styled-bg{
+    @apply relative bg-[url('https://www.concealed.pt/_next/static/media/pattern-background.8fe61216.png')] bg-auto bg-[50%]
+}
+
 .home-view .hero-heading{
     @apply relative overflow-hidden cursor-text font-apercu text-[40px] leading-[52px] sm:text-[60px] sm:leading-[75px] md:text-[90px] md:leading-[95px] lg:text-[128px] lg:leading-[136px] font-medium
 }
@@ -179,6 +183,9 @@ input:checked + div svg {
 }
 
 .smooth-transition{
+    @apply transition-all duration-700 ease-in-out
+}
+.svg-transition{
     @apply transition-all duration-700 ease-in-out
 }
 

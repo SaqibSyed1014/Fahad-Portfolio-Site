@@ -1,14 +1,34 @@
+import gsap from "gsap";
+import {useRef} from "react";
+import { useGSAP } from "@gsap/react";
+
 export default function ProcessSteps() {
+    const StepsSection = useRef<HTMLHeadingElement>(null);
+
+    useGSAP(() => {
+        gsap.from('.section-header-text', {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: StepsSection.current,
+                start: 'top center'
+            },
+            delay: .5
+        });
+
+    })
+
     return (
         <section>
             <div className="container text-center">
-                <h2 className="section-header-subtitle">
-                    HOW WE CREATE
-                </h2>
-                <h3 className="section-header-main-heading">
-                    Modern and intuitive
-                    digital solutions
-                </h3>
+                <div className="section-header-text">
+                    <h2 className="section-header-subtitle">
+                        HOW WE CREATE
+                    </h2>
+                    <h3 className="section-header-main-heading">
+                        Modern and intuitive
+                        digital solutions
+                    </h3>
+                </div>
 
                 <div className="flex justify-center items-center max-md:flex-col gap-5 mt-10 md:mt-20 text-base md:text-lg font-medium">
                     <p>Product Strategy</p>
