@@ -90,7 +90,7 @@ export default function Hero() {
     });
 
     return (
-        <div className="home-view mt-10 md:mt-20">
+        <div className="home-view mt-10 md:mt-20 lg:pr-10">
             <div className="container" ref={container}>
                 <div className="flex">
                     <div className="w-full lg:w-10/12 mx-auto xl:px-5">
