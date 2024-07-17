@@ -44,11 +44,11 @@ export default function CoreValues() {
                     </h3>
                 </div>
 
-                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-8 mt-24 relative z-20">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 mt-24 relative z-20">
                     {values.map((benefit, index) => {
-                            return (<div className="flex flex-col group" key={index}>
-                                    {benefit.icon}
-                                    <h4 className="lg:text-lg lg:mt-5 lg:mb-2 xl:text-2xl font-medium">{benefit.title}</h4>
+                            return (<div className="flex flex-col group max-md:text-center" key={index}>
+                                    <div className="max-md:mx-auto max-md:scale-50">{benefit.icon}</div>
+                                    <h4 className="text-lg lg:mt-5 mb-2 xl:text-2xl font-medium">{benefit.title}</h4>
                                     <p className="text-gray-text text-base xl:text-lg">{benefit.description}</p>
                                 </div>
                             )

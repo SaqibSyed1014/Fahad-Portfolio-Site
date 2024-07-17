@@ -17,11 +17,26 @@ export default function OurWork() {
             swiperRef.current.swiper.slideTo(index);
         }
     }
+
     function slideChanged($event :any) {
         if (window.innerWidth >= 992) setActiveSlide($event.activeIndex);
     }
 
     const autoPlayTime = 4000;
+
+    function mouseHoverMovement(mouseOver :string) {
+        const bar = document.querySelector('.animate-bar')
+        const animation = bar?.getAnimations()[0];
+        if (animation) {
+            if (mouseOver === 'in') {
+                animation.pause();
+                swiperRef.current?.swiper?.autoplay?.stop();
+            } else if (mouseOver === 'out') {
+                animation.play();
+                swiperRef.current?.swiper?.autoplay?.start();
+            }
+        }
+    }
 
     return (
         <section className="py-14 md:py-20 lg:py-40">
@@ -63,15 +78,15 @@ export default function OurWork() {
                                 modules={[Autoplay, EffectCreative]}
                                 autoplay={{
                                     delay: autoPlayTime,
-                                    disableOnInteraction: true
+                                    pauseOnMouseEnter: true
                                 }}
                                 onSlideChange={slideChanged}
                                 className=" overflow-hidden h-[520px] !min-h-full"
                             >
-                                {projects.slice(0, 4).map(project => {
+                                {projects.slice(0, 4).map((project, index) => {
                                     return (
-                                        <SwiperSlide style={{backgroundColor: project.color}}
-                                                     className="overflow-hidden  ">
+                                        <SwiperSlide onMouseEnter={() => mouseHoverMovement('in')} onMouseLeave={() => mouseHoverMovement('out')} style={{backgroundColor: project.color}}
+                                                     className="overflow-hidden border border-red-800">
                                             <img src={project.images[0]} alt=""
                                                  className="w-full h-full object-contain"/>
                                         </SwiperSlide>
@@ -86,7 +101,7 @@ export default function OurWork() {
                                         <button type="button" onClick={() => moveToSlide(index)} className={`relative py-6 px-5 font-medium border-b border-[#242b31] text-left hover:bg-[#363B3F]/20 cursor-pointer ${activeSlide === index ? 'bg-[#363B3F]/20' : '' }`}>
                                            <div className={`bg-primary absolute top-0 left-0 h-px ${activeSlide === index ? 'animate-bar':''}`}></div>
                                             <h4 className="text-gray-text text-base mb-1 md:mb-2">
-                                                {project.subtitle}
+                                                {project.subtitle} {activeSlide}
                                             </h4>
                                             <h5 className="text-xl md:text-2xl">
                                                 {project.title}

@@ -50,7 +50,7 @@ export default function ProjectsList() {
                     </div>
 
                     <div className="flex md:mb-3">
-                        <div className={`project-filter ${selectedFilter === 'All' ? 'text-primary' : ''}`} onClick={() => setFilter('All')}>
+                        <div className={`project-filter mr-2.5 ${selectedFilter === 'All' ? 'text-primary' : ''}`} onClick={() => setFilter('All')}>
                             <span>All</span>
                             <span className="project-filters-amount">{projects.length}</span>
                         </div>
@@ -87,7 +87,7 @@ function ProjectCard({ project } : ProjectCardProps) {
     return (
         <Link to="" className="project-card">
             <div className="flex flex-col h-full">
-                <div className="relative h-full md:bg-dark-gray p-5 transition duration-500 ease-in-out" style={{ background: project.color }}>
+                <div className="relative h-full md:!bg-dark-gray p-5 transition duration-500 ease-in-out" style={{ background: project.color }}>
                     <div className="overflow-hidden h-[300px]" style={{ background: project.color }}>
                         <img src={project.images[0]} alt={project.title}/>
                     </div>

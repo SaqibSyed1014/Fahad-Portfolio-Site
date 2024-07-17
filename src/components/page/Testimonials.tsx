@@ -41,6 +41,12 @@ export default function Testimonials() {
         });
     });
 
+    const swiperBreakpoints = {
+        768: {
+            spaceBetween: 30
+        },
+    };
+
     return (
         <section className="pt-24 pb-14 md:pt-40 md:pb-20 max-lg:overflow-hidden" ref={TestimonialsSection}>
             <div className="container">
@@ -83,7 +89,9 @@ export default function Testimonials() {
                     <Swiper
                         ref={swiperRef}
                         slides-per-view={1}
-                        spaceBetween={30}
+                        spaceBetween={20}
+                        breakpoints={swiperBreakpoints}
+                        centeredSlides={true}
                         onSlideChange={slideChanged}
                         className="testimonials-mobile-slider !overflow-visible"
                     >

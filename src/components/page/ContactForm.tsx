@@ -115,22 +115,20 @@ export default function ContactForm() {
                         <div className="col-span-12 md:col-start-3 md:col-span-8">
                             <form className="flex flex-col gap-10 md:gap-16 contact-form">
                                 <div>
-                                    <label htmlFor="">What's your name?</label>
-                                    <input autoFocus={true} type="text"/>
+                                    <label htmlFor="name">What's your name?</label>
+                                    <input autoFocus={true} type="text" id="name" />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="">What's your email?</label>
-                                    <input type="email"/>
+                                    <label htmlFor="email">What's your email?</label>
+                                    <input type="email" id="email" />
                                 </div>
 
                                 <div>
                                     <label htmlFor="">How can we help you?</label>
                                     <div className="grid md:grid-cols-2 gap-3 md:gap-1 max-md:mt-3">
                                         {services.map((service, index) => {
-                                            return (
-                                                <Checkbox key={index} label={service} />
-                                            )
+                                            return <Checkbox key={index} label={service} />
                                         })}
                                     </div>
 
@@ -155,8 +153,8 @@ export default function ContactForm() {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="">What can you tell us about it?</label>
-                                    <input type="text"/>
+                                    <label htmlFor="desc">What can you tell us about it?</label>
+                                    <input type="text" id="desc" />
                                 </div>
 
                                 <div className="flex justify-between items-center">

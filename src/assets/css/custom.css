@@ -15,7 +15,7 @@ html, body {
     @apply relative inline-flex items-center gap-3 text-base
 }
 .styled-link:after{
-    @apply content-[''] block absolute left-1/2 -translate-x-1/2 bottom-[-8px] w-0 border-b border-light transition-all duration-500 ease-in-out
+    @apply content-[''] block absolute left-1/2 -translate-x-1/2 bottom-[-4px] w-0 border-b border-light transition-all duration-500 ease-in-out
 }
 .styled-link.last-link{
     @apply text-[#606EE4]
@@ -119,15 +119,18 @@ html, body {
 .about-page .dates-slider{
     @apply !overflow-visible relative mb-20
 }
-.about-page .dates-slider:before, .about-page .about-slider:after{
+.about-page .dates-slider:before,
+.about-page .about-slider:after,
+.testimonials-mobile-slider:before,
+.testimonials-mobile-slider:after{
     @apply absolute top-0 h-full w-full z-10 content-[""]
 }
-.about-page .dates-slider:before{
-    background: linear-gradient(-90deg, rgba(4, 11, 16, 0), #040b10 10%);
+.about-page .dates-slider:before, .testimonials-mobile-slider:before{
+    background: linear-gradient(-90deg, rgba(4, 11, 16, 0), #040b10 15%);
     @apply right-full
 }
-.about-page .dates-slider:after{
-    background: linear-gradient(90deg, rgba(4, 11, 16, 0), #040b10 10%);
+.about-page .dates-slider:after, .testimonials-mobile-slider:after{
+    background: linear-gradient(90deg, rgba(4, 11, 16, 0), #040b10 15%);
     @apply left-full
 }
 .about-page .dates-slider-indicator{

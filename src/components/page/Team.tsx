@@ -13,7 +13,7 @@ export default function Team() {
     }
     return (
         <section className="section-spacing">
-            <div className="container">
+            <div className="container max-sm:px-0">
                 <div className="text-center">
                     <h2 className="section-header-subtitle">
                         Team
@@ -37,7 +37,7 @@ export default function Team() {
                             </div>
                         </div>
 
-                        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-4 md:mt-6">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-4 md:mt-6">
                             {teamMembers.map((member, index) => {
                                 return (
                                     <div className="relative bg-[#f9f6f1] overflow-hidden">
@@ -47,7 +47,7 @@ export default function Team() {
                                         {Boolean(toggledMembersInfo.includes(index)) && <div
                                             className="absolute bg-[#040B10] opacity-90 top-0 left-0 right-0 bottom-0"></div>}
 
-                                        <div className="absolute top-2 left-2 lg:top-[17px] lg:left-4 text-sm lg:text-base">
+                                        <div className="absolute top-3 left-2 lg:top-[14px] lg:left-4 text-xs lg:text-base">
                                             <h4 className="font-semibold lg:text-lg">{member.name}</h4>
                                             {Boolean(toggledMembersInfo.includes(index)) && <div>
                                                 <p className="">{member.designation}</p>

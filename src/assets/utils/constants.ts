@@ -51,7 +51,7 @@ export const projects = [
         color: ProjectColors.Red
     },
     {
-        category: ProjectCategories.app,
+        category: ProjectCategories.website,
         title: 'Restoring The Forgotten Forests In Our Ocean',
         subtitle: 'SeaForester — Marketing Website',
         images: [

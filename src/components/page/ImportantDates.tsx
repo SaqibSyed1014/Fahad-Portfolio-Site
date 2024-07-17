@@ -76,7 +76,7 @@ export default function ImportantDates() {
                     <div className="flex items-center justify-between gap-5 mt-6 md:hidden">
                         <div className="flex items-center flex-1 gap-2">
                             {dates.map((_, index) => (
-                                <div key={index} className={`h-px w-full ${activeSlide === index ? 'bg-primary' : 'bg-light'}`} />
+                                <div key={index} className={`h-px w-full ${activeSlide === index ? 'bg-primary' : 'bg-gray-text'}`} />
                             ))}
                         </div>
                         <div className="shrink-0">{activeSlide+1} of {dates.length}</div>

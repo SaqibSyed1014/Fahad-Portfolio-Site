@@ -20,7 +20,6 @@ export default function Feedbacks() {
     }
     function slideChanged($event :any) {
         setActiveSlide($event.activeIndex);
-        console.log(activeSlide)
     }
 
     return (
@@ -58,7 +57,7 @@ export default function Feedbacks() {
                             effect={'fade'}
                             modules={[Autoplay, EffectFade]}
                             autoplay={{
-                                delay: 1000000,
+                                delay: 5000,
                                 disableOnInteraction: true
                             }}
                             fadeEffect={{ crossFade: true }}
