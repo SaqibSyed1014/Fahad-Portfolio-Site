@@ -18,7 +18,7 @@ export default function OurWork() {
         }
     }
     function slideChanged($event :any) {
-        setActiveSlide($event.activeIndex);
+        if (window.innerWidth >= 992) setActiveSlide($event.activeIndex);
     }
 
     const autoPlayTime = 4000;
@@ -26,21 +26,24 @@ export default function OurWork() {
     return (
         <section className="py-14 md:py-20 lg:py-40">
             <div className="container">
-                <div className="flex justify-between items-center pb-10 md:pb-20">
+                <div className="flex max-sm:flex-col sm:justify-between sm:items-center pb-10 md:pb-20">
                     <div className="flex flex-col">
                         <h2 className="section-header-subtitle">
                             Our Work
                         </h2>
-                        <h3 className="section-header-heading">
+                        <h3 className="section-header-heading max-sm:text-left max-sm:!ml-0">
                             Recent Projects
                         </h3>
                     </div>
 
-                    <Link to="showcase" className="primary-btn">View all projects</Link>
+                    <div className="max-sm:pt-5">
+                        <Link to="showcase" className="primary-btn">View all projects</Link>
+                    </div>
                 </div>
 
                 <div>
                     <div className="flex lg:hidden">
+                        <ProjectTabGroup activeSlide={activeSlide} updateIndex={(index :number) => setActiveSlide(index)} />
                     </div>
 
                     <div className="hidden lg:grid grid-cols-12 h-[520px]">
@@ -98,4 +101,37 @@ export default function OurWork() {
             </div>
         </section>
         )
+}
+
+interface ProjectTabGroupPropsType {
+    activeSlide: number
+    updateIndex: (index :number) => void
+}
+function ProjectTabGroup({ activeSlide, updateIndex } :ProjectTabGroupPropsType) {
+    return (
+        <div className="flex flex-col">
+            {projects.slice(0, 4).map((project, index) => {
+                return (
+                    <div className="flex flex-col">
+                        <button type="button" onClick={() => updateIndex(index)}
+                                className={`relative py-6 px-5 font-medium border-b border-[#242b31] text-left hover:bg-[#363B3F]/20 cursor-pointer ${activeSlide === index ? 'bg-[#363B3F]/20' : ''}`}>
+                            <div
+                                className={`bg-primary absolute top-0 left-0 h-px ${activeSlide === index ? 'w-full' : 'w-0'}`}></div>
+                            <h4 className="text-gray-text text-base mb-1 md:mb-2">
+                                {project.subtitle}
+                            </h4>
+                            <h5 className="text-xl md:text-2xl">
+                                {project.title}
+                            </h5>
+                        </button>
+                        <div  style={{backgroundColor: project.color}}
+                                     className={`overflow-hidden aspect-square ${activeSlide === index ? 'block' : 'hidden'}`}>
+                            <img src={project.images[0]} alt=""
+                                 className="w-full h-full object-contain"/>
+                        </div>
+                    </div>
+                )
+            })}
+        </div>
+    )
 }

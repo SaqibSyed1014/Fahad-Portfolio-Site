@@ -37,20 +37,49 @@ export default function WhatWeDo() {
     const container = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-            gsap.from('.box', {
-                opacity: 0,
-                stagger: 0.7,
-                scrollTrigger: {
-                    trigger: container.current,
-                    start: 'top center'
+            const mm = gsap.matchMedia();
+            mm.add({
+                small: '(max-width: 767px)',
+                large: '(min-width: 768px)',
+            }, (ctx) => {
+                const { small, large } = ctx.conditions ?? {};
+                if (large) {
+                    gsap.from('.box', {
+                        opacity: 0,
+                        stagger: 0.7,
+                        scrollTrigger: {
+                            trigger: container.current,
+                            start: 'top center'
+                        }
+                    });
+                    gsap.from('.section-arrow', {
+                        width: 0,
+                        stagger: 0.7,
+                        scrollTrigger: {
+                            trigger: container.current,
+                            start: 'top center'
+                        }
+                    });
                 }
-            });
-            gsap.from('.section-arrow', {
-                width: 0,
-                stagger: 0.7,
-                scrollTrigger: {
-                    trigger: container.current,
-                    start: 'top center'
+                else if (small) {
+                    gsap.utils.toArray('.box').forEach((box :any) => {
+                        gsap.fromTo(
+                            box,
+                            { opacity: 0 },
+                            {
+                                opacity: 1,
+                                duration: 0.8,
+                                ease: 'power2.out',
+                                scrollTrigger: {
+                                    trigger: box,
+                                    start: 'top center+=100',
+                                    end: 'bottom center',
+                                    scrub: true,
+                                    toggleActions: 'play none none reverse', // Play on enter, do nothing on other events
+                                },
+                            }
+                        );
+                    })
                 }
             });
         },
@@ -60,10 +89,10 @@ export default function WhatWeDo() {
     return (
         <section className="what-we-do-section py-14 md:py-20 xl:py-40">
             <div className="container" ref={container}>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 relative">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-0 relative">
                     {services.map((service :Service, index :number) => {
                         return (
-                            <div key={index} className="group px-5 box">
+                            <div key={index} className="group xl:px-5 box">
                                 {service.icon}
                                 <h3 className="lg:text-lg lg:mt-5 lg:mb-2 xl:text-2xl font-medium">{service.label}</h3>
                                 <p className="text-gray-text text-base xl:text-lg">{service.text}</p>

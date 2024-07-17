@@ -251,7 +251,7 @@ function CustomRadioButton({ label, value, onChange, isSelected } :CustomRadioBu
                 onChange={() => onChange(value)}
                 className="sr-only peer" // Hide the default radio button visually
             />
-            <div className="relative w-4 h-4 rounded-full border-[1.5px] border-gray-300
+            <div className="relative w-4 h-4 rounded-full border-[1.5px] border-[#363b3f]
         peer-checked:bg-transparent group-hover:border-primary peer-checked:border-primary
         transition-all duration-200 ease-in-out">
                 {isSelected && ( // Show inner circle only when selected

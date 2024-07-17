@@ -90,10 +90,10 @@ export default function Hero() {
     });
 
     return (
-        <div className="home-view mt-20">
+        <div className="home-view mt-10 md:mt-20">
             <div className="container" ref={container}>
                 <div className="flex">
-                    <div className="w-full lg:w-10/12 mx-auto px-5">
+                    <div className="w-full lg:w-10/12 mx-auto xl:px-5">
                         <h1 ref={headingRef} className="hero-heading">
                             <span className="heading-text-piece">Everything</span>
                             <span>
@@ -101,13 +101,13 @@ export default function Hero() {
                                 <span className="heading-text-piece">will</span>
                             </span>
                             <span className="heading-text-piece">be revealed</span>
-                            <div ref={followerRef} className="heading-overlay"></div>
+                            <div ref={followerRef} className="heading-overlay max-md:hidden"></div>
                         </h1>
                     </div>
                 </div>
 
                 <div className="flex">
-                    <div className="w-full sm:w-10/12 md:w-11/12 lg:w-8/12 xl:w-7/12 2xl:w-6/12 lg:ml-[8.3%] px-5">
+                    <div className="w-full sm:w-10/12 md:w-11/12 lg:w-8/12 xl:w-7/12 2xl:w-6/12 lg:ml-[8.3%] xl:px-5">
                         <h2 className="hero-text">
                             Concealed is a creative digital agency that designs and builds thoughtful digital experiences
                         </h2>
