@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import {Link} from "react-router-dom";
 import type {SwiperProps} from "swiper/react";
-import {clientsFeedback} from "../../assets/utils/constants";
+import { clientsFeedback } from "../../assets/utils/constants";
 
 
 export default function Feedbacks() {

@@ -1,4 +1,4 @@
-import {dates} from "../../assets/utils/constants";
+import { dates } from "../../assets/utils/constants";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {SwiperProps} from "swiper/swiper-react";
 import React, {useRef, useState} from "react";

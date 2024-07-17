@@ -29,9 +29,7 @@ export default function NavBar() {
         <nav className="py-5 sm:py-10">
             <div className="container">
                 <div className="flex items-center justify-between relative z-50">
-                    <Link to="/">
-                       <SiteLogo />
-                    </Link>
+                    <SiteLogo />
 
                     <ul className="hidden md:flex gap-7 text-light font-inter">
                         {menuLinks.map((link, index) => (
