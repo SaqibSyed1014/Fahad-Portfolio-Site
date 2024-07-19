@@ -203,10 +203,51 @@ input:checked + div svg {
 
 /* Process Page CSS */
 .process-page .process-title{
-    @apply text-2xl md:text-3xl mb-4 md:mb-5 font-apercu font-medium
+    @apply text-2xl md:text-3xl xl:text-5xl mb-4 md:mb-5 font-apercu font-medium
 }
 .process-page .process-desc{
-    @apply text-base md:text-lg max-md:mb-5
+    @apply text-base md:text-lg xl:text-2xl max-md:mb-5
+}
+.process-page .process-step{
+    @apply inline text-nowrap
+}
+.process-page .product-strategy-conversation .product-strategy-message{
+    @apply p-6 mb-5 border border-light text-light font-medium flex flex-col justify-between md:absolute md:top-1/2 md:left-1/2 h-[248px] w-[256px]
+}
+.process-page .product-strategy-conversation .product-strategy-message.client-message-1,
+.process-page .product-strategy-conversation .product-strategy-message.client-message-2{
+    @apply bg-primary
+}
+.process-page .product-strategy-conversation .product-strategy-message.concealed-message-1,
+.process-page .product-strategy-conversation .product-strategy-message.concealed-message-2{
+    @apply bg-mild-gray
+}
+
+.process-page .ui-ux-design-step .scribbles-img{
+    @apply absolute md:top-1/2 md:left-1/2
+}
+.process-page .ui-ux-design-step img,
+.process-page .ui-ux-design-step svg{
+    @apply md:max-w-[688px] lg:max-w-[928px]
+}
+.process-page .ui-ux-design-step svg,
+.process-page .ui-ux-design-step img{
+    @apply absolute z-[5] top-1/2 left-1/2
+}
+.process-page .ui-ux-design-step .design-comment.comment-1{
+    @apply translate-x-[30px] translate-y-[20px]
+}
+.process-page .ui-ux-design-step .design-comment.comment-2{
+    @apply translate-x-[130px] translate-y-[90px]
+}
+.process-page .ui-ux-design-step .design-comment.comment-3{
+    @apply translate-x-[-170px] translate-y-[300px]
+}
+.process-page .ui-ux-design-step .color-options{
+    @apply translate-x-[320px] translate-y-[-50px] z-[6] w-[180px]
+}
+.process-page .ui-ux-design-step .cursor-svg{
+    @apply translate-x-[-200px] translate-y-[180px] z-[7]
 }
 
 
