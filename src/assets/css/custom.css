@@ -223,11 +223,14 @@ input:checked + div svg {
     @apply bg-mild-gray
 }
 
-.process-page .ui-ux-design-step .scribbles-img{
+.process-page .ui-ux-design-step .scribbles-img,
+.process-page .conversion-step .conversion-img,
+.process-page .conversion-step svg{
     @apply absolute md:top-1/2 md:left-1/2
 }
 .process-page .ui-ux-design-step img,
-.process-page .ui-ux-design-step svg{
+.process-page .ui-ux-design-step svg,
+.process-page .conversion-step .conversion-img{
     @apply md:max-w-[688px] lg:max-w-[928px]
 }
 .process-page .ui-ux-design-step svg,
@@ -249,7 +252,31 @@ input:checked + div svg {
 .process-page .ui-ux-design-step .cursor-svg{
     @apply translate-x-[-200px] translate-y-[180px] z-[7]
 }
+.process-page .conversion-step .above-md-screens .conversion-comment-1{
+    @apply translate-x-[430px] translate-y-[-70px]
+}
+.process-page .conversion-step .above-md-screens .conversion-comment-2{
+    @apply translate-x-[300px] translate-y-[100px]
+}
+.process-page .conversion-step .above-md-screens .conversion-comment-3{
+    @apply translate-x-[420px] translate-y-[350px]
+}
+.process-page .conversion-step .above-md-screens .conversion-comment-4{
+    @apply translate-x-[-550px] translate-y-[410px]
+}
 
+.process-page .conversion-step .below-md-screens .conversion-comment-1{
+    @apply translate-x-[180px] translate-y-[calc(-50%_-_80px)] top-1/2 right-[20px] w-full
+}
+.process-page .conversion-step .below-md-screens .conversion-comment-2{
+    @apply translate-x-[-100px] translate-y-[-100px] top-[100px] left-[20px] w-full
+}
+.process-page .conversion-step .below-md-screens .conversion-comment-3{
+    @apply translate-x-[110px] translate-y-[calc(-50%_+_20px)] top-1/2 right-[20px] w-full
+}
+.process-page .conversion-step .below-md-screens .conversion-comment-4{
+    @apply translate-x-[-110px] translate-y-[10px] bottom-[10px] left-[20px] w-full
+}
 
 .contact-us-lamp{
     @apply absolute top-0 left-1/2 ml-1.5 transform -translate-x-1/2 -translate-y-full opacity-0
