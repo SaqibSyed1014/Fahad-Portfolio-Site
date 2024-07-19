@@ -211,8 +211,14 @@ input:checked + div svg {
 .process-page .process-step{
     @apply inline text-nowrap
 }
+.process-page .process-arrow{
+    @apply max-md:!rotate-90
+}
+.process-page .product-strategy-conversation{
+    @apply max-md:flex max-md:flex-col max-md:items-center h-0 pb-[265px]
+}
 .process-page .product-strategy-conversation .product-strategy-message{
-    @apply p-6 mb-5 border border-light text-light font-medium flex flex-col justify-between md:absolute md:top-1/2 md:left-1/2 h-[248px] w-[256px]
+    @apply p-6 mb-5 border border-light text-light font-medium flex flex-col justify-between relative md:absolute md:top-1/2 md:left-1/2 h-auto w-[335px] md:h-[248px] md:w-[256px]
 }
 .process-page .product-strategy-conversation .product-strategy-message.client-message-1,
 .process-page .product-strategy-conversation .product-strategy-message.client-message-2{

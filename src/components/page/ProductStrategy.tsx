@@ -4,68 +4,94 @@ import React from "react";
 
 export default function ProductStrategy() {
     useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.product-strategy-section',
-                start: 'top top',
-                end: `bottom+=500 top`,
-                pin: true,
-                scrub: true
-            },
-        })
-        tl.to('.strategy-content', { opacity: 0, duration: 0.5 });
-        tl.fromTo('.client-message-1', {
-            xPercent: 12,
-            yPercent: -51
-        }, {
-            xPercent: -219,
-            yPercent: -44
-        })
-        tl.fromTo('.concealed-message-1', {
-            xPercent: 46,
-            yPercent: -3
-        }, {
-            xPercent: -106,
-            yPercent: -44
-        })
-        tl.fromTo('.client-message-2', {
-            xPercent: 79,
-            yPercent: -80
-        }, {
-            xPercent: 6.5,
-            yPercent: -44
-        })
-        tl.fromTo('.concealed-message-2', {
-            xPercent: 119,
-            yPercent: -45
-        }, {
-            xPercent: 119,
-            yPercent: -45
-        })
-        tl.from('.section-arrow', {
-            opacity: 0
-        })
+        const matchMedia = gsap.matchMedia();
+        matchMedia.add({
+            small: '(max-width: 767px)',
+            large: '(min-width: 768px)',
+        }, (ctx) => {
+            const {small, large} = ctx.conditions ?? {};
+            if (large) {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.product-strategy-section',
+                        start: 'top top',
+                        end: `bottom+=500 top`,
+                        pin: true,
+                        scrub: true
+                    },
+                })
+                tl.to('.strategy-content', { opacity: 0, duration: 0.5 });
+                tl.fromTo('.client-message-1', {
+                    xPercent: 12,
+                    yPercent: -51
+                }, {
+                    xPercent: -219,
+                    yPercent: -44
+                })
+                tl.fromTo('.concealed-message-1', {
+                    xPercent: 46,
+                    yPercent: -3
+                }, {
+                    xPercent: -106,
+                    yPercent: -44
+                })
+                tl.fromTo('.client-message-2', {
+                    xPercent: 79,
+                    yPercent: -80
+                }, {
+                    xPercent: 6.5,
+                    yPercent: -44
+                })
+                tl.fromTo('.concealed-message-2', {
+                    xPercent: 119,
+                    yPercent: -45
+                }, {
+                    xPercent: 119,
+                    yPercent: -45
+                })
+                tl.from('.section-arrow', {
+                    opacity: 0
+                })
+            }
+            if (small) {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.product-strategy-conversation',
+                        start: 'top center+=150',
+                        end: 'bottom center+=100',
+                        scrub: true,
+                        markers: true
+                    }
+                })
+                    .to('.product-strategy-message.concealed-message-1', {
+                        yPercent: -85,
 
+                    }, 0)
+                    .to('.product-strategy-message.client-message-2', {
+                        yPercent: -215,
+
+                    }, '<+=0.3')
+                    .to('.product-strategy-message.concealed-message-2', {
+                        yPercent: -271,
+                    }, '<+=0.1');
+
+            }
+        })
     })
     return (
         <section className="product-strategy-section">
             <div className="container py-40">
-                <div className="grid grid-cols-12 relative">
+                <div className="flex max-md:flex-col relative">
                     <div className="col-span-12 md:col-span-5">
-                        <div className="strategy-content">
+                        <div className="strategy-content max-w-[510px] max-md:mb-10">
                             <h2 className="process-title">Product Strategy</h2>
                             <p className="process-desc">
                                 Each collaboration starts with a thorough investigation of the product’s business,
                                 analysis of its key features and definition of the optimal strategy for developing it.
                             </p>
                         </div>
-
-                        <div className="block md:hidden">
-                            <div className="mt-10">
-                            </div>
-                        </div>
                     </div>
-                    <div className="md:col-span-7 hidden md:block md:ml-[8.9%]">
+                    <div className="md:col-span-7 block md:ml-[8.9%]">
                         <div className="product-strategy-conversation">
                             <div className="product-strategy-message client-message-1">
                                 <p>
