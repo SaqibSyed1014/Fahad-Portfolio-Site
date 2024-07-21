@@ -10,6 +10,10 @@ export default function Conversion() {
         }, (ctx) => {
             const {small, large} = ctx.conditions ?? {};
             if (large) {
+                gsap.set('.conversion-step', {
+                    top: 17,
+                    padding: () => window.innerWidth >= 992 ? '240px 0' : '68px 0'
+                })
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: '.conversion-step',
@@ -26,7 +30,7 @@ export default function Conversion() {
                     scale: .8
                 }, {
                     xPercent: -50,
-                    yPercent: -50,
+                    yPercent: -42,
                     scale: 1,
                     delay: .3
                 }, '<');
@@ -54,7 +58,7 @@ export default function Conversion() {
     })
 
     return (
-        <section className="conversion-step mt-32 md:mt-48 md:py-20 lg:py-60 relative">
+        <section className="conversion-step relative md:!mb-32">
             <div className="container">
                 <div className="md:col-span-6 hidden md:block">
                     <div className="above-md-screens">

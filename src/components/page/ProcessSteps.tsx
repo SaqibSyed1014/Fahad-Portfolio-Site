@@ -43,7 +43,7 @@ export default function ProcessSteps() {
     })
 
     return (
-        <section className="mb-32">
+        <section className="mb-14">
             <div className="container text-center">
                 <div className="section-header-text">
                     <h2 className="section-header-subtitle">

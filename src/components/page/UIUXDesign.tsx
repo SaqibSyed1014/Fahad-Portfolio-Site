@@ -3,11 +3,14 @@ import gsap from "gsap";
 
 export default function UIUXDesign() {
     useGSAP(() => {
+        gsap.set('.ui-ux-design-step', {
+            padding: () => window.innerWidth >= 992 ? '240px 0' : '68px 0'
+        })
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.ui-ux-design-step',
                 start: 'top top',
-                end: `bottom+=1200 top`,
+                end: `bottom+=1600 top`,
                 pin: true,
                 scrub: true
             },
@@ -46,7 +49,7 @@ export default function UIUXDesign() {
     })
 
     return (
-        <section className="ui-ux-design-step mt-32 md:mt-48 md:py-20 lg:py-48">
+        <section className="ui-ux-design-step md:!mt-28 md:!mb-48">
             <div className="container">
                 <div className="grid grid-cols-12 relative">
                     <div className="md:col-span-6 hidden md:block">

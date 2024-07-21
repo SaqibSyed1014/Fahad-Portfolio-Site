@@ -22,7 +22,8 @@ module.exports = {
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
-        'apercu': ['Apercu', 'sans-serif']
+        'apercu': ['Apercu', 'sans-serif'],
+        'sf-mono': ['SF Mono', 'sans-serif']
       }
     },
     screens: {

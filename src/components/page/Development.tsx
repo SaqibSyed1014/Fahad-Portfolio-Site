@@ -1,7 +1,47 @@
-import {useGSAP} from "@gsap/react";
+import {useRef} from "react";
 import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
+import { ScrollTrigger, TextPlugin } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function Development() {
+    const textContainerRef = useRef<HTMLDivElement>(null);
+    const demoTextContainerRef = useRef<HTMLDivElement>(null);
+
+    const text = [
+        {
+            text: '<Description>',
+            class: 'animation-text-tag'
+        },
+        {
+            text: 'Concealed is a creative digital agency',
+            class: 'animation-text-line'
+        },
+        {
+            text: 'that designs and builds thoughtful digital',
+            class: 'animation-text-line'
+        },
+        {
+            text: 'experiences',
+            class: 'animation-text-line'
+        },
+        {
+            text: '</Description>',
+            class: 'animation-text-tag'
+        },
+        {
+            text: '</>',
+            class: 'animation-text-ending-tag'
+        },
+        {
+            text: ');',
+            class: 'text'
+        },
+        {
+            text: 'export default Development;',
+            class: 'text-[#908efb]'
+        }
+    ];
     useGSAP(() => {
         const mm = gsap.matchMedia();
         mm.add({
@@ -9,12 +49,15 @@ export default function Development() {
             large: '(min-width: 768px)',
         }, (ctx) => {
             const { small, large} = ctx.conditions ?? {};
+            gsap.set('.development-step', {
+                padding: () => window.innerWidth >= 1200 ? '240px 0' : '180px 0'
+            })
             if (large) {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: '.development-step',
                         start: 'top top',
-                        end: `bottom+=1200 top`,
+                        end: `bottom+=3500 top`,
                         pin: true,
                         scrub: true
                     },
@@ -26,8 +69,9 @@ export default function Development() {
                     scale: .53
                 }, {
                     xPercent: -72,
-                    yPercent: -44.7,
-                    scale: .53
+                    yPercent: -50,
+                    scale: .53,
+                    duration: 5
                 });
                 tl.fromTo('.developed-site', {
                     xPercent: 70,
@@ -35,14 +79,46 @@ export default function Development() {
                 }, {
                     xPercent: 5,
                     yPercent: -42,
+                    duration: 5
                 }, '<');
+
+
+                if (textContainerRef.current?.hasChildNodes()) textContainerRef.current.innerHTML = ''
+
+                text.forEach((item, index) => {
+                    const p = document.createElement('p');
+                    p.classList.add(item.class);
+
+                    const charSpans = item.text?.split('').map((char) => {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        span.style.opacity = '0';
+                        if (['<', '>'].includes(char)) span.classList.add('text-light');
+                        else if ([')'].includes(char)) span.classList.add('text-[#ffd100]');
+                        return span;
+                    }) || [];
+
+                    charSpans.forEach((span) => p?.appendChild(span));
+                    textContainerRef.current?.appendChild(p);
+
+                    tl.to(charSpans, {
+                        opacity: 1,
+                        stagger: .3
+                    },);
+                    if ([1, 2, 3].includes(index)) {
+                        tl.to(`.code-output-demo .line-${index}`, {
+                            duration: 20,
+                            text: item.text,
+                        }, '<')
+                    }
+                })
             }
         })
     })
 
     return (
-        <section className="development-step overflow-hidden mt-32 md:mt-48 md:py-20 lg:py-48 relative">
-            <div className="container">
+        <section className="development-step md:!mb-52 xl:!mb-40">
+            <div className="container relative">
                 <div className="flex max-md:flex-col">
                         <div className="development-content max-w-[440px]">
                             <h2 className="process-title">Development</h2>
@@ -56,8 +132,14 @@ export default function Development() {
 
                     <div className="hidden md:block">
                         <div>
-                            <img className="code-mockup" src="https://www.concealed.pt/_next/static/media/development-left.aa1d6bbd.jpg" alt=""/>
-                            <img className="developed-site" src="https://www.concealed.pt/_next/static/media/development-right-mobile.1b3c82ea.jpg" alt=""/>
+                            <img className="code-mockup w-full" src="https://www.concealed.pt/_next/static/media/development-left.aa1d6bbd.jpg" alt=""/>
+                            <div ref={textContainerRef} className="code-mockup-text absolute top-[50px] left-[20px] xl:top-[125px] xl:left-[45px] scale-[.85] xl:-mt-3 xl:-mb-1 w-[500px] z-20"></div>
+                            <img className="developed-site w-full" src="https://www.concealed.pt/_next/static/media/development-right.7864e028.jpg" alt=""/>
+                            <div ref={demoTextContainerRef} className="code-output-demo">
+                                <p className="line-1"></p>
+                                <p className="line-2"></p>
+                                <p className="line-3"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
