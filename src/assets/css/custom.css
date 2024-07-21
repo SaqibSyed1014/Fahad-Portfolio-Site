@@ -230,7 +230,7 @@ input:checked + div svg {
     @apply bg-mild-gray
 }
 
-.process-page .ui-ux-design-step .scribbles-img,
+.process-page .ui-ux-design-step .above-md-screens .scribbles-img,
 .process-page .development-step .code-mockup,
 .process-page .development-step .developed-site,
 .process-page .conversion-step .conversion-img,
@@ -253,13 +253,13 @@ input:checked + div svg {
     @apply absolute w-[500px] top-[130px] left-[-140px] xl:left-[120px] xl:top-[280px] translate-x-[840px] translate-y-[190px] text-2xl
 }
 
-.process-page .ui-ux-design-step img,
-.process-page .ui-ux-design-step svg,
+.process-page .ui-ux-design-step .above-md-screens img,
+.process-page .ui-ux-design-step .above-md-screens svg,
 .process-page .conversion-step .conversion-img{
     @apply md:max-w-[688px] lg:max-w-[928px]
 }
-.process-page .ui-ux-design-step svg,
-.process-page .ui-ux-design-step img{
+.process-page .ui-ux-design-step .above-md-screens svg,
+.process-page .ui-ux-design-step .above-md-screens img{
     @apply absolute z-[5] top-1/2 left-1/2
 }
 .process-page .ui-ux-design-step .design-comment.comment-1{

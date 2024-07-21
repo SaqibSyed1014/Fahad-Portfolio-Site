@@ -17,18 +17,18 @@ export default function ProductStrategy() {
                 delay: 3,
                 padding: () => window.innerWidth >= 992 ? '140px 0' : '68px 0'
             });
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.product-strategy-section',
-                    start: 'top top',
-                    end: `+=800`,
-                    pin: true,
-                    scrub: true,
-                },
-            })
-            tl.to('.strategy-content', { opacity: 0, duration: 0.5 });
 
             if (xlarge) {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.product-strategy-section',
+                        start: 'top top',
+                        end: `+=800`,
+                        pin: true,
+                        scrub: true,
+                    },
+                })
+                tl.to('.strategy-content', { opacity: 0, duration: 0.5 });
                 tl.fromTo('.client-message-1', {
                     xPercent: 12,
                     yPercent: -51
@@ -60,6 +60,16 @@ export default function ProductStrategy() {
                 tl.from('.section-arrow', { opacity: 0 })
             }
             else if (large) {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.product-strategy-section',
+                        start: 'top top',
+                        end: `+=800`,
+                        pin: true,
+                        scrub: true,
+                    },
+                })
+                tl.to('.strategy-content', { opacity: 0, duration: 0.5 });
                 tl.fromTo('.client-message-1', {
                     xPercent: 0,
                     yPercent: -50
@@ -91,21 +101,21 @@ export default function ProductStrategy() {
                 tl.from('.section-arrow', { opacity: 0 })
             }
             if (small) {
-                gsap.timeline({
+               const smtl = gsap.timeline({
                     scrollTrigger: {
                         trigger: '.product-strategy-conversation',
-                        start: 'top center+=150',
+                        start: 'top center',
                         end: 'bottom center+=100',
-                        scrub: true
+                        scrub: true,
                     }
                 })
-                    .to('.product-strategy-message.concealed-message-1', {
+                smtl.to('.product-strategy-message.concealed-message-1', {
                         yPercent: -85,
                     }, 0)
-                    .to('.product-strategy-message.client-message-2', {
+                smtl.to('.product-strategy-message.client-message-2', {
                         yPercent: -215,
                     }, '<+=0.3')
-                    .to('.product-strategy-message.concealed-message-2', {
+                smtl.to('.product-strategy-message.concealed-message-2', {
                         yPercent: -271,
                     }, '<+=0.1');
 

@@ -6,54 +6,89 @@ export default function UIUXDesign() {
         gsap.set('.ui-ux-design-step', {
             padding: () => window.innerWidth >= 992 ? '240px 0' : '68px 0'
         })
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.ui-ux-design-step',
-                start: 'top top',
-                end: `bottom+=1600 top`,
-                pin: true,
-                scrub: true
-            },
+
+        const matchMedia = gsap.matchMedia();
+        matchMedia.add({
+            small: '(max-width: 767px)',
+            large: '(min-width: 768px)',
+        }, (ctx) => {
+            const {small, large} = ctx.conditions ?? {};
+            if (large) {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.ui-ux-design-step',
+                        start: 'top top',
+                        end: `bottom+=1600 top`,
+                        pin: true,
+                        scrub: true
+                    },
+                })
+                tl.fromTo('.scribbles-img', {
+                    xPercent: -95,
+                    yPercent: -50,
+                    scale: .8
+                }, {
+                    xPercent: -50,
+                    yPercent: -50,
+                    scale: 1
+                })
+                tl.to('.ui-ux-content', { opacity: 0 }, "<");
+                tl.from('.scribbles-bg', { opacity: 0 });
+                tl.from('.site-wireframe', { opacity: 0 }, '<');
+                tl.from('.final-site', { opacity: 0 });
+                tl.from('.design-comment.comment-1', { opacity: 0 })
+                tl.to('.design-comment.comment-1', { opacity: 0 })
+                tl.from('.design-comment.comment-3', { opacity: 0 })
+                tl.to('.design-comment.comment-3', { opacity: 0 })
+                tl.from('.design-comment.comment-2', { opacity: 0 })
+                tl.from('.cursor-svg', { opacity: 0 })
+                tl.fromTo('.cursor-svg', {
+                    x: -200,
+                    y: 180,
+                }, {
+                    x: 330,
+                    y: 140,
+                })
+                tl.from('.color-options', { opacity: 0 }, '<')
+                tl.from('.dark-site', { opacity: 0 })
+                tl.to('.cursor-svg', { opacity: 0 }, '<')
+                tl.to('.color-options', { opacity: 0 }, '<')
+                tl.to('.design-comment.comment-2', { opacity: 0 }, '<')
+            }
+            else if (small) {
+                const smtl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.ui-ux-design-step',
+                        start: 'top center',
+                        end: 'bottom center',
+                        scrub: true,
+                    }
+                })
+                smtl.from('.ui-ux-design-step', {
+                    opacity: 0,
+                });
+                smtl.from('.ui-ux-design-step .below-md-screens .scribbles-bg-mobile', {
+                    opacity: 0,
+                });
+                smtl.from('.ui-ux-design-step .below-md-screens .site-wireframe-mobile', {
+                    opacity: 0,
+                });
+                smtl.from('.ui-ux-design-step .below-md-screens .final-site-mobile', {
+                    opacity: 0,
+                });
+                smtl.from('.ui-ux-design-step .below-md-screens .dark-site-mobile', {
+                    opacity: 0,
+                });
+            }
         })
-        tl.fromTo('.scribbles-img', {
-            xPercent: -95,
-            yPercent: -50,
-            scale: .8
-        }, {
-            xPercent: -50,
-            yPercent: -50,
-            scale: 1
-        })
-        tl.to('.ui-ux-content', { opacity: 0 }, "<");
-        tl.from('.scribbles-bg', { opacity: 0 });
-        tl.from('.site-wireframe', { opacity: 0 }, '<');
-        tl.from('.final-site', { opacity: 0 });
-        tl.from('.design-comment.comment-1', { opacity: 0 })
-        tl.to('.design-comment.comment-1', { opacity: 0 })
-        tl.from('.design-comment.comment-3', { opacity: 0 })
-        tl.to('.design-comment.comment-3', { opacity: 0 })
-        tl.from('.design-comment.comment-2', { opacity: 0 })
-        tl.from('.cursor-svg', { opacity: 0 })
-        tl.fromTo('.cursor-svg', {
-            x: -200,
-            y: 180,
-        }, {
-            x: 330,
-            y: 140,
-        })
-        tl.from('.color-options', { opacity: 0 }, '<')
-        tl.from('.dark-site', { opacity: 0 })
-        tl.to('.cursor-svg', { opacity: 0 }, '<')
-        tl.to('.color-options', { opacity: 0 }, '<')
-        tl.to('.design-comment.comment-2', { opacity: 0 }, '<')
     })
 
     return (
-        <section className="ui-ux-design-step md:!mt-28 md:!mb-48">
+        <section className="ui-ux-design-step !my-20 md:!mt-28 md:!mb-48">
             <div className="container">
                 <div className="grid grid-cols-12 relative">
                     <div className="md:col-span-6 hidden md:block">
-                        <div>
+                        <div className="above-md-screens">
                             <img className="scribbles-img z-[1]" src="https://www.concealed.pt/_next/static/media/scribble.dadc989d.png" alt=""/>
                             <img className="scribbles-bg z-[2] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="https://www.concealed.pt/_next/static/media/background.2af45376.jpg" alt=""/>
                             <img className="site-wireframe z-[3] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[48%] scale-[.935]" src="https://www.concealed.pt/_next/static/media/wireframes.5617e8a4.jpg" alt=""/>
@@ -83,8 +118,12 @@ export default function UIUXDesign() {
                         </div>
 
                         <div className="block md:hidden">
-                            <div className="mt-10">
-                                <img src="https://www.concealed.pt/_next/static/media/scribble.dadc989d.png" alt=""/>
+                            <div className="mt-10 pb-[100%] below-md-screens relative">
+                                <img className="scribbles-img-mobile absolute z-[1]" src="https://www.concealed.pt/_next/static/media/scribble.dadc989d.png" alt=""/>
+                                <img className="scribbles-bg-mobile absolute" src="https://www.concealed.pt/_next/static/media/background.2af45376.jpg" alt=""/>
+                                <img className="site-wireframe-mobile absolute z-[3]" src="https://www.concealed.pt/_next/static/media/wireframes.5617e8a4.jpg" alt=""/>
+                                <img className="final-site-mobile absolute z-[4]" src="https://www.concealed.pt/_next/static/media/website-light.c99e7b72.jpg" alt=""/>
+                                <img className="dark-site-mobile absolute z-[5]" src="https://www.concealed.pt/_next/static/media/website-dark.548a6c9a.jpg" alt=""/>
                             </div>
                         </div>
                     </div>
