@@ -60,7 +60,7 @@ export default function ImportantDates() {
                                 <SwiperSlide key={index} className="!w-[80%] cursor-grab !h-auto">
                                     <div className="flex max-lg:flex-col h-full">
                                         <div className="lg:order-2 h-[250px] md:h-[300px] lg:h-[400px] w-full lg:pb-3">
-                                            <img src={date.image} alt="" className="h-full w-full object-cover" />
+                                            <img loading="lazy" src={date.image} alt="" className="h-full w-full object-cover" />
                                         </div>
                                         <div className="flex flex-col grow p-6 bg-[#171d22] lg:p-8 lg:max-w-[376px] lg:min-w-[400px]">
                                             <h3 className="text-2xl font-medium">{date.title}</h3>
