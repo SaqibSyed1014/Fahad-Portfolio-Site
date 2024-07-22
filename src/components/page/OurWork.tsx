@@ -86,9 +86,9 @@ export default function OurWork() {
                                 {projects.slice(0, 4).map((project, index) => {
                                     return (
                                         <SwiperSlide key={index} onMouseEnter={() => mouseHoverMovement('in')} onMouseLeave={() => mouseHoverMovement('out')} style={{backgroundColor: project.color}}
-                                                     className="overflow-hidden border border-red-800">
-                                            <img src={project.images[0]} alt=""
-                                                 className="w-full h-full object-contain"/>
+                                                     className="overflow-hidden">
+                                            {/*<img src={project.images[0]} alt=""*/}
+                                            {/*     className="w-full h-full object-contain"/>*/}
                                         </SwiperSlide>
                                     )
                                 })}
@@ -101,7 +101,7 @@ export default function OurWork() {
                                         <button key={index} type="button" onClick={() => moveToSlide(index)} className={`relative py-6 px-5 font-medium border-b border-[#242b31] text-left hover:bg-[#363B3F]/20 cursor-pointer ${activeSlide === index ? 'bg-[#363B3F]/20' : '' }`}>
                                            <div className={`bg-primary absolute top-0 left-0 h-px ${activeSlide === index ? 'animate-bar':''}`}></div>
                                             <h4 className="text-gray-text text-base mb-1 md:mb-2">
-                                                {project.subtitle} {activeSlide}
+                                                {project.subtitle}
                                             </h4>
                                             <h5 className="text-xl md:text-2xl">
                                                 {project.title}

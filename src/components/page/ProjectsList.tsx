@@ -89,7 +89,7 @@ function ProjectCard({ project } : ProjectCardProps) {
             <div className="flex flex-col h-full">
                 <div className="relative h-full md:!bg-dark-gray p-5 transition duration-500 ease-in-out" style={{ background: project.color }}>
                     <div className="overflow-hidden h-[300px]" style={{ background: project.color }}>
-                        <img src={project.images[0]} alt={project.title}/>
+                        {/*<img src={project.images[0]} alt={project.title}/>*/}
                     </div>
                     <div className="project-overlay font-medium">
                         <h4 className="text-light/50 md:text-gray-text mt-5 mb-2 transition duration-500 ease-in-out">
