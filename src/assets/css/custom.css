@@ -250,7 +250,7 @@ input:checked + div svg {
     @apply text-light ml-[6px]
 }
 .process-page .development-step .code-output-demo{
-    @apply absolute w-[500px] top-[130px] left-[-140px] xl:left-[120px] xl:top-[280px] translate-x-[840px] translate-y-[190px] text-2xl
+    @apply absolute w-[500px] top-[130px] left-[-140px] lg:left-[-20px] lg:top-[240px] 2xl:left-[120px] 2xl:top-[280px] translate-x-[840px] translate-y-[190px] text-2xl
 }
 
 .process-page .ui-ux-design-step .above-md-screens img,

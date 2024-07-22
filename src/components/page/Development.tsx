@@ -50,7 +50,7 @@ export default function Development() {
         }, (ctx) => {
             const { small, large} = ctx.conditions ?? {};
             gsap.set('.development-step', {
-                padding: () => window.innerWidth >= 1200 ? '240px 0' : '180px 0'
+                padding: () => window.innerWidth >= 1200 ? '150px 0' : '180px 0'
             })
             if (large) {
                 const tl = gsap.timeline({
@@ -133,7 +133,7 @@ export default function Development() {
                     <div className="hidden md:block">
                         <div>
                             <img className="code-mockup w-full" src="https://www.concealed.pt/_next/static/media/development-left.aa1d6bbd.jpg" alt=""/>
-                            <div ref={textContainerRef} className="code-mockup-text absolute top-[50px] left-[20px] xl:top-[125px] xl:left-[45px] scale-[.85] xl:-mt-3 xl:-mb-1 w-[500px] z-20"></div>
+                            <div ref={textContainerRef} className="code-mockup-text absolute top-[50px] left-[20px] lg:top-[140px] lg:left-[32px] 2xl:top-[125px] 2xl:left-[45px] scale-[.85] xl:-mt-3 xl:-mb-1 w-[500px] z-20"></div>
                             <img className="developed-site w-full" src="https://www.concealed.pt/_next/static/media/development-right.7864e028.jpg" alt=""/>
                             <div ref={demoTextContainerRef} className="code-output-demo">
                                 <p className="line-1"></p>

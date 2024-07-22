@@ -124,7 +124,7 @@ export default function ProductStrategy() {
     })
     return (
         <section className="product-strategy-section">
-            <div className="container xl:py-40">
+            <div className="container 2xl:py-40">
                 <div className="flex max-md:flex-col items-center relative">
                     <div className="col-span-12 md:col-span-5">
                         <div className="strategy-content max-w-[450px] xl:max-w-[510px] max-md:mb-10">
@@ -163,14 +163,14 @@ export default function ProductStrategy() {
                             </div>
 
                                 <div className="section-arrow hidden overflow-hidden md:block absolute w-[298px] md:top-1/2 md:left-1/2 opacity-70 translate-y-[-170px] translate-x-[-115%] xl:translate-y-[-190px] xl:translate-x-[-165%] max-xl:scale-[.8]">
-                                    <svg fill="none" height="58" viewBox="0 0 178 58" width="178" xmlns="http://www.w3.org/2000/svg"><path d="M1 32C9.23 16.869 39.642-9.551 95.443 5.816c55.8 15.367 76.571 43.407 79.138 51.668m0 0l2.505-7.551m-2.505 7.551l-7.118-1.96" opacity="0.9" stroke="#fcfcfa" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    <svg fill="none" height="58" viewBox="0 0 178 58" width="178" xmlns="http://www.w3.org/2000/svg"><path d="M1 32C9.23 16.869 39.642-9.551 95.443 5.816c55.8 15.367 76.571 43.407 79.138 51.668m0 0l2.505-7.551m-2.505 7.551l-7.118-1.96" opacity="0.9" stroke="#fcfcfa" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                                 </div>
 
                                 <div className="section-arrow hidden overflow-hidden md:block absolute md:left-[40%] opacity-70 bottom-[-40px] xl:left-[47%] xl:bottom-[-80px] max-xl:scale-[.8]">
                                     <svg fill="none" height="46" viewBox="0 0 177 46" width="177" xmlns="http://www.w3.org/2000/svg"><path d="M.782.914c4.882 14.84 28.996 44.52 86.403 44.52 57.406 0 83.376-19.038 87.574-25.482m0 0l.879 7.03m-.879-7.03h-7.322" opacity="0.9" stroke="#fcfcfa" strokeLinecap="round" strokeLinejoin="round"></path></svg>                        </div>
 
                                 <div className="section-arrow hidden overflow-hidden md:block absolute md:top-1/2 md:left-1/2 opacity-70 translate-y-[-170px] translate-x-[120%] xl:translate-y-[-190px] xl:translate-x-[150%] max-xl:scale-[.8]">
-                                    <svg fill="none" height="58" viewBox="0 0 178 58" width="178" xmlns="http://www.w3.org/2000/svg"><path d="M1 32C9.23 16.869 39.642-9.551 95.443 5.816c55.8 15.367 76.571 43.407 79.138 51.668m0 0l2.505-7.551m-2.505 7.551l-7.118-1.96" opacity="0.9" stroke="#fcfcfa" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    <svg fill="none" height="58" viewBox="0 0 178 58" width="178" xmlns="http://www.w3.org/2000/svg"><path d="M1 32C9.23 16.869 39.642-9.551 95.443 5.816c55.8 15.367 76.571 43.407 79.138 51.668m0 0l2.505-7.551m-2.505 7.551l-7.118-1.96" opacity="0.9" stroke="#fcfcfa" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                                 </div>
                         </div>
                     </div>
