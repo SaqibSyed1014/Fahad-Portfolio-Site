@@ -15,7 +15,7 @@ export default function ProductStrategy() {
             gsap.from('.product-strategy-section', {
                 opacity: 0,
                 delay: 3,
-                padding: () => window.innerWidth >= 992 ? '140px 0' : '68px 0'
+                padding: () => window.innerWidth >= 1400 ? '68px 0' : '140px 0'
             });
 
             if (xlarge) {

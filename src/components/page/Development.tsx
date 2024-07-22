@@ -117,7 +117,7 @@ export default function Development() {
     })
 
     return (
-        <section className="development-step md:!mb-52 xl:!mb-40">
+        <section className="development-step md:!mb-52 xl:!mb-64 2xl:!mt-14">
             <div className="container relative">
                 <div className="flex max-md:flex-col">
                         <div className="development-content max-w-[440px]">

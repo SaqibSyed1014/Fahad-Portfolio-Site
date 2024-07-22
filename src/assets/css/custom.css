@@ -263,16 +263,16 @@ input:checked + div svg {
     @apply absolute z-[5] top-1/2 left-1/2
 }
 .process-page .ui-ux-design-step .design-comment.comment-1{
-    @apply translate-x-[30px] translate-y-[20px]
+    @apply translate-x-[20px] translate-y-[60px]
 }
 .process-page .ui-ux-design-step .design-comment.comment-2{
-    @apply translate-x-[130px] translate-y-[90px]
+    @apply translate-x-[130px] translate-y-[140px]
 }
 .process-page .ui-ux-design-step .design-comment.comment-3{
-    @apply translate-x-[-170px] translate-y-[300px]
+    @apply translate-x-[-170px] translate-y-[360px]
 }
 .process-page .ui-ux-design-step .color-options{
-    @apply translate-x-[320px] translate-y-[-50px] z-[6] w-[180px]
+    @apply translate-x-[320px] translate-y-[-10px] z-[6] w-[180px]
 }
 .process-page .ui-ux-design-step .cursor-svg{
     @apply translate-x-[-200px] translate-y-[180px] z-[7]
