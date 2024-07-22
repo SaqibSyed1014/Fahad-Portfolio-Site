@@ -28,7 +28,7 @@ export default function Feedbacks() {
                 <div className="pb-10 md:pb-20 relative text-center">
                     <div className="container">
                         <h2 className="section-header-subtitle">
-                            Our Partners
+                            My Clients
                         </h2>
                         <h3 className="section-header-heading">
                             Collaborating with inspiring companies
@@ -62,6 +62,7 @@ export default function Feedbacks() {
                             }}
                             fadeEffect={{ crossFade: true }}
                             onSlideChange={slideChanged}
+                            className="feedback-slider"
                         >
                             {clientsFeedback.map((client, index) => {
                             return (

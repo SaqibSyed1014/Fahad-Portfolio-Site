@@ -48,7 +48,7 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="pt-24 pb-14 md:pt-52 md:pb-20 max-lg:overflow-hidden" ref={TestimonialsSection}>
+        <section className="testi pt-24 pb-14 md:pt-52 md:pb-20 max-lg:overflow-hidden" ref={TestimonialsSection}>
             <div className="container">
                 <div className="hidden lg:grid grid-cols-12 gap-10">
                     <div className="md:col-span-4 md:mt-20">
@@ -88,7 +88,7 @@ export default function Testimonials() {
                 <div className="block lg:hidden">
                     <Swiper
                         ref={swiperRef}
-                        slides-per-view={1}
+                        slides-per-view={'auto'}
                         spaceBetween={20}
                         breakpoints={swiperBreakpoints}
                         centeredSlides={true}
@@ -106,7 +106,7 @@ export default function Testimonials() {
                             </div>
                         </SwiperSlide>
 
-                        <SwiperSlide className="testimonials-mobile-slide">
+                        <SwiperSlide className="testimonials-mobile-slide ml-5">
                             <div className="grid gap-3 border border-[#363b3f] h-full p-6">
                                 <blockquote className="text-lg xl:text-xl">
                                     {clientsFeedback[0].briefFeedback}
@@ -117,7 +117,7 @@ export default function Testimonials() {
                             </div>
                         </SwiperSlide>
 
-                        <SwiperSlide className="testimonials-mobile-slide">
+                        <SwiperSlide className="testimonials-mobile-slide ml-5">
                             <div className="grid gap-3 border border-[#363b3f] h-full p-6">
                                 <blockquote className="text-lg xl:text-xl">
                                     {clientsFeedback[3].briefFeedback}

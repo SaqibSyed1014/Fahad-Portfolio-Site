@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/apercu-font@1.0.0/stylesheet.min.css');
-@import url('https://fonts.cdnfonts.com/css/sf-mono');
+@import url('https://v1.fontapi.ir/css/SFMono');
 
 html, body {
     height: 100%;
@@ -39,13 +39,20 @@ html, body {
 .styled-link.last-link.mobile-link.active:after{
     @apply border-light
 }
+.feedback-slider .swiper-slide{
+    @apply h-0
+}
+.feedback-slider .swiper-slide-active{
+    @apply h-auto
+}
 
 .dotted-styled-bg{
     @apply relative bg-[url('https://www.concealed.pt/_next/static/media/pattern-background.8fe61216.png')] bg-auto bg-[50%]
 }
 
+/* Home Page CSS */
 .home-view .hero-heading{
-    @apply relative overflow-hidden cursor-text font-apercu text-5xl sm:text-6xl md:text-[90px] md:leading-[95px] lg:text-[128px] lg:leading-[136px] font-medium
+    @apply relative overflow-hidden select-none font-apercu text-5xl sm:text-6xl md:text-[90px] md:leading-[95px] lg:text-[128px] lg:leading-[136px] font-medium
 }
 .home-view .hero-heading span{
     @apply inline-block
@@ -102,7 +109,7 @@ html, body {
     @apply !w-[25%] !h-px
 }
 
-
+/* Career Page CSS */
 .career-perks{
     @apply relative pb-[620px]
 }
@@ -111,6 +118,7 @@ html, body {
     @apply content-[''] hidden md:block absolute z-[1] right-0 w-full h-full bg-no-repeat bg-bottom md:bg-[length:1400px]
 }
 
+/* About Page CSS */
 .about-page{
     @apply overflow-x-hidden
 }
@@ -184,7 +192,7 @@ input:checked + div svg {
 }
 @keyframes barAnimation {
     from {
-        width: 0%;
+        width: 0;
     }
     to {
         width: 100%;
@@ -306,7 +314,6 @@ input:checked + div svg {
 .contact-us-lamp{
     @apply absolute top-0 left-1/2 ml-1.5 transform -translate-x-1/2 -translate-y-full opacity-0
 }
-
 
 .project-filter{
     @apply relative font-light cursor-pointer hover:text-primary transition duration-300 ease-in-out

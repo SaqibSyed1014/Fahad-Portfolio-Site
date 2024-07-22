@@ -6,7 +6,6 @@ export default function Footer() {
         { label: 'Showcase', path: '/showcase' },
         { label: 'Process', path: '/process' },
         { label: 'About', path: '/about' },
-        { label: 'Careers', path: '/careers' },
         { label: 'Say Hello', path: '/contact-us' }
     ]
 
