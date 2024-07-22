@@ -48,7 +48,7 @@ export default function Conversion() {
                         toggleActions: 'play none none reverse',
                     },
                 })
-                tl.from('.conversion-content', { opacity: 0 });
+                tl.from('.conversion-step', { opacity: 0 });
                 tl.from('.below-md-screens .conversion-comment-2', { opacity: 0 })
                 tl.from('.below-md-screens .conversion-comment-1', { opacity: 0 })
                 tl.from('.below-md-screens .conversion-comment-3', { opacity: 0 })
@@ -58,7 +58,7 @@ export default function Conversion() {
     })
 
     return (
-        <section className="conversion-step relative md:!mb-32">
+        <section className="conversion-step relative max-md:!mt-10 md:!mb-32">
             <div className="container">
                 <div className="md:col-span-6 hidden md:block">
                     <div className="above-md-screens">

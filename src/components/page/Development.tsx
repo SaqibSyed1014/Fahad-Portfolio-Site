@@ -113,11 +113,38 @@ export default function Development() {
                     }
                 })
             }
+            else if (small) {
+                const smtl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.development-step',
+                        start: 'top center+=200',
+                        end: 'bottom center+=250',
+                        scrub: true,
+                        markers: true
+                    }
+                })
+                smtl.from('.development-step', { opacity: 0, });
+                smtl.fromTo('.code-mockup-img', {
+                    xPercent: 0,
+                    yPercent: 0,
+                }, {
+                    xPercent: -130,
+                    yPercent: 0,
+                });
+                smtl.fromTo('.developed-site-img', {
+                    xPercent: 160,
+                    yPercent: 50,
+                    scale: 2,
+                }, {
+                    xPercent: 30,
+                    yPercent: 50,
+                }, '<');
+            }
         })
     })
 
     return (
-        <section className="development-step md:!mb-52 xl:!mb-64 2xl:!mt-14">
+        <section className="development-step max-md:!py-[80px] md:!mb-52 xl:!mb-64 2xl:!mt-14">
             <div className="container relative">
                 <div className="flex max-md:flex-col">
                         <div className="development-content max-w-[440px]">
@@ -129,6 +156,11 @@ export default function Development() {
                                 us to deliver the best solution for each challenge, every time.
                             </p>
                         </div>
+
+                    <div className="block md:hidden max-md:pb-[110%] max-md:my-10">
+                        <img className="code-mockup-img absolute w-full" src="https://www.concealed.pt/_next/static/media/development-left-mobile.7d12c88b.jpg" alt=""/>
+                        <img className="developed-site-img absolute w-full" src="https://www.concealed.pt/_next/static/media/development-right-mobile.1b3c82ea.jpg" alt=""/>
+                    </div>
 
                     <div className="hidden md:block">
                         <div>

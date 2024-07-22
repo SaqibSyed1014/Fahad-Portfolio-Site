@@ -210,7 +210,7 @@ input:checked + div svg {
     @apply text-base md:text-lg xl:text-2xl max-md:mb-5
 }
 .process-page .process-step{
-    @apply inline text-nowrap
+    @apply inline text-nowrap max-md:!w-auto
 }
 .process-page .process-arrow{
     @apply max-md:!rotate-90

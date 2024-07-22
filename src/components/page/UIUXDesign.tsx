@@ -21,7 +21,6 @@ export default function UIUXDesign() {
                         end: `bottom+=1600 top`,
                         pin: true,
                         scrub: true,
-                        markers: true
                     },
                 })
                 tl.fromTo('.scribbles-img', {
@@ -60,9 +59,9 @@ export default function UIUXDesign() {
                 const smtl = gsap.timeline({
                     scrollTrigger: {
                         trigger: '.ui-ux-design-step',
-                        start: 'top center',
-                        end: 'bottom center',
-                        scrub: true,
+                        start: 'top center+=200',
+                        end: 'bottom center+=250',
+                        scrub: true
                     }
                 })
                 smtl.from('.ui-ux-design-step', {
@@ -73,7 +72,7 @@ export default function UIUXDesign() {
                 });
                 smtl.from('.ui-ux-design-step .below-md-screens .site-wireframe-mobile', {
                     opacity: 0,
-                });
+                }, '<');
                 smtl.from('.ui-ux-design-step .below-md-screens .final-site-mobile', {
                     opacity: 0,
                 });
@@ -85,7 +84,7 @@ export default function UIUXDesign() {
     })
 
     return (
-        <section className="ui-ux-design-step !my-20 md:!mt-0 md:!mb-80">
+        <section className="ui-ux-design-step !mt-20 md:!mt-0 md:!mb-80">
             <div className="container">
                 <div className="grid grid-cols-12 relative">
                     <div className="md:col-span-6 hidden md:block">
@@ -108,7 +107,7 @@ export default function UIUXDesign() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-12 md:col-span-6 ml-[9%]">
+                    <div className="col-span-12 md:col-span-6 md:ml-[9%]">
                         <div className="ui-ux-content">
                             <h2 className="process-title">UX & UI Design</h2>
                             <p className="process-desc">
@@ -121,10 +120,10 @@ export default function UIUXDesign() {
                         <div className="block md:hidden">
                             <div className="mt-10 pb-[100%] below-md-screens relative">
                                 <img className="scribbles-img-mobile absolute z-[1]" src="https://www.concealed.pt/_next/static/media/scribble.dadc989d.png" alt=""/>
-                                <img className="scribbles-bg-mobile absolute" src="https://www.concealed.pt/_next/static/media/background.2af45376.jpg" alt=""/>
-                                <img className="site-wireframe-mobile absolute z-[3]" src="https://www.concealed.pt/_next/static/media/wireframes.5617e8a4.jpg" alt=""/>
-                                <img className="final-site-mobile absolute z-[4]" src="https://www.concealed.pt/_next/static/media/website-light.c99e7b72.jpg" alt=""/>
-                                <img className="dark-site-mobile absolute z-[5]" src="https://www.concealed.pt/_next/static/media/website-dark.548a6c9a.jpg" alt=""/>
+                                <img className="scribbles-bg-mobile absolute z-[2]" src="https://www.concealed.pt/_next/static/media/background.2af45376.jpg" alt=""/>
+                                <img className="site-wireframe-mobile max-md:scale-[.9] absolute z-[3]" src="https://www.concealed.pt/_next/static/media/wireframes.5617e8a4.jpg" alt=""/>
+                                <img className="final-site-mobile max-md:scale-[.9] absolute z-[4]" src="https://www.concealed.pt/_next/static/media/website-light.c99e7b72.jpg" alt=""/>
+                                <img className="dark-site-mobile max-md:scale-[.9] absolute z-[5]" src="https://www.concealed.pt/_next/static/media/website-dark.548a6c9a.jpg" alt=""/>
                             </div>
                         </div>
                     </div>
