@@ -55,9 +55,9 @@ export default function ImportantDates() {
                         onSlideChange={slideChanged}
                         className="dates-slider"
                     >
-                        {dates.map(date => {
+                        {dates.map((date, index) => {
                             return (
-                                <SwiperSlide className="!w-[80%] cursor-grab !h-auto">
+                                <SwiperSlide key={index} className="!w-[80%] cursor-grab !h-auto">
                                     <div className="flex max-lg:flex-col h-full">
                                         <div className="lg:order-2 h-[250px] md:h-[300px] lg:h-[400px] w-full lg:pb-3">
                                             <img src={date.image} alt="" className="h-full w-full object-cover" />

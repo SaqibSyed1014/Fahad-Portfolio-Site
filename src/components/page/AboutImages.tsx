@@ -55,13 +55,13 @@ export default function AboutImages() {
 
             <div className="container mt-20 md:mt-32">
                 <div className="grid md:grid-cols-12 gap-6 md:gap-12">
-                    <div className="col-span-5">
+                    <div className="col-span-12 md:col-span-5">
                         <p className="text-lg xl:text-2xl">
                             Concealed was created in João Saraiva’s living room table in 2017 with the goal of assembling a fully remote team that would live their best life while delivering their best work.
                         </p>
                     </div>
                     <div className="col-span-1"></div>
-                    <div className="col-span-6">
+                    <div className="col-span-12 md:col-span-6">
                         <p className="text-gray-text text-lg xl:text-2xl">
                             “Despite my professional skills being mainly as a developer I always had a strong passion for design and how these two areas should be combined together. Concealed was born out of that passion with the vision to work in the “shadows” and allowing the work that we do shine by itself. We love to work in different products from diverse areas: share your idea with us so that we can surprise you.”
                         </p>

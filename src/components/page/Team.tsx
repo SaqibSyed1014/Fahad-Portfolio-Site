@@ -40,7 +40,7 @@ export default function Team() {
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-4 md:mt-6">
                             {teamMembers.map((member, index) => {
                                 return (
-                                    <div className="relative bg-[#f9f6f1] overflow-hidden">
+                                    <div key={index} className="relative bg-[#f9f6f1] overflow-hidden">
                                         <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                                         <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-[rgba(4,11,16,0.64)] to-[rgba(4,11,16,0.17)]"></div>
 

@@ -66,7 +66,7 @@ export default function Feedbacks() {
                         >
                             {clientsFeedback.map((client, index) => {
                             return (
-                                <SwiperSlide className="text-light">
+                                <SwiperSlide key={index} className="text-light">
                                     <div className="border border-[#363b3f] p-6 w-full cursor-grab">
                                         <blockquote className="text-lg xl:text-xl">{client.feedback}</blockquote>
                                         <div className="flex max-md:flex-col md:items-center md:justify-between">
