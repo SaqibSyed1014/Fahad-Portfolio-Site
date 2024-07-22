@@ -24,6 +24,14 @@ export default function AboutImages() {
             },
             delay: .8
         });
+        gsap.from('.about-content', {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: AboutImagesSection.current,
+                start: 'top center'
+            },
+            delay: 2
+        });
     });
 
     return (
@@ -54,7 +62,7 @@ export default function AboutImages() {
             </div>
 
             <div className="container mt-20 md:mt-32">
-                <div className="grid md:grid-cols-12 gap-6 md:gap-12">
+                <div className="grid md:grid-cols-12 gap-6 md:gap-12 about-content">
                     <div className="col-span-12 md:col-span-5">
                         <p className="text-lg xl:text-2xl">
                             Concealed was created in João Saraiva’s living room table in 2017 with the goal of assembling a fully remote team that would live their best life while delivering their best work.
