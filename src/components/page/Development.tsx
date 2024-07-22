@@ -120,7 +120,6 @@ export default function Development() {
                         start: 'top center+=200',
                         end: 'bottom center+=250',
                         scrub: true,
-                        markers: true
                     }
                 })
                 smtl.from('.development-step', { opacity: 0, });

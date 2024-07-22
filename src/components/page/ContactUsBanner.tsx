@@ -40,7 +40,7 @@ export default function ContactUsBanner() {
                             <g className="js-svg-lamps " data-svg-origin="107.13300323486328 148.5"
                                transform="matrix(1,0,0,1,0,-15)">
                                 <path d="M108-178h-2V62h2v-240z" fill="#263238"></path>
-                                <g id="lampHead" className="js-svg-lamps-object smooth-transition">
+                                <g id="lampHead" className="js-svg-lamps-object smooth-transition duration-700">
                                     <g className="opacity-0 group-hover:opacity-60 smooth-transition">
                                         <path opacity="0.3"
                                               d="M195.33 409.076s-23.031 44.971-88.18 44.971c-65.15 0-88.198-44.971-88.198-44.971l32.885-311.71h110.608l32.885 311.71z"
