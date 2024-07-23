@@ -11,7 +11,6 @@ export default function Showcase() {
 
     return (
        <>
-           {compoKey}
            <ProjectsList filtersUpdated={updateKey} />
            <Testimonials key={compoKey} />
            <ContactUsBanner />
