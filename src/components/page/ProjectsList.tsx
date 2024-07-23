@@ -5,13 +5,14 @@ import {ProjectCategories} from "../../assets/utils/constants";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export default function ProjectsList() {
+export default function ProjectsList({ filtersUpdated } : { filtersUpdated: () => void }) {
     const [selectedFilter, setFilter] = useState<string>('All');
     const [filteredProjects, setProjects] = useState(projects);
 
     useEffect(() => {
         setProjects(selectedFilter === 'All' ? projects : projects.filter((project) => project.category === selectedFilter));
-    }, [selectedFilter]);
+        filtersUpdated();
+        }, [selectedFilter]);
 
     const ProjectsListSection = useRef<HTMLHeadingElement>(null);
 
@@ -50,7 +51,8 @@ export default function ProjectsList() {
                     </div>
 
                     <div className="flex md:mb-3">
-                        <div className={`project-filter mr-2.5 ${selectedFilter === 'All' ? 'text-primary' : ''}`} onClick={() => setFilter('All')}>
+                        <div className={`project-filter mr-2.5 ${selectedFilter === 'All' ? 'text-primary' : ''}`}
+                             onClick={() => setFilter('All')}>
                             <span>All</span>
                             <span className="project-filters-amount">{projects.length}</span>
                         </div>
@@ -59,7 +61,8 @@ export default function ProjectsList() {
                             return (
                                 <div className="flex items-center" key={index} onClick={() => setFilter(category)}>
                                     <div className="w-1 h-1 bg-light mx-6"></div>
-                                    <div className={`project-filter ${selectedFilter === category ? 'text-primary' : ''}`}>
+                                    <div
+                                        className={`project-filter ${selectedFilter === category ? 'text-primary' : ''}`}>
                                         <span>{category}</span>
                                         <span className="project-filters-amount">{projectCount}</span>
                                     </div>

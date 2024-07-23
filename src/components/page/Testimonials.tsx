@@ -25,8 +25,7 @@ export default function Testimonials() {
         ];
 
         animations.forEach(({ target, endY, speed }) => {
-            gsap.fromTo(
-                target,
+            gsap.fromTo(target,
                 { yPercent: 0 },
                 {
                     yPercent: endY,
@@ -48,7 +47,7 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="testi pt-24 pb-14 md:pt-52 md:pb-20 max-lg:overflow-hidden" ref={TestimonialsSection}>
+        <section className="pt-24 pb-14 md:pt-52 md:pb-20 max-lg:overflow-hidden relative" ref={TestimonialsSection}>
             <div className="container">
                 <div className="hidden lg:grid grid-cols-12 gap-10">
                     <div className="md:col-span-4 md:mt-20">
