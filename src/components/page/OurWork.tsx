@@ -141,8 +141,8 @@ function ProjectTabGroup({ activeSlide, updateIndex } :ProjectTabGroupPropsType)
                         </button>
                         <div  style={{backgroundColor: project.color}}
                                      className={`overflow-hidden aspect-square ${activeSlide === index ? 'block' : 'hidden'}`}>
-                            <img src={project.images[0]} alt=""
-                                 className="w-full h-full object-contain"/>
+                            {/*<img src={project.images[0]} alt=""*/}
+                            {/*     className="w-full h-full object-contain"/>*/}
                         </div>
                     </div>
                 )
