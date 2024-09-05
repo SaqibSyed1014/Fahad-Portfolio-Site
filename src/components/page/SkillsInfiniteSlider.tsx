@@ -1,5 +1,4 @@
 import {skills, tools} from "../../assets/utils/constants";
-import {Skill} from "../../assets/utils/types";
 import {Link} from "react-router-dom";
 import React from "react";
 
