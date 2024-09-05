@@ -54,8 +54,8 @@ export default function Hero() {
                 followerRef.current.style.top = `${mousePosition.y}px`;
             } else {
                 // Default position
-                followerRef.current.style.left = `20%`;
-                followerRef.current.style.top = `54%`;
+                followerRef.current.style.left = `15%`;
+                followerRef.current.style.top = `75%`;
             }
         }
     }, [mousePosition, isHovering]);
@@ -98,16 +98,15 @@ export default function Hero() {
                             <span className="heading-text-piece">I'm</span><br/>
                             <div>
                                 <span className="site-name">Fahad</span>&nbsp;
-                                {/*<span className="heading-text-piece">will</span>*/}
+                                <span className="heading-text-piece">Ibrahim.</span>
                             </div>
-                            <span className="heading-text-piece">Ibrahim.</span>
                             <div ref={followerRef} className="heading-overlay max-md:hidden"></div>
                         </h1>
                     </div>
                 </div>
 
                 <div className="flex">
-                    <div className="w-full 2xl:w-6/12 lg:ml-[8.3%] xl:px-5">
+                    <div className="w-full 2xl:w-8/12 lg:ml-[8.3%] xl:px-5">
                         <h2 className="hero-text">
                             I have 8 years of experience as a full-stack developer, specializing in Mobile And Web Applications. On the frontend, I'm skilled in React-Native, Java, Kotlin, Swift, Next.js, Vue.js and React.js. For backend development, I'm adept in Node.js, Express, Next.js and have experience working with both NoSQL databases like MongoDB and SQL databases like PostgresSql.                        </h2>
                     </div>

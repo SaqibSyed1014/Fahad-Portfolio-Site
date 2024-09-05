@@ -25,8 +25,49 @@ export enum ProjectCategories {
 export const projects = [
     {
         category: ProjectCategories.website,
+        title: 'Renaissant Mobile',
+        subtitle: 'Management',
+        coverImage: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/19/59/5f/19595f3b-3994-222b-0795-60c8142f714c/AppIcon-0-0-1x_U007emarketing-0-0-0-8-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.webp',
+        images: [
+            'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/19/59/5f/19595f3b-3994-222b-0795-60c8142f714c/AppIcon-0-0-1x_U007emarketing-0-0-0-8-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.webp',
+        ],
+        color: '#112233'
+    },
+    {
+        category: ProjectCategories.website,
+        title: 'Renaissant KIOSK (Version 1) ',
+        subtitle: 'Management',
+        coverImage: 'https://play-lh.googleusercontent.com/c666V4-mRPTu9gmnm5Kezgd6rXyhpHNySfskkS_RoYxKsTL8qS02jZmNyGFKqSUNeA0=w240-h480-rw',
+        images: [
+            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
+        ],
+        color: '#112233'
+    },
+    {
+        category: ProjectCategories.website,
+        title: 'Renaissant KIOSK (Version 2) ',
+        subtitle: 'Management',
+        coverImage: 'https://play-lh.googleusercontent.com/c666V4-mRPTu9gmnm5Kezgd6rXyhpHNySfskkS_RoYxKsTL8qS02jZmNyGFKqSUNeA0=w240-h480-rw',
+        images: [
+            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
+        ],
+        color: '#112233'
+    },
+    {
+        category: ProjectCategories.website,
+        title: 'Renaissant Carrier',
+        subtitle: 'Management',
+        coverImage: 'https://play-lh.googleusercontent.com/m5lFuZ473VLZxmPazJEZgJvsBM2ZXJ2pkO3ulIS82NA14VbMjvwrDJN6zkLxMPMZiso=w240-h480-rw',
+        images: [
+            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
+        ],
+        color: '#112233'
+    },
+    {
+        category: ProjectCategories.website,
         title: 'WhatStocks',
-        subtitle: 'Investment | Android & iOS Native',
+        subtitle: 'Stock Market',
+        coverImage: 'https://www.whatstocks.com/WhatStocks_files/main-logo.svg',
         images: [
             'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
         ],
@@ -34,8 +75,9 @@ export const projects = [
     },
     {
         category: ProjectCategories.app,
-        title: 'StriveOn',
-        subtitle: 'Tourism | Android & iOS Native',
+        title: 'SAL- Mobile Modeller',
+        subtitle: 'Finance and Insurance',
+        coverImage: 'https://play-lh.googleusercontent.com/NDiPkWbaweRwO-bmFB6znEE9M0gwY2yg4Ma1W1RWZOLUHLzdW0xUxWW5SHp8ANTYeRjB=w240-h480-rw',
         images: [
             'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/striveon.png'
         ],
@@ -43,8 +85,9 @@ export const projects = [
     },
     {
         category: ProjectCategories.app,
-        title: 'asad',
-        subtitle: '',
+        title: 'VenueGPS',
+        subtitle: 'Information & Events',
+        coverImage: 'https://play-lh.googleusercontent.com/9UUXhN5GMc0epxe_SeMUpz1ZnuL3pPkqdW98KKxNcIShpdGdOOFNnfMWDo0VVqXfHRg=w240-h480-rw',
         images: [
             'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
         ],
@@ -52,8 +95,9 @@ export const projects = [
     },
     {
         category: ProjectCategories.website,
-        title: 'asad',
-        subtitle: '',
+        title: 'DIBBS',
+        subtitle: 'Ecommerce',
+        coverImage: 'https://play-lh.googleusercontent.com/pGfFbAAalDVRzqA2GwE14FS7sjyH5BvsXOeSdaihRvht7dO9Yowm82SInokajSO0XRg=w240-h480-rw',
         images: [
             'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
         ],
@@ -61,8 +105,9 @@ export const projects = [
     },
     {
         category: ProjectCategories.website,
-        title: 'asad',
-        subtitle: '',
+        title: 'Thenx',
+        subtitle: 'Fitness App',
+        coverImage: 'https://play-lh.googleusercontent.com/2SAidba7Exwo6-Wf-NUJMIW3ru2FWREsuDFYWPJyPITtNi5_Gnf2x_s1DWTaAqL1B2s=s48-rw',
         images: [
             'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
         ],
@@ -71,8 +116,9 @@ export const projects = [
 
     {
         category: ProjectCategories.website,
-        title: 'asad',
-        subtitle: '',
+        title: 'Dukan.pk',
+        subtitle: 'Online Stores',
+        coverImage: 'https://play-lh.googleusercontent.com/4_SxmqayQItdQalJqj5laCzQXw7EHczTBaSt61hmuK5ZMps634tcl2Mg1tviuN9Uk6Oc=s48-rw',
         images: [
             'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
         ],
@@ -80,8 +126,9 @@ export const projects = [
     },
     {
         category: ProjectCategories.app,
-        title: 'tuqeer',
-        subtitle: '',
+        title: 'ScoreBoard',
+        subtitle: 'for Sports score counting',
+        coverImage: 'https://play-lh.googleusercontent.com/IaDRPWwXFt5MIBiera9i1scKY6mtHnX5YjFvLcXwOcAVAj5QkawU_3hxBG9E-dvT1eea=w240-h480-rw',
         images: [
             'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
         ],
@@ -89,8 +136,9 @@ export const projects = [
     },
     {
         category: ProjectCategories.website,
-        title: 'asad',
-        subtitle: '',
+        title: 'Dboard',
+        subtitle: 'Attendance Management System',
+        coverImage: 'https://play-lh.googleusercontent.com/UbmlJUFal0zxhfkehz0rBIR6GfkTMSG1wNAkTJo79vyLGjADMI1jc-OEiiWaPQdBIg=w240-h480-rw',
         images: [
             'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
         ],

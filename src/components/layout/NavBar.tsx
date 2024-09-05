@@ -7,7 +7,7 @@ export default function NavBar() {
     const location = useLocation();
     const menuLinks = [
         { label: 'Home', path: '/', title: 'Home' },
-        { label: 'Showcase', path: '/showcase', title: 'Showcase' },
+        { label: 'Projects', path: '/projects', title: 'Project' },
         // { label: 'Process', path: '/process', title: 'Process' },
         { label: 'About', path: '/about', title: 'About' },
         { label: <>Say Hello <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="styles_base-button__icon__EYMfV styles_base-button__icon--no-margin-right__rJm3b

@@ -4,8 +4,7 @@ import {Link, NavLink} from "react-router-dom";
 export default function Footer() {
     const menuLinks = [
         { label: 'Home', path: '/' },
-        { label: 'Showcase', path: '/showcase' },
-        // { label: 'Process', path: '/process' },
+        { label: 'Projects', path: '/projects' },
         { label: 'About', path: '/about' },
         { label: 'Say Hello', path: '/contact-us' }
     ]
