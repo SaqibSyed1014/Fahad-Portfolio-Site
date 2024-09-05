@@ -314,3 +314,47 @@ input:checked + div svg {
 .project-filter{
     @apply relative font-light cursor-pointer hover:text-primary transition duration-300 ease-in-out
 }
+
+
+.carousel-container {
+    /*overflow: hidden;*/
+    position: relative;
+    height: 80px;
+    border-color: #4b5563;
+    width: 100%;
+}
+
+.carousel-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-card > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.carousel-track {
+    display: flex;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    gap: 24px;
+    width: 200%;
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}

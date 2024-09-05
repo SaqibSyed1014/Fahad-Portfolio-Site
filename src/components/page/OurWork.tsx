@@ -52,7 +52,7 @@ export default function OurWork() {
                     </div>
 
                     <div className="max-sm:pt-5">
-                        <Link to="showcase" className="primary-btn">View all projects</Link>
+                        <Link to="projects" className="primary-btn">View all projects</Link>
                     </div>
                 </div>
 

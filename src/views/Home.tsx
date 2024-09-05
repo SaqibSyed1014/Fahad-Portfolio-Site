@@ -3,6 +3,7 @@ import WhatWeDo from "../components/page/WhatWeDo";
 import Feedbacks from "../components/page/Feedbacks";
 import ContactUsBanner from "../components/page/ContactUsBanner";
 import OurWork from "../components/page/OurWork";
+import SkillsInfiniteSlider from "../components/page/SkillsInfiniteSlider";
 
 export default function Home() {
 
@@ -11,6 +12,7 @@ export default function Home() {
             <Hero/>
             <WhatWeDo/>
             <OurWork />
+            <SkillsInfiniteSlider />
             <Feedbacks />
             <ContactUsBanner />
         </>

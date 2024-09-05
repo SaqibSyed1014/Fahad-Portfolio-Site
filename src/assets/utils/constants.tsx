@@ -3,6 +3,7 @@ import SimMarket from "../imgs/simmarket.webp";
 import SeaForester from "../imgs/seaforester.webp";
 import Cantihodo from "../imgs/cantinhodocoimbra.webp";
 import React from "react";
+import {Skill, Tool} from "./types";
 
 enum ProjectColors {
     Blue = '#589BDE',
@@ -301,7 +302,7 @@ export const dates = [
     }
 ]
 
-export const skills :{ title: string, description: string, icon: string, rating: number }[] = [
+export const skills :Skill[] = [
     {
         title: 'ReactNative',
         description: '',
@@ -424,64 +425,64 @@ export const skills :{ title: string, description: string, icon: string, rating:
     },
 ]
 
-export const tools = [
+export const tools :Tool[] = [
     {
-        name: 'Xcode',
-        image: 'https://devprofiles.thundertechsol.com/devdock/public/png/xcode-seeklogo.png'
+        title: 'Xcode',
+        icon: 'https://devprofiles.thundertechsol.com/devdock/public/png/xcode-seeklogo.png'
     },
     {
-        name: 'Android Studio',
-        image: 'https://devprofiles.thundertechsol.com/devdock/public/png/Group 1.png'
+        title: 'Android Studio',
+        icon: 'https://devprofiles.thundertechsol.com/devdock/public/png/Group 1.png'
     },
     {
-        name: 'VS Code',
-        image: 'https://devprofiles.thundertechsol.com/devdock/public/png/vs code.png'
+        title: 'VS Code',
+        icon: 'https://devprofiles.thundertechsol.com/devdock/public/png/vs code.png'
     },
     {
-        name: 'Postman',
-        image: 'https://devprofiles.thundertechsol.com/devdock/public/png/postman.png'
+        title: 'Postman',
+        icon: 'https://devprofiles.thundertechsol.com/devdock/public/png/postman.png'
     },
     {
-        name: 'cPanel',
-        image: 'https://devprofiles.thundertechsol.com/devdock/public/png/Vector.png'
+        title: 'cPanel',
+        icon: 'https://devprofiles.thundertechsol.com/devdock/public/png/Vector.png'
     },
     {
-        name: 'Docker Hub',
-        image: 'https://devprofiles.thundertechsol.com/devdock/public/png/docker.png'
+        title: 'Docker Hub',
+        icon: 'https://devprofiles.thundertechsol.com/devdock/public/png/docker.png'
     },
     {
-        name: "GitHub",
-        image:
+        title: "GitHub",
+        icon:
             "https://devprofiles.thundertechsol.com/devdock/public/tools/github.png",
     },
     {
-        name: "Slack",
-        image:
+        title: "Slack",
+        icon:
             "https://devprofiles.thundertechsol.com/devdock/public/png/slack.png",
     },
     {
-        name: "Notion",
-        image:
+        title: "Notion",
+        icon:
             "https://devprofiles.thundertechsol.com/devdock/public/png/notion.png",
     },
     {
-        name: "Discord",
-        image:
+        title: "Discord",
+        icon:
             "https://devprofiles.thundertechsol.com/devdock/public/png/discord.png",
     },
     {
-        name: "Chat GPT",
-        image:
+        title: "Chat GPT",
+        icon:
             "https://devprofiles.thundertechsol.com/devdock/public/png/chatgpt.png",
     },
     {
-        name: "App Store",
-        image:
+        title: "App Store",
+        icon:
             "https://devprofiles.thundertechsol.com/devdock/public/png/appstore.png",
     },
     {
-        name: "Play Store",
-        image:
+        title: "Play Store",
+        icon:
             "https://devprofiles.thundertechsol.com/devdock/public/png/google play store.png",
     },
 

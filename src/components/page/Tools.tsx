@@ -17,9 +17,9 @@ export default function Tools() {
                     {tools.map((value, index) => {
                             return (<div className="flex flex-col text-center" key={index}>
                                     <div className="size-12 mx-auto">
-                                        <img src={value.image} alt="" className="w-full h-full object-contain" />
+                                        <img src={value.icon} alt={value.title} className="w-full h-full object-contain" />
                                     </div>
-                                    <h4 className="text-lg lg:mt-5 mb-2 xl:text-2xl font-medium">{value.name}</h4>
+                                    <h4 className="text-lg lg:mt-5 mb-2 xl:text-2xl font-medium">{value.title}</h4>
                                 </div>
                             )
                         }
