@@ -3,7 +3,7 @@ import SimMarket from "../imgs/simmarket.webp";
 import SeaForester from "../imgs/seaforester.webp";
 import Cantihodo from "../imgs/cantinhodocoimbra.webp";
 import React from "react";
-import {Skill, Tool} from "./types";
+import {Project, Skill, Tool} from "./types";
 
 enum ProjectColors {
     Blue = '#589BDE',
@@ -23,127 +23,225 @@ export enum ProjectCategories {
     lab = 'Lab'
 }
 
-export const projects = [
+export const projects :Project[] = [
     {
+        id: 'renaissant-mobile',
         category: ProjectCategories.website,
         title: 'Renaissant Mobile',
         subtitle: 'Management',
+        description: 'The Renaissant solution suite makes organizations more efficient, promotes stakeholder accountability, and weaves safety into all features and functions.',
         coverImage: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/19/59/5f/19595f3b-3994-222b-0795-60c8142f714c/AppIcon-0-0-1x_U007emarketing-0-0-0-8-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.webp',
         images: [
-            'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/19/59/5f/19595f3b-3994-222b-0795-60c8142f714c/AppIcon-0-0-1x_U007emarketing-0-0-0-8-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.webp',
+            'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/e4/d7/b2/e4d7b2d9-1d83-38c6-3ef0-aa170f755cc8/9013ea1a-bac0-4705-88cc-b81c6e08cf11_simulator_screenshot_C497BB09-F400-4F8E-82F5-C175C7DBA6B6.png/300x0w.webp',
+            'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/2d/36/60/2d366048-a002-bd7a-1082-82eaabbd7038/c4533570-b1ff-43da-a24d-9404cc9376dc_Simulator_Screen_Shot_-_iPhone_11_Pro_Max_-_2022-02-25_at_20.11.31.png/300x0w.webp',
+            'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/b6/46/3d/b6463d34-3245-f832-c66c-10494982a44f/a46bbcc8-e1d3-4497-b686-78e69d1bdd5e_Simulator_Screen_Shot_-_iPhone_11_Pro_Max_-_2022-02-25_at_20.15.36.png/300x0w.webp',
+            'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/25/18/6d/25186d4f-be8c-c40b-ac55-01b90e3ba6b5/15a64e40-f39f-4cdc-a5c7-1a0191c3f375_Simulator_Screen_Shot_-_iPhone_11_Pro_Max_-_2021-02-19_at_11.40.36.png/300x0w.webp'
         ],
-        color: '#112233'
+        appStoreLink: 'https://apps.apple.com/us/app/renaissant-mobile/id1498412010',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.intelaegis.mobile X',
+        tools: [],
+        color: '#e31892'
     },
     {
+        id: 'renaissant-kiosk-v1',
         category: ProjectCategories.website,
         title: 'Renaissant KIOSK (Version 1) ',
         subtitle: 'Management',
+        description: 'The Renaissant solution suite makes organizations more efficient, promotes stakeholder accountability, and weaves safety into all features and functions.',
         coverImage: 'https://play-lh.googleusercontent.com/c666V4-mRPTu9gmnm5Kezgd6rXyhpHNySfskkS_RoYxKsTL8qS02jZmNyGFKqSUNeA0=w240-h480-rw',
         images: [
-            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
+            'https://play-lh.googleusercontent.com/oh3o0sxJn-h5eb1xvwf658ElPjHe6I0Zhi1bROVx9-24vYnRreIP6P81Tn6LyNARuxrP=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/qREVRD8fkQlYPB9mclFc-ZjO5oVop9DQR3eh9hxeoKcCNq3ltfsOeSY4NpKK4qrAKg=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/ldxngSoxdB1vm9pC_60cvQXtwPXqiNz5EwQYXt4cKD8cQFjcESLXrr27EE2dIb8Uy2U=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/sJRpoQvEsGhuC4k7lbVb5AdcFWQn3DG13d0i-pXqrz7zXcA1hvQw-NMqpsnKZwIrZWy3=w526-h296-rw'
         ],
-        color: '#112233'
+        appStoreLink: '',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.intelaegis.kiosk X',
+        tools: [],
+        color: ProjectColors.Red
     },
     {
+        id: 'renaissant-kiosk-v2',
         category: ProjectCategories.website,
         title: 'Renaissant KIOSK (Version 2) ',
         subtitle: 'Management',
+        description: 'The Renaissant solution suite makes organizations more efficient, promotes stakeholder accountability, and weaves safety into all features and functions.',
         coverImage: 'https://play-lh.googleusercontent.com/c666V4-mRPTu9gmnm5Kezgd6rXyhpHNySfskkS_RoYxKsTL8qS02jZmNyGFKqSUNeA0=w240-h480-rw',
         images: [
-            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
+            'https://play-lh.googleusercontent.com/oh3o0sxJn-h5eb1xvwf658ElPjHe6I0Zhi1bROVx9-24vYnRreIP6P81Tn6LyNARuxrP=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/qREVRD8fkQlYPB9mclFc-ZjO5oVop9DQR3eh9hxeoKcCNq3ltfsOeSY4NpKK4qrAKg=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/ldxngSoxdB1vm9pC_60cvQXtwPXqiNz5EwQYXt4cKD8cQFjcESLXrr27EE2dIb8Uy2U=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/sJRpoQvEsGhuC4k7lbVb5AdcFWQn3DG13d0i-pXqrz7zXcA1hvQw-NMqpsnKZwIrZWy3=w526-h296-rw'
         ],
-        color: '#112233'
+        appStoreLink: '',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.renaissantkiosk',
+        tools: [],
+        color: ProjectColors.Red
     },
     {
+        id: 'renaissant-carrier',
         category: ProjectCategories.website,
         title: 'Renaissant Carrier',
         subtitle: 'Management',
+        description: 'The Renaissant solution suite makes organizations more efficient, promotes stakeholder accountability, and weaves safety into all features and functions.',
         coverImage: 'https://play-lh.googleusercontent.com/m5lFuZ473VLZxmPazJEZgJvsBM2ZXJ2pkO3ulIS82NA14VbMjvwrDJN6zkLxMPMZiso=w240-h480-rw',
         images: [
-            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
+            'https://play-lh.googleusercontent.com/MKcZKgO9FFmwGCFUWvJQu6QrNQFHwullsNjt3e2NoaEo9aLclEFGy2scdA7ft-Gcj4lE=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/b6F6jNvUMaHUiD7L0e89V2wkMjoHftBnC8aARRakzJdakVQULCwr2JRloqfRwjFcI7w=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/mpB4flqfwnpJ9g3Nq4eTax607UO9vcXz1ANqI30tRSFEJJ9GvxXJOxtKguKli9PoWw=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/FgiAxU6xL2JmheVMqWLiHEMYFbWuo679ErqWdkKO6yapPp29JFHTaMY2tmEUkNeHOg=w526-h296-rw'
         ],
-        color: '#112233'
+        appStoreLink: '',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.renaissant.carrier',
+        tools: [],
+        color: ProjectColors.Red
     },
     {
+        id: 'whatstocks',
         category: ProjectCategories.website,
         title: 'WhatStocks',
         subtitle: 'Stock Market',
+        description: 'A place that combines discovering, learning, and asking questions about stocks, to enable you to create your ideal investment portfolio.',
         coverImage: 'https://www.whatstocks.com/WhatStocks_files/main-logo.svg',
         images: [
-            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/whatstocks.png',
+            'https://www.whatstocks.com/img/welcome/welcome-art.webp',
+            'https://www.whatstocks.com/img/discover/discover-art.webp',
+            'https://www.whatstocks.com/img/my-edge/my-edge-art.webp',
+            'https://www.whatstocks.com/img/themes/themes-art_2.webp'
         ],
+        appStoreLink: '',
+        playStoreLink: '',
+        tools: [],
         color: '#112233'
     },
     {
+        id: 'sal',
         category: ProjectCategories.app,
         title: 'SAL- Mobile Modeller',
         subtitle: 'Finance and Insurance',
+        description: 'Tap into the cost of life insurance products with the Mobile Modeller. Harnessing the power and flexibility of the Mo.net Financial Modelling Platform the app demonstrates how your existing financial models can be used to service front-office or back-office insurance calculations.',
         coverImage: 'https://play-lh.googleusercontent.com/NDiPkWbaweRwO-bmFB6znEE9M0gwY2yg4Ma1W1RWZOLUHLzdW0xUxWW5SHp8ANTYeRjB=w240-h480-rw',
         images: [
-            'https://devprofiles.thundertechsol.com/devdock/public/portfolios/fahad/striveon.png'
+            'https://play-lh.googleusercontent.com/zUy2TKGLowAW5FpR3ZXZU0nTSO5G5gwVnr-OWB6tG-cSzaD860XNJlCfghP259wDMQE=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/__8spwjRz7C46zLEcRUGsg1Kfaqo8mI6z-4SzhMaXjrIZ8dVgynGs0NRxEQxEei1Fg=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/f-KWcRjjvm6zgMqglXyCJCHOgYXxe3egR8LsX8RHAmPxJSydPBIcgnJrKE4JU7xb_XY=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/VRpP2eJ3vM1mey1MMCAkUFO8wUQ76M9BoxtTg7TIk2B1AHkna2ngGekAYwyjpGUzsQ=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/EYPpN1Yd1m-KsBcbsB2601PyOh2f8UvKo7Pq4wU9gWinUZnkFb0AVJPgDRWTTMtVVFM=w526-h296-rw'
         ],
-        color: '#7e807d'
+        appStoreLink: '',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.renaissant.carrier',
+        tools: [],
+        color: ProjectColors.LightBlue
     },
     {
+        id: 'venvue-gps',
         category: ProjectCategories.app,
         title: 'VenueGPS',
         subtitle: 'Information & Events',
+        description: 'VenueGPS guarantees a simplified and revolutionized new way the entire world will travel, by personalizing all entertainment experiences from fantasy to real-time fun! VenueGPS is a digital promoter, concierge, yellow page directory & marketing managing application to Consumers, Businesses and Entertainers.',
         coverImage: 'https://play-lh.googleusercontent.com/9UUXhN5GMc0epxe_SeMUpz1ZnuL3pPkqdW98KKxNcIShpdGdOOFNnfMWDo0VVqXfHRg=w240-h480-rw',
         images: [
-            'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
+            'https://play-lh.googleusercontent.com/FPnK0x6Nr5BvgymjVWILp8eQZQpNd2tyIf9kJlG7hlcpOcFS8R9_2V5U3hZgRmtBsfKT=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/HNOWFi8JZTamwHqbbEJDp-IYYNJ9Nf3psPqysqyLOrbLhIU6B4b3RB_dc2qjJ7oi8sw=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/Gq8tkmN1NhazNGf3ye7NbSVVD4i3OHbOpD7rU9Id5Q-tBZqssnCwcEs7fTH_j4NAVLAs=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/8yV27331DdZDG_giwyCaYOm1NJ8MwE7Siqoqn5ZWbb8GDP6y1tkpfSO-juZT18JrsEnD=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/BT6PwWK9ysD5oKuHsBuWVnqAi60s1VvEKIhBN3vk75jmoazcYWR8eeX3PCYm14xV-0m0=w526-h296-rw'
         ],
+        appStoreLink: 'https://apps.apple.com/pk/app/venuegps/id1613059136',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.thunders.venuegps',
+        tools: [],
         color: '#887654'
     },
     {
+        id: 'dibbs',
         category: ProjectCategories.website,
         title: 'DIBBS',
         subtitle: 'Ecommerce',
+        description: 'A platform for local business to connect with their communities. Find great deals from businesses you’ve shopped with in the past or discover new ones that you may love. From restaurants, to entertainment, to self-care, you’re sure to find something that will be to good to pass up. Pay only a fraction of the price of the deal upfront to claim it and redeem it whenever you’re ready.',
         coverImage: 'https://play-lh.googleusercontent.com/pGfFbAAalDVRzqA2GwE14FS7sjyH5BvsXOeSdaihRvht7dO9Yowm82SInokajSO0XRg=w240-h480-rw',
         images: [
-            'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
+            'https://play-lh.googleusercontent.com/gkOgHqoD4YMYcJEtfWmn7SS_fNm95erTX53MB6A5xucSBL109NoWyEPMK-0_2-iquKk=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/6cJklY8e3aRt0nWl9yBMjZde7-ez_w6zbGk7xlDZl0N8jx1OhxSZgpkiZpT-qTv0z1xU=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/RStgM8B6z0pyP8PnuVZ0pPk62bJwaXUWAa22UJ12nQfbru5L54p0NFxudWltP7SeqjlY=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/KKdAp5fECOdjNBQcuI4YIRCnUT9qNKTFw3am01sKgNlEdNXy0e_iKr842V5LGxSNGJYs=w526-h296-rw'
         ],
+        appStoreLink: '',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.thunder.dibbs',
+        tools: [],
         color: ProjectColors.Blue
     },
     {
+        id: 'thenx',
         category: ProjectCategories.website,
         title: 'Thenx',
         subtitle: 'Fitness App',
+        description: 'Thenx is designed to teach anyone the secret techniques and knowledge of bodyweight training. These programs have been tested and developed over many years by professional instructors and athletes to provide the most direct and simplistic format to excel in calisthenics fitness and ability. In these programs you will face challenges, but the skills and abilities that you will develop through proper guided progression is obtainable by anyone from any age or any fitness level. The content provided is designed in short video format with the purpose to convey the techniques and exercises at your own pace, ensuring proper form to be easily repeated, personalizing your workout experience.',
         coverImage: 'https://play-lh.googleusercontent.com/2SAidba7Exwo6-Wf-NUJMIW3ru2FWREsuDFYWPJyPITtNi5_Gnf2x_s1DWTaAqL1B2s=s48-rw',
         images: [
-            'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
+            'https://play-lh.googleusercontent.com/mfVTid45zoUSatVSDa_H1Cr0tqinwlTZGKFIJd2PTw6L31nM6z5d6-HJWNGn2Anhu2w=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/dZWkKDwJP6niJGMZYEKO0okf5onbXcOHiw-PNJlTec4kgYy_iHqa8cjeiTQYbVVI99Eb=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/ymzpZd-yE5LGBHkhNOcOjOzEZumnnSV9LCP8JVued5VZVlMtf4ZtOttruoRyl2oZA_s=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/9nUaXr_YshTsP_X_W_DkqG1c-4unjRf6oskfX7Wyfh6wtSgBl2irTpiG6d39IeCOxBE=w526-h296-rw'
         ],
+        appStoreLink: 'https://apps.apple.com/us/app/thenx/id1192413645',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.sysops.thenx',
+        tools: [],
         color: "#894423"
     },
 
     {
+        id: 'dukan-pk',
         category: ProjectCategories.website,
         title: 'Dukan.pk',
+        description: 'Dukan is a complete e-commerce solution for you to take your business online. Dukan App allows you to create your store in just 29 seconds and access a host of services that are critical for a successful e-commerce business. From product and inventory management, khata - bookkeeping, accepting online payments through EasyPaisa, JazzCash OR credit cards, multiple delivery options with Bykea or Pandago for quick 30 mins delivery to Trax and Movex for nationwide fulfillment.',
         subtitle: 'Online Stores',
         coverImage: 'https://play-lh.googleusercontent.com/4_SxmqayQItdQalJqj5laCzQXw7EHczTBaSt61hmuK5ZMps634tcl2Mg1tviuN9Uk6Oc=s48-rw',
         images: [
-            'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
+            'https://play-lh.googleusercontent.com/TbcU9eLbnArFzSms04ggMZ_rd9fh4imhl5VxplX3ZhoQdBjG0j7T9VfdmXGNlPYEFg=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/c5h3nmYermr9XbDf28V6WVK7aajJ86ZGTIkgjk1QVqJQYREpZZWX6fKPu9tNWoIacPo=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/tm6U289vWjhqyiVH5JatX1P0_qTm7vvhcqGGG-1lOQEmlEKUSOiw9F4dbdMIEEdRt1Ag=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/Fyu4xBVMvN_gLia-F0tD7psEdsKDT-JVvRbqMsvQEyOeX7y-gSX1XdV00_DsrnTa0g=w2560-h1440-rw'
         ],
+        appStoreLink: 'https://apps.apple.com/pk/app/dukan-pk-digitizing-sellers/id1525721580',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=pk.dukan&hl=en&gl=US',
+        tools: [],
         color: "#090954"
     },
     {
+        id: 'score-board',
         category: ProjectCategories.app,
         title: 'ScoreBoard',
         subtitle: 'for Sports score counting',
+        description: 'Whether you\'re a coach, a referee, or just a fan, our app has everything you need to keep track of the score. With our easy-to-use interface and customizable features, you can create the perfect scoreboard for any game.',
         coverImage: 'https://play-lh.googleusercontent.com/IaDRPWwXFt5MIBiera9i1scKY6mtHnX5YjFvLcXwOcAVAj5QkawU_3hxBG9E-dvT1eea=w240-h480-rw',
         images: [
-            'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
+            'https://play-lh.googleusercontent.com/pDzfn0RRIshbMDQrno0Da4CokQnYpdR7zkksrTCtKU8iekGjf1uZ6ZNVNODzV7fz_aQ=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/WbOnwaMbzMe5UP6TQ-jbZZ-vCoDp8ltidxC0GSBOolHuM9yiQPAP7L0vLvaTDFdxShc=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/u58vF871rISi3TmaKB3YSQbcr0Dn2HAhCCP4u_AE1Fiq7YIN54Rb7eItPYTEoP59YSI=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/mROZpphmws6hRyWf35cAjpIVU3tOR_N9wOb_PZf9AzRIuD2oG2q_K0Ze_CeFOJL-U48=w526-h296-rw'
         ],
+        appStoreLink: '',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.vuproductionsmedia.scoreboard&hl=en&gl=US',
+        tools: [],
         color: "#674379"
     },
     {
+        id: 'dboard',
         category: ProjectCategories.website,
         title: 'Dboard',
         subtitle: 'Attendance Management System',
+        description: 'Revolutionize your office management experience with our cutting-edge, all-encompassing platform designed to seamlessly handle both employee administration and attendance tracking. This sophisticated solution empowers you to efficiently navigate through the intricacies of workforce management, offering a centralized hub for all your office-related tasks.',
         coverImage: 'https://play-lh.googleusercontent.com/UbmlJUFal0zxhfkehz0rBIR6GfkTMSG1wNAkTJo79vyLGjADMI1jc-OEiiWaPQdBIg=w240-h480-rw',
         images: [
-            'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80'
+            'https://play-lh.googleusercontent.com/8123374g5_lOBf5SM3L9EIjFyXFEEDWWn5popcXjBwfvYUscO39YDgOrONV5f4ZNAcE=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/v5mxGqODp1pQsqdqauMCkDeStN_LBgBkyVqu3HZkkH8P3iPPvHrfLhasmacldDHUnuE=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/GAvGAFaNw8tPhvNDse6vg9YMMjvTQv87MqF_XPQxxgRZMLbJHS29pAxf7hSX2CFdgWo=w526-h296-rw',
+            'https://play-lh.googleusercontent.com/XmHlPeh5N02bB-idhj1OlzJew4zhtY7bxdkpkUK1XNPT8sryjHOlTuZq6_tZe7-pINs=w526-h296-rw'
         ],
-        color: '#553300'
+        appStoreLink: '',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.devdock.dboard&pli=1',
+        tools: [],
+        color: ProjectColors.Red
     }
 ]
 

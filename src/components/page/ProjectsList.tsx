@@ -88,7 +88,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project } : ProjectCardProps) {
     return (
-        <Link to="" className="project-card">
+        <Link to={`/project/${project.id}`} className="project-card">
             <div className="flex flex-col h-full">
                 <div className="relative h-full md:!bg-dark-gray p-5 transition duration-500 ease-in-out" style={{ background: project.color }}>
                     <div className="overflow-hidden h-[300px] flex items-center justify-center p-5" style={{ background: project.color }}>

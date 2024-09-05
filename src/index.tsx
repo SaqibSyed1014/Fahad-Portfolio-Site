@@ -9,6 +9,7 @@ import About from "./views/About";
 import { register } from 'swiper/element/bundle';
 import Showcase from "./views/Showcase";
 import ContactUs from "./views/ContactUs";
+import ProjectDetail from "./views/ProjectDetail";
 
 register();
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<DefaultLayout />}>
             <Route index element={<Home />} />
             <Route path="projects" element={<Showcase />} />
+            <Route path="project/:projectId" element={<ProjectDetail />} />
             <Route path="about" element={<About />} />
             <Route path="contact-us" element={<ContactUs />} />
         </Route>

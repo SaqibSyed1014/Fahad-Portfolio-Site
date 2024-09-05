@@ -11,3 +11,17 @@ export interface Tool {
     title: string,
     icon: string
 }
+
+export interface Project {
+    id: string,
+    category: string
+    title: string,
+    subtitle: string
+    description: string
+    coverImage: string
+    images: string[]
+    playStoreLink: string
+    appStoreLink: string
+    tools: string[]
+    color: string
+}
