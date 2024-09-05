@@ -3,17 +3,18 @@ import {Link, NavLink} from "react-router-dom";
 
 export default function Footer() {
     const menuLinks = [
+        { label: 'Home', path: '/' },
         { label: 'Showcase', path: '/showcase' },
-        { label: 'Process', path: '/process' },
+        // { label: 'Process', path: '/process' },
         { label: 'About', path: '/about' },
         { label: 'Say Hello', path: '/contact-us' }
     ]
 
     const socialLinks = [
-        { label: 'Facebook', path: '' },
-        { label: 'Instagram', path: '' },
-        { label: 'Linkedin', path: '' },
-        { label: 'Twitter', path: '' }
+        { label: 'GitHub', path: 'https://github.com/Bilal10Akram' },
+        { label: 'Linkedin', path: 'https://www.linkedin.com/in/muhammad-bilal-akram-99b033129/' },
+        { label: 'Skype', path: 'https://join.skype.com/invite/yskNEqJVPYwu' },
+        { label: 'Stack Overflow', path: 'https://stackoverflow.com/users/22293418/asad-meer?tab=profile' }
     ]
 
     return (
@@ -29,7 +30,7 @@ export default function Footer() {
                             ))}
                         </ul>
                     </div>
-                    <div className="col-span-6 md:col-span-3 xl:col-span-2 md:order-2">
+                    <div className="col-span-6 md:col-span-3 xl:col-span-3 md:order-2">
                         <ul className="flex flex-col gap-6 md:px-10">
                             {socialLinks.map((link, index) => (
                                 <li key={index}>
@@ -38,12 +39,15 @@ export default function Footer() {
                             ))}
                         </ul>
                     </div>
-                    <div className="col-span-12 md:col-span-6 xl:col-span-8">
+                    <div className="col-span-12 md:col-span-6 xl:col-span-7">
                         <div className="mt-20 md:mt-0">
-                            <SiteLogo />
+                            {/*<SiteLogo />*/}
 
-                            <a href="mailto:hell@conceal.com" className="text-2xl font-medium mb-8 mt-6 block">
-                                hello@conceal.com
+                            <a href="mailto:+92 339 4080410" className="text-2xl font-medium mb-8 mt-6 block">
+                                +92 339 4080410
+                            </a>
+                            <a href="mailto:fibrahimbutt@gmail.com" className="text-2xl font-medium mb-8 mt-6 block">
+                                fibrahimbutt@gmail.com
                             </a>
                         </div>
                     </div>

@@ -82,7 +82,7 @@ export default function ContactUsBanner() {
                                 Have an idea?
                             </h3>
                             <p className="mt-3 text-xl lg:text-2xl">
-                                We can help you bring it to life!
+                                I can help you bring it to life!
                             </p>
 
                             <Link to="/contact-us" className="styled-button mt-8">

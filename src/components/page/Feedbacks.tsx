@@ -75,7 +75,7 @@ export default function Feedbacks() {
                                                     <img src={client.image} alt={client.name}/>
                                                 </div>
                                                 <p className="text-[#9ea4a6] font-medium text-base pt-2">
-                                                    {client.name}, {client.designation}, {client.companyName}
+                                                    {client.name} {client.designation && ','} {client.companyName}
                                                 </p>
                                             </div>
                                             <div className="text-end">

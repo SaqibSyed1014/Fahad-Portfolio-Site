@@ -6,8 +6,9 @@ import { useLocation } from 'react-router-dom';
 export default function NavBar() {
     const location = useLocation();
     const menuLinks = [
+        { label: 'Home', path: '/', title: 'Home' },
         { label: 'Showcase', path: '/showcase', title: 'Showcase' },
-        { label: 'Process', path: '/process', title: 'Process' },
+        // { label: 'Process', path: '/process', title: 'Process' },
         { label: 'About', path: '/about', title: 'About' },
         { label: <>Say Hello <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="styles_base-button__icon__EYMfV styles_base-button__icon--no-margin-right__rJm3b
               "><path fillRule="evenodd" clipRule="evenodd" d="M10.97 14.47a.75.75 0 101.06 1.06l5-5a.75.75 0 000-1.06l-5-5a.75.75 0 10-1.06 1.06l3.72 3.72H4a.75.75 0 000 1.5h10.69l-3.72 3.72z" fill="currentColor"></path></svg></>,
@@ -29,7 +30,8 @@ export default function NavBar() {
         <nav className="py-5 sm:py-10">
             <div className="container">
                 <div className="flex items-center justify-between relative z-50">
-                    <SiteLogo />
+                    {/*<SiteLogo />*/}
+                    <div></div>
 
                     <ul className="hidden md:flex gap-7 text-light font-inter">
                         {menuLinks.map((link, index) => (

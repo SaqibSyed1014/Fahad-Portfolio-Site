@@ -56,7 +56,7 @@ export default function Testimonials() {
                                 {clientsFeedback[1].briefFeedback}
                             </blockquote>
                             <p className="font-medium text-base text-gray-text mt-3 md:mt-4">
-                                {clientsFeedback[1].name}, {clientsFeedback[1].designation}, {clientsFeedback[1].companyName}
+                                {clientsFeedback[1].name} {clientsFeedback[1].designation && ','} {clientsFeedback[1].companyName}
                             </p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ export default function Testimonials() {
                                 {clientsFeedback[0].briefFeedback}
                             </blockquote>
                             <p className="font-medium text-base text-gray-text mt-3 md:mt-4">
-                                {clientsFeedback[0].name}, {clientsFeedback[0].designation}, {clientsFeedback[0].companyName}
+                                {clientsFeedback[0].name} {clientsFeedback[0].designation && ','} {clientsFeedback[0].companyName}
                             </p>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ export default function Testimonials() {
                                 {clientsFeedback[3].briefFeedback}
                             </blockquote>
                             <p className="font-medium text-base text-gray-text mt-3 md:mt-4">
-                                {clientsFeedback[3].name}, {clientsFeedback[3].designation}, {clientsFeedback[3].companyName}
+                                {clientsFeedback[3].name} {clientsFeedback[3].designation && ','} {clientsFeedback[3].companyName}
                             </p>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ export default function Testimonials() {
                                     {clientsFeedback[1].briefFeedback}
                                 </blockquote>
                                 <p className="font-medium text-base text-gray-text mt-3 md:mt-4">
-                                    {clientsFeedback[1].name}, {clientsFeedback[1].designation}, {clientsFeedback[1].companyName}
+                                    {clientsFeedback[1].name} {clientsFeedback[1].designation && ','} {clientsFeedback[1].companyName}
                                 </p>
                             </div>
                         </SwiperSlide>
@@ -111,7 +111,7 @@ export default function Testimonials() {
                                     {clientsFeedback[0].briefFeedback}
                                 </blockquote>
                                 <p className="font-medium text-base text-gray-text mt-3 md:mt-4">
-                                    {clientsFeedback[0].name}, {clientsFeedback[0].designation}, {clientsFeedback[0].companyName}
+                                    {clientsFeedback[0].name} {clientsFeedback[0].designation && ','} {clientsFeedback[0].companyName}
                                 </p>
                             </div>
                         </SwiperSlide>
@@ -122,7 +122,7 @@ export default function Testimonials() {
                                     {clientsFeedback[3].briefFeedback}
                                 </blockquote>
                                 <p className="font-medium text-base text-gray-text mt-3 md:mt-4">
-                                    {clientsFeedback[3].name}, {clientsFeedback[3].designation}, {clientsFeedback[3].companyName}
+                                    {clientsFeedback[3].name} {clientsFeedback[3].designation && ','} {clientsFeedback[3].companyName}
                                 </p>
                             </div>
                         </SwiperSlide>

@@ -87,8 +87,8 @@ export default function OurWork() {
                                     return (
                                         <SwiperSlide key={index} onMouseEnter={() => mouseHoverMovement('in')} onMouseLeave={() => mouseHoverMovement('out')} style={{backgroundColor: project.color}}
                                                      className="overflow-hidden">
-                                            {/*<img src={project.images[0]} alt=""*/}
-                                            {/*     className="w-full h-full object-contain"/>*/}
+                                            <img src={project.images[0]} alt=""
+                                                 className="w-full h-full object-contain"/>
                                         </SwiperSlide>
                                     )
                                 })}
