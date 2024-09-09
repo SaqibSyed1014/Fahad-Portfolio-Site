@@ -75,8 +75,8 @@ export default function Feedbacks() {
                                         </blockquote>
                                         <div className="flex max-md:flex-col md:items-center md:justify-between">
                                             <div className="flex items-center gap-3 mt-4">
-                                                <div className="w-8 h-8">
-                                                    <img src={client.image} alt={client.name}/>
+                                                <div className="w-8 h-8 overflow-hidden">
+                                                    <img src={client.image} alt={client.name} className="w-full h-full object-cover" />
                                                 </div>
                                                 <p className="text-[#9ea4a6] font-medium text-base pt-2">
                                                     {client.name}
