@@ -26,19 +26,24 @@ export default function Hero() {
                 if (followerRef.current) {
                     followerRef.current.style.left = `${x}px`;
                     followerRef.current.style.top = `${y}px`;
-                }
-            } else {
-                if (followerRef.current) {
-                    followerRef.current.style.left = `15%`;
-                    followerRef.current.style.top = `75%`;
+                    followerRef.current.classList.remove('mouse-left');
                 }
             }
         };
+
+        const handleMouseLeave = () => {
+            if (followerRef.current) {
+                followerRef.current.style.left = `15%`;
+                followerRef.current.style.top = `75%`;
+                followerRef.current.classList.add('mouse-left');
+            }
+        }
 
         if (headingRef.current) {
             headingRef.current.addEventListener('mousemove', function (event) {
                 handleMouseMove(event);
             })
+            headingRef.current.addEventListener('mouseleave', handleMouseLeave);
         }
 
         return () => {
@@ -85,7 +90,7 @@ export default function Hero() {
                             <span className="site-name">{PortfolioOwner.FirstName}</span>&nbsp;
                             <span className="heading-text-piece">{PortfolioOwner.LastName}.</span>
                         </div>
-                        <div ref={followerRef} className="heading-overlay max-md:hidden"></div>
+                        <div ref={followerRef} className="heading-overlay mouse-left max-md:hidden"></div>
                     </h1>
                 </div>
 
