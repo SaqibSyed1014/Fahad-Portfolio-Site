@@ -9,7 +9,7 @@ export default function Skills() {
                         Skills
                     </h2>
                     <h3 className="section-header-heading max-w-[620px] mx-auto">
-                        I posses a variety of skills including:
+                        I posses a variety of skills including
                     </h3>
                 </div>
 

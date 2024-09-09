@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
+import {PortfolioOwner} from "../../assets/utils/constants";
 
 export default function Hero() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -91,24 +92,27 @@ export default function Hero() {
 
     return (
         <div className="home-view mt-10 md:mt-20 lg:pr-10">
-            <div className="container" ref={container}>
+            <div className="container 2xl:ml-60" ref={container}>
                 <div className="flex">
-                    <div className="w-full lg:w-10/12 mx-auto xl:px-5">
-                        <h1 ref={headingRef} className="hero-heading">
-                            <span className="heading-text-piece">I'm</span><br/>
-                            <div>
-                                <span className="site-name">Fahad</span>&nbsp;
-                                <span className="heading-text-piece">Ibrahim.</span>
-                            </div>
-                            <div ref={followerRef} className="heading-overlay max-md:hidden"></div>
-                        </h1>
-                    </div>
+                    <h1 ref={headingRef} className="hero-heading">
+                        <span className="heading-text-piece">I'm</span><br/>
+                        <div>
+                            <span className="site-name">{PortfolioOwner.FirstName}</span>&nbsp;
+                            <span className="heading-text-piece">{PortfolioOwner.LastName}.</span>
+                        </div>
+                        <div ref={followerRef} className="heading-overlay max-md:hidden"></div>
+                    </h1>
                 </div>
 
                 <div className="flex">
-                    <div className="w-full 2xl:w-8/12 lg:ml-[8.3%] xl:px-5">
+                    <div className="w-full 2xl:w-8/12">
                         <h2 className="hero-text">
-                            I have 8 years of experience as a full-stack developer, specializing in Mobile And Web Applications. On the frontend, I'm skilled in React-Native, Java, Kotlin, Swift, Next.js, Vue.js and React.js. For backend development, I'm adept in Node.js, Express, Next.js and have experience working with both NoSQL databases like MongoDB and SQL databases like PostgresSql.                        </h2>
+                            I have 8 years of experience as a full-stack developer, specializing in Mobile And Web
+                            Applications. On the frontend, I'm skilled in React-Native, Java, Kotlin, Swift, Next.js,
+                            Vue.js and React.js. For backend development, I'm adept in Node.js, Express, Next.js and
+                            have experience working with both NoSQL databases like MongoDB and SQL databases like
+                            PostgresSql.
+                        </h2>
                     </div>
                 </div>
             </div>

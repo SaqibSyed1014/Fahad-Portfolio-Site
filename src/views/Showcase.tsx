@@ -1,6 +1,6 @@
 import ProjectsList from "../components/page/ProjectsList";
 import Testimonials from "../components/page/Testimonials";
-import ContactUsBanner from "../components/page/ContactUsBanner";
+import ContactBanner from "../components/page/ContactBanner";
 import {useState} from "react";
 
 export default function Showcase() {
@@ -13,7 +13,7 @@ export default function Showcase() {
        <>
            <ProjectsList filtersUpdated={updateKey} />
            <Testimonials key={compoKey} />
-           <ContactUsBanner />
+           <ContactBanner />
        </>
     )
 }

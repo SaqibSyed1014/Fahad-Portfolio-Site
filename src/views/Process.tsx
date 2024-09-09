@@ -1,4 +1,4 @@
-import ContactUsBanner from "../components/page/ContactUsBanner";
+import ContactBanner from "../components/page/ContactBanner";
 import ProcessSteps from "../components/page/ProcessSteps";
 import ProductStrategy from "../components/page/ProductStrategy";
 import UIUXDesign from "../components/page/UIUXDesign";
@@ -15,7 +15,7 @@ export default function Process() {
             <Development />
             <Conversion />
             <Testimonials />
-            <ContactUsBanner />
+            <ContactBanner />
         </div>
     )
 }

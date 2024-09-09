@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { navigationLinks, socialLinks } from "../../assets/utils/constants";
+import { PortfolioOwner, navigationLinks, socialLinks } from "../../assets/utils/constants";
 
 export default function Footer() {
     return (
@@ -33,12 +33,12 @@ export default function Footer() {
                     </div>
                     <div className="col-span-12 md:col-span-6 xl:col-span-7">
                         <div className="mt-20 md:mt-0">
-                            <a href="tel:+92394080410" className="text-2xl font-medium mb-8 mt-6 block">
-                                +92 339 4080410
+                            <a href={`tel:${PortfolioOwner.Number.split(' ').join('')}`} className="text-2xl font-medium mb-8 mt-6 block">
+                                {PortfolioOwner.Number}
                             </a>
-                            <a href="mailto:fibrahimbutt@gmail.com" className="text-2xl font-medium mb-8 mt-6 block">
-                                fibrahimbutt@gmail.com
-                            </a>
+                            <Link to={`mailto:${PortfolioOwner.Email}`} className="text-2xl font-medium mb-8 mt-6 block">
+                                {PortfolioOwner.Email}
+                            </Link>
                         </div>
                     </div>
                 </div>

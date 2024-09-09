@@ -9,7 +9,7 @@ export default function Tools() {
                         Tools
                     </h2>
                     <h3 className="section-header-heading max-w-[620px] mx-auto">
-                        I use a wide range of tools for Coding:
+                        I use a wide range of tools for Coding
                     </h3>
                 </div>
 

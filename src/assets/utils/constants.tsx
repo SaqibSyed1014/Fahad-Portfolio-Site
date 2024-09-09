@@ -4,6 +4,7 @@ import SeaForester from "../imgs/seaforester.webp";
 import Cantihodo from "../imgs/cantinhodocoimbra.webp";
 import React from "react";
 import {NavigationLink, Project, Skill, SocialLink, Tool} from "./types";
+import exp from "constants";
 
 enum ProjectColors {
     Blue = '#589BDE',
@@ -23,6 +24,17 @@ export enum ProjectCategories {
     lab = 'Lab'
 }
 
+export enum PortfolioOwner {
+    FirstName = 'Fahad',
+    LastName = 'Ibrahim',
+    Email = 'fibrahimbutt@gmail.com',
+    Number = '+92 339 4080410',
+    Upwork = 'https://www.upwork.com/freelancers/leaddeveloper',
+    GitHub = 'https://github.com/Bilal10Akram',
+    StackOverflow = 'https://stackoverflow.com/users/22293418/asad-meer?tab=profile',
+    LinkedIn = 'https://www.linkedin.com/in/muhammad-bilal-akram-99b033129/'
+}
+
 const sayHelloLinkText :JSX.Element = <>Say Hello <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fillRule="evenodd" clipRule="evenodd" d="M10.97 14.47a.75.75 0 101.06 1.06l5-5a.75.75 0 000-1.06l-5-5a.75.75 0 10-1.06 1.06l3.72 3.72H4a.75.75 0 000 1.5h10.69l-3.72 3.72z" fill="currentColor"></path>
 </svg></>
@@ -31,14 +43,14 @@ export const navigationLinks :NavigationLink[] = [
     { label: 'Home', path: '/', title: 'Home', isInternalLink: true },
     { label: 'Projects', path: '/projects', title: 'Projects', isInternalLink: true },
     { label: 'About', path: '/about', title: 'About', isInternalLink: true },
-    { label: sayHelloLinkText, path: 'https://www.upwork.com/freelancers/leaddeveloper', title: 'Say Hello', isInternalLink: false }
+    { label: sayHelloLinkText, path: PortfolioOwner.Upwork, title: 'Say Hello', isInternalLink: false }
 ]
 
 export const socialLinks :SocialLink[] = [
-    { label: 'GitHub', path: 'https://github.com/Bilal10Akram' },
-    { label: 'Linkedin', path: 'https://www.linkedin.com/in/muhammad-bilal-akram-99b033129/' },
-    { label: 'Skype', path: 'https://join.skype.com/invite/yskNEqJVPYwu' },
-    { label: 'Stack Overflow', path: 'https://stackoverflow.com/users/22293418/asad-meer?tab=profile' }
+    { label: 'GitHub', path: PortfolioOwner.GitHub },
+    { label: 'Linkedin', path: PortfolioOwner.LinkedIn },
+    { label: 'Upwork', path: PortfolioOwner.Upwork },
+    { label: 'Stack Overflow', path: PortfolioOwner.StackOverflow }
 ]
 
 export const projects :Project[] = [
