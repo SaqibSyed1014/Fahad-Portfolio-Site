@@ -45,7 +45,9 @@ export default function Feedbacks() {
                                             className={`border border-[#363b3f] h-[95px] md:h-[160px] w-full flex justify-center items-center cursor-pointer ${activeSlide === index ? `` : 'grayscale' }`}
                                             style={{ backgroundImage: activeSlide === index ? `linear-gradient(45deg, ${client.bgColor[0]}, ${client.bgColor[1]})` : 'none' }}
                                         >
-                                            <img src={client.logo} alt={client.companyName} />
+                                            <div className="size-28">
+                                                <img src={client.logo} alt={client.companyName} className=" h-full w-full object-contain" />
+                                            </div>
                                         </div>
                                     </div>
                                 )
@@ -68,18 +70,20 @@ export default function Feedbacks() {
                             return (
                                 <SwiperSlide key={index} className="text-light">
                                     <div className="border border-[#363b3f] p-6 w-full cursor-grab">
-                                        <blockquote className="text-lg xl:text-xl">{client.feedback}</blockquote>
+                                        <blockquote className="text-lg xl:text-xl">
+                                            {`"${client.feedback}"`}
+                                        </blockquote>
                                         <div className="flex max-md:flex-col md:items-center md:justify-between">
                                             <div className="flex items-center gap-3 mt-4">
                                                 <div className="w-8 h-8">
                                                     <img src={client.image} alt={client.name}/>
                                                 </div>
                                                 <p className="text-[#9ea4a6] font-medium text-base pt-2">
-                                                    {client.name} {client.designation && ','} {client.companyName}
+                                                    {client.name}
                                                 </p>
                                             </div>
                                             <div className="text-end">
-                                                <Link to="/contact" className="styled-button mt-8 md:mt-4">
+                                                <Link to={client.productLink} target="_blank" className="styled-button mt-8 md:mt-4">
                                                     View Project
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                          xmlns="http://www.w3.org/2000/svg">

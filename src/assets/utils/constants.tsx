@@ -278,53 +278,77 @@ export const projects :Project[] = [
 
 export const clientsFeedback = [
     {
-        logo: Gleam,
-        name: 'Maria Smantha',
-        feedback: '“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.”',
-        briefFeedback: '“Concealed allowed us to add top tier front-end skills to our team at a very reasonable price. Looking forward to working with them for many years to come!”',
-        companyName: '',
-        designation: '',
+        logo: '/logos/devdock.svg',
+        name: 'Abdul Wahab',
+        feedback: 'Fahad exceeded our expectations with his attention to detail and commitment to quality work. Our website is now mobile and SEO optimised. All thanks to him.',
+        companyName: 'DevDock',
+        designation: 'CEO',
         image: 'https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg',
         website: '',
-        bgColor: ['#4B6998', '#68B193'],
-        role: 'Web Developer'
+        bgColor: ['#d1f2fd', '#d1f2fd'],
+        role: 'Web Developer',
+        productLink: 'https://www.devdock.tech/'
     },
     {
-        logo: SimMarket,
+        logo: '/logos/dibbs.png',
         name: 'Lisa Cudrow',
-        feedback: '"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi”',
-        briefFeedback: '“Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi”',
-        companyName: '',
-        designation: '',
-        image: 'https://www.concealed.pt/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsimmarket-miguel-blaufuks.a3f01069.jpg&w=32&q=100',
-        website: '',
-        bgColor: ['#589BDE', '#589BDE'],
-        role: 'Graphic Designer',
-    },
-    {
-        logo: SeaForester,
-        name: 'Lisa Cudrow',
-        feedback: '“Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi”',
-        briefFeedback: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi',
-        companyName: '',
+        feedback: 'Fahad played an important role in the mobile development of Dibbs. He communicated well and provided regular updates and meet the deadlines. HE IS THE BEST!!!',
+        companyName: 'Dibbs',
         designation: '',
         image: 'https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg',
         website: '',
-        bgColor: ['#0088B8', '#0088B8'],
+        bgColor: ['#fff', 'rgba(104,56,112,0.8)'],
         role: 'Graphic Designer',
+        productLink: 'https://softwarealliance.net/'
     },
     {
-        logo: Cantihodo,
+        logo: '/logos/mab.webp',
+        name: 'Lisa Cudrow',
+        feedback: 'When it comes to technology, it is fair to say that Fahad is a genius. They understood my concept immediately and built an excellent web app which proved to be far better than what I had in mind.',
+        companyName: 'MAB Solutions',
+        designation: '',
+        image: 'https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg',
+        website: '',
+        bgColor: ['#00acbb', '#ccc'],
+        role: 'Graphic Designer',
+        productLink: 'https://mabsolutions.com.pk/'
+    },
+    {
+        logo: '/logos/renaissant.webp',
+        name: 'Lisa Cudrow',
+        feedback: 'Working with Fahad was a remarkable and pleasant experience! He managed to implement all my app ideas along with great design and intuitive elements. Would definitely recommend!',
+        companyName: 'Renaissant',
+        designation: '',
+        image: '/logos/renaissant.webp',
+        website: '',
+        bgColor: ['#fff', '#CE5028'],
+        role: 'Graphic Designer',
+        productLink: 'https://renaissant.com/'
+    },
+    {
+        logo: '/logos/sal.svg',
         name: 'John Smith',
-        feedback: '“At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.”',
-        briefFeedback: '“At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.”',
-        companyName: '',
+        feedback: 'Fahad\'s command over mobile and web development impressed me as he was equally able to handle both. He developed an effective and easy-to-use platform for my business, SAL. Highly Recommended!',
+        companyName: 'SAL',
         designation: '',
         image: 'https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg',
         website: '',
-        bgColor: ['#E69C4A', '#E69C4A'],
-        role: 'Marketing Specialist'
-    }
+        bgColor: ['#1c4f60', '#767479'],
+        role: 'Marketing Specialist',
+        productLink: 'https://thedibbsapp.com/'
+    },
+    {
+        logo: '/logos/tepia.svg',
+        name: 'Maria Smantha',
+        feedback: 'Fahad Ibrahim is a fantastic coder. He resolved any technical challenges we faced during the development process and was also available for application launch and it\'s maintenance afterwards. He is, no doubt, the best asset of my team',
+        companyName: 'Tepia',
+        designation: '',
+        image: 'https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg',
+        website: '',
+        bgColor: ['#80C97A', '#80C97A'],
+        role: 'Web Developer',
+        productLink: 'https://tepia.co/'
+    },
 ]
 
 export const teamMembers = [
