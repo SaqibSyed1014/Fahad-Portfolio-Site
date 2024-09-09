@@ -60,7 +60,7 @@ img{
     @apply inline-block
 }
 .home-view .heading-overlay{
-    transition: top .5s ease-out, left .5s ease-out, opacity .4s;
+    transition: top .25s ease-out, left .25s ease-out, opacity .4s;
     pointer-events: none;
     z-index: 1;
     position: absolute;
@@ -69,8 +69,8 @@ img{
     height: 400%;
     transform: translate(-50%, -50%);
     opacity: 1;
-    top: 54%;
-    left: 33%;
+    top: 75%;
+    left: 15%;
 }
 .home-view .hero-text{
     @apply text-2xl md:text-[28px] md:leading-[44px] lg:text-[32px] lg:leading-[48px] mt-6 md:mt-14

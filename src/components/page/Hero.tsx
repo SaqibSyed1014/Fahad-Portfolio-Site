@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 import {PortfolioOwner} from "../../assets/utils/constants";
 
 export default function Hero() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
     const followerRef = useRef<HTMLDivElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
 
@@ -14,7 +12,6 @@ export default function Hero() {
             if (!headingRef.current) return;
 
             const headingRect = headingRef.current.getBoundingClientRect();
-
             // Check if mouse is within heading bounds
             if (
                 event.clientX >= headingRect.left &&
@@ -26,40 +23,28 @@ export default function Hero() {
                 const x = Math.round(event.clientX - headingRect.left);
                 const y = Math.round(event.clientY - headingRect.top);
 
-                setMousePosition({ x, y });
-                setIsHovering(true);
-            } else setIsHovering(false);
+                if (followerRef.current) {
+                    followerRef.current.style.left = `${x}px`;
+                    followerRef.current.style.top = `${y}px`;
+                }
+            } else {
+                if (followerRef.current) {
+                    followerRef.current.style.left = `15%`;
+                    followerRef.current.style.top = `75%`;
+                }
+            }
         };
-
-        const handleMouseLeave = () => setIsHovering(false);
 
         if (headingRef.current) {
             headingRef.current.addEventListener('mousemove', function (event) {
                 handleMouseMove(event);
             })
-            headingRef.current.addEventListener('mouseleave', handleMouseLeave);
         }
 
         return () => {
-            if (headingRef.current) {
-                headingRef.current.removeEventListener('mousemove', handleMouseMove);
-                headingRef.current.removeEventListener('mouseleave', handleMouseLeave);
-            }
+            if (headingRef.current) headingRef.current.removeEventListener('mousemove', handleMouseMove);
         };
     }, []);
-
-    useEffect(() => {
-        if (followerRef.current && headingRef.current) {
-            if (isHovering) {
-                followerRef.current.style.left = `${mousePosition.x}px`;
-                followerRef.current.style.top = `${mousePosition.y}px`;
-            } else {
-                // Default position
-                followerRef.current.style.left = `15%`;
-                followerRef.current.style.top = `75%`;
-            }
-        }
-    }, [mousePosition, isHovering]);
 
     const container = useRef<HTMLDivElement>(null);
 
