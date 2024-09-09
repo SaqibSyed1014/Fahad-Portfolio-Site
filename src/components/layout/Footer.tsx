@@ -33,12 +33,13 @@ export default function Footer() {
                     </div>
                     <div className="col-span-12 md:col-span-6 xl:col-span-7">
                         <div className="mt-20 md:mt-0">
+                            <div onClick={() => window.open(`mailto:${PortfolioOwner.Email}`)}>Open</div>
                             <a href={`tel:${PortfolioOwner.Number.split(' ').join('')}`} className="text-2xl font-medium mb-8 mt-6 block">
                                 {PortfolioOwner.Number}
                             </a>
-                            <Link to={`mailto:${PortfolioOwner.Email}`} className="text-2xl font-medium mb-8 mt-6 block">
+                            <a target="_blank" href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" className="text-2xl font-medium mb-8 mt-6 block">
                                 {PortfolioOwner.Email}
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

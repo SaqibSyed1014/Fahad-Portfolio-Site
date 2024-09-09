@@ -124,7 +124,7 @@ interface ProjectTabGroupPropsType {
 }
 function ProjectTabGroup({ activeSlide, updateIndex } :ProjectTabGroupPropsType) {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col flex-1">
             {projects.slice(0, 4).map((project, index) => {
                 return (
                     <div key={index} className="flex flex-col">
@@ -140,9 +140,8 @@ function ProjectTabGroup({ activeSlide, updateIndex } :ProjectTabGroupPropsType)
                             </h5>
                         </button>
                         <div  style={{backgroundColor: project.color}}
-                                     className={`overflow-hidden aspect-square ${activeSlide === index ? 'block' : 'hidden'}`}>
-                            {/*<img src={project.images[0]} alt=""*/}
-                            {/*     className="w-full h-full object-contain"/>*/}
+                                     className={`overflow-hidden flex justify-center items-center aspect-square ${activeSlide === index ? 'block' : 'hidden'}`}>
+                            <img src={project.coverImage} alt="" />
                         </div>
                     </div>
                 )

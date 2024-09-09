@@ -45,7 +45,7 @@ export default function Feedbacks() {
                                             className={`border border-[#363b3f] h-[95px] md:h-[160px] w-full flex justify-center items-center cursor-pointer ${activeSlide === index ? `` : 'grayscale' }`}
                                             style={{ backgroundImage: activeSlide === index ? `linear-gradient(45deg, ${client.bgColor[0]}, ${client.bgColor[1]})` : 'none' }}
                                         >
-                                            <div className="size-28">
+                                            <div className="size-12 md:size-20 lg:size-28">
                                                 <img src={client.logo} alt={client.companyName} className=" h-full w-full object-contain" />
                                             </div>
                                         </div>
