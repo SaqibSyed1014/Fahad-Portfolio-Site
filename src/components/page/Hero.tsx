@@ -26,18 +26,25 @@ export default function Hero() {
                 if (followerRef.current) {
                     followerRef.current.style.left = `${x}px`;
                     followerRef.current.style.top = `${y}px`;
-                    followerRef.current.classList.remove('mouse-left');
+                    if (followerRef.current.classList.contains('mouse-left')) {
+                        setTimeout(() => {
+                            if (followerRef.current) followerRef.current.classList.remove('mouse-left');
+                        }, 500);
+                    }
+
                 }
             }
         };
 
         const handleMouseLeave = () => {
             if (followerRef.current) {
-                followerRef.current.style.left = `15%`;
+                followerRef.current.style.left = `20%`;
                 followerRef.current.style.top = `75%`;
                 followerRef.current.classList.add('mouse-left');
             }
         }
+
+
 
         if (headingRef.current) {
             headingRef.current.addEventListener('mousemove', function (event) {
@@ -47,7 +54,7 @@ export default function Hero() {
         }
 
         return () => {
-            if (headingRef.current) headingRef.current.removeEventListener('mousemove', handleMouseMove);
+            // if (headingRef.current) headingRef.current.removeEventListener('mousemove', handleMouseMove);
         };
     }, []);
 

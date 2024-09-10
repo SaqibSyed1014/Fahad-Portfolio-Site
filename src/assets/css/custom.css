@@ -65,12 +65,12 @@ img{
     z-index: 1;
     position: absolute;
     background: radial-gradient(rgba(5, 11, 16, 0), rgba(5, 11, 16, .5) 4%, rgba(5, 11, 16, .9) 8%);
-    width: 400%;
-    height: 400%;
+    width: 500%;
+    height: 500%;
     transform: translate(-50%, -50%);
     opacity: 1;
     top: 75%;
-    left: 15%;
+    left: 20%;
 }
 .home-view .heading-overlay.mouse-left{
     transition: top 0.5s ease-out, left 0.5s ease-out, opacity .4s;
