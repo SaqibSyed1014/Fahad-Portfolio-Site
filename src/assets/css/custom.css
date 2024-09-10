@@ -338,8 +338,8 @@ input:checked + div svg {
 }
 
 .carousel-track {
-    @apply flex absolute left-0 justify-center items-center border border-light h-[120px] md:h-[80px] w-[200%] gap-12 md:gap-20 lg:gap-28 pointer-events-none will-change-transform;
-    animation: slide 10s linear infinite;
+    @apply flex absolute left-0 justify-center items-center h-[120px] md:h-[80px] w-[200%] gap-12 md:gap-20 lg:gap-28 pointer-events-none will-change-transform;
+    animation: slide 20s linear infinite;
 }
 
 @keyframes slide {
