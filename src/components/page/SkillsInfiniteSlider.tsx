@@ -16,7 +16,7 @@ export default function SkillsInfiniteSlider() {
         return 0.5 - Math.random()
     })
     return (
-        <div className="skills-infinite-slider pb-14 md:pb-20 lg:pb-40">
+        <div className="skills-infinite-slider pb-14 md:pb-20 lg:pb-40 max-w-[1280px] mx-auto overflow-hidden">
             <div className="carousel-container">
                 <div className="carousel-track">
                     {sliderList.map((skill, index) => {
