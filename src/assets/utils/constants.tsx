@@ -30,9 +30,9 @@ export enum PortfolioOwner {
     Email = 'fibrahimbutt@gmail.com',
     Number = '+92 339 4080410',
     Upwork = 'https://www.upwork.com/freelancers/leaddeveloper',
-    GitHub = 'https://github.com/Bilal10Akram',
-    StackOverflow = 'https://stackoverflow.com/users/22293418/asad-meer?tab=profile',
-    LinkedIn = 'https://www.linkedin.com/in/muhammad-bilal-akram-99b033129/'
+    GitHub = 'https://github.com/fahadibrahimdev',
+    StackOverflow = 'https://stackoverflow.com/users/22702312/lead-dev',
+    LinkedIn = 'https://www.linkedin.com/in/fahad-ibrahim-251a102b2'
 }
 
 const sayHelloLinkText :JSX.Element = <>Say Hello <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
