@@ -12,7 +12,7 @@ export default function DefaultLayout() {
 
 
     return (
-        <div className={`flex flex-col bg-dark text-light font-inter overflow-x-hidden ${location.pathname === '/process' ? 'dotted-styled-bg' : ''}`}>
+        <div className={`flex flex-col bg-dark text-light font-inter ${location.pathname === '/process' ? 'dotted-styled-bg' : ''}`}>
             <header>
                 <NavBar />
             </header>
