@@ -1,4 +1,5 @@
 import { tools } from "../../assets/utils/constants";
+import BoxWrapper from "../common/BoxWrapper";
 
 export default function Tools() {
     return (
@@ -13,15 +14,12 @@ export default function Tools() {
                     </h3>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 mt-24 relative z-20">
-                    {tools.map((value, index) => {
-                            return (<div className="flex flex-col text-center" key={index}>
-                                    <div className="size-12 mx-auto">
-                                        <img src={value.icon} alt={value.title} className="w-full h-full object-contain" />
-                                    </div>
-                                    <h4 className="text-lg lg:mt-5 mb-2 xl:text-2xl font-medium">{value.title}</h4>
-                                </div>
-                            )
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-24">
+                    {tools.map((tool, index) => {
+                            return <BoxWrapper
+                                    title={tool.title}
+                                    icon={tool.icon}
+                                    key={index} />
                         }
                     )}
                 </div>
