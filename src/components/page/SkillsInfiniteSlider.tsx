@@ -40,7 +40,7 @@ export default function SkillsInfiniteSlider() {
                 </div>
             </div>
 
-            <div className="flex justify-center mt-20">
+            <div className="flex justify-center mt-10 md:mt-20">
                 <Link to="about" className="primary-btn">View All</Link>
             </div>
         </div>

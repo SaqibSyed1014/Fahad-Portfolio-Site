@@ -330,7 +330,7 @@ input:checked + div svg {
 }
 
 .carousel-card {
-    @apply flex justify-center items-center size-8 lg:size-16 shrink-0
+    @apply flex justify-center items-center size-10 lg:size-16 shrink-0
 }
 
 .carousel-card > img {
@@ -338,8 +338,8 @@ input:checked + div svg {
 }
 
 .carousel-track {
-    @apply flex absolute left-0 justify-center items-center h-[120px] md:h-[80px] w-[200%] gap-12 md:gap-20 lg:gap-28 pointer-events-none will-change-transform;
-    animation: slide 20s linear infinite;
+    @apply flex absolute left-0 justify-center items-center h-[120px] md:h-[80px] w-[100%] gap-14 md:gap-20 lg:gap-28 pointer-events-none will-change-transform;
+    animation: slide 5s linear infinite;
 }
 
 @keyframes slide {

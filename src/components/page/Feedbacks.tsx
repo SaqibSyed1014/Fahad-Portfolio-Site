@@ -37,15 +37,15 @@ export default function Feedbacks() {
                 </div>
 
                 <div>
-                    <div className="grid grid-cols-4 mb-10">
+                    <div className="grid grid-cols-3 lg:grid-cols-4 mb-10">
                         {clientsFeedback.map((client, index) => {
                                 return (
                                     <div key={index} onClick={() => moveToSlide(index)}>
                                         <div
-                                            className={`border border-[#363b3f] h-[95px] md:h-[160px] w-full flex justify-center items-center cursor-pointer ${activeSlide === index ? `` : 'grayscale' }`}
+                                            className={`border border-[#363b3f] aspect-square h-[95px] md:h-[200px] lg::h-[160px] w-full flex justify-center items-center cursor-pointer ${activeSlide === index ? `` : 'grayscale' }`}
                                             style={{ backgroundImage: activeSlide === index ? `linear-gradient(45deg, ${client.bgColor[0]}, ${client.bgColor[1]})` : 'none' }}
                                         >
-                                            <div className="size-12 md:size-20 lg:size-28">
+                                            <div className="size-14 md:size-28">
                                                 <img src={client.logo} alt={client.companyName} className=" h-full w-full object-contain" />
                                             </div>
                                         </div>
@@ -69,7 +69,7 @@ export default function Feedbacks() {
                             {clientsFeedback.map((client, index) => {
                             return (
                                 <SwiperSlide key={index} className="text-light">
-                                    <div className="border border-[#363b3f] p-6 w-full cursor-grab">
+                                    <div className="border border-[#363b3f] p-4 sm:p-6 w-full cursor-grab">
                                         <blockquote className="text-lg xl:text-xl">
                                             {`"${client.feedback}"`}
                                         </blockquote>
@@ -83,7 +83,7 @@ export default function Feedbacks() {
                                                 </p>
                                             </div>
                                             <div className="text-end">
-                                                <Link to={client.productLink} target="_blank" className="styled-button mt-8 md:mt-4">
+                                                <Link to={client.productLink} target="_blank" className="styled-button max-sm:!text-md mt-8 md:mt-4">
                                                     View Project
                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                          xmlns="http://www.w3.org/2000/svg">
